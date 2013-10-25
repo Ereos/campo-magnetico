@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bGuionTeorico">Guión Teórico</string>
+    <string name="bComponetes">Componentes de la practica</string>
+    <string name="bMontaje">Como montar la practica</string>
+    <string name="bSimulacion">Simulación de la practica</string>
+    
+</resources>
