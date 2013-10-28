@@ -15,11 +15,47 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.campomagnetico.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/titulo_activity_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.campomagnetico.ActivityGuion"
+            android:label="@string/titulo_activity_guion" >
+            <intent-filter>
+                <action android:name="guion" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.campomagnetico.ActivityListaComponentes"
+            android:label="@string/titulo_activity_componentes" >
+            <intent-filter>
+                <action android:name="componentes" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.campomagnetico.ActivityMontaje"
+            android:label="@string/titulo_activity_montaje" >
+            <intent-filter>
+                <action android:name="montaje" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.campomagnetico.ActivitySimulacion"
+            android:label="@string/titulo_activity_simulacion" >
+            <intent-filter>
+                <action android:name="simulacion" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>
