@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="titulo_activity_main">Campo magnetico</string>
+    <string name="titulo_activity_guion">Guión de la practica</string>
+    <string name="titulo_activity_componentes">Componentes de la practica</string>
+    <string name="titulo_activity_montaje">Montaje de la practica</string>
+    <string name="titulo_activity_simulacion">Simulacion de la practica</string>
+    
+</resources>
