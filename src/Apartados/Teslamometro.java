@@ -65,10 +65,7 @@ public class Teslamometro {
         	final int intensidad = 100; //100Amperios
         	double campo,campo2;
         	double y = -0.04;
-        	/*
-        	 * Necesario determinar el valor de d.
-        	 */
-        	final double d = 0.04;//Distancia entre las dos barras del conductor (m).
+        	final double d = 0.065;//Distancia entre las dos barras del conductor (m).
         	while(y < 0.1){
         		if(y < -0.010){//de -0.04 hasta -0.010 en intervalos de 0.005
         			calcula_campo(intensidad, y, d);
