@@ -7,9 +7,6 @@ public class Teslamometro {
          */
         final public static double permeabilidad = 12.56E-7;//T*m/A
         
-        //NO esa linea estaba mal!!!
-        
-        
         
         /**
          * Calcula el campo magnético a partir de la ecuación B=mu*I/2*Pi*r
