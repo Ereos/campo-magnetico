@@ -7,6 +7,8 @@ public class Teslamometro {
          */
         final public static double permeabilidad = 12.56E-7;//T*m/A
         
+        final int yoquese=1;
+        
         /**
          * Calcula el campo magnético a partir de la ecuación B=mu*I/2*Pi*r
          * @param intensidad Intensidad de la corriente en el conductor.
