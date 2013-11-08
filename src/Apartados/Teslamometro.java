@@ -7,10 +7,12 @@ public class Teslamometro {
          */
         final public static double permeabilidad = 12.56E-7;//T*m/A
         
-        final int yoquese=1;
+        //NO esa linea estaba mal!!!
+        
+        
         
         /**
-         * Calcula el campo magn√©tico a partir de la ecuaci√≥n B=mu*I/2*Pi*r
+         * Calcula el campo magnético a partir de la ecuación B=mu*I/2*Pi*r
          * @param intensidad Intensidad de la corriente en el conductor.
          * @param distancia Distancia 'r' del conductor al punto de medida.
          * @return Valor del campo magn√©tico en el punto indicado.
