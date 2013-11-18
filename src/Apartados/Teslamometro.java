@@ -1,4 +1,6 @@
 package Apartados;
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.text.NumberFormat;
 
 public class Teslamometro {
@@ -6,6 +8,7 @@ public class Teslamometro {
          * Permeabilidad magnética en el vacio.
          */
         final public static double permeabilidad = 12.56E-7;//T*m/A
+        final protected static MathContext escala = new MathContext(5);
         
         /**
          * Calcula el campo magnético a partir de la ecuación B=mu*I/2*Pi*r
@@ -76,10 +79,10 @@ public class Teslamometro {
         public static double[][] apartado1(double distancia){
         	double result[][] = new double[10][2];
         	Integer i;
-        	double intensidad;
+        	BigDecimal intensidad;
     		for(i=0;i<10;i++){
-    			intensidad = (double)0.005 * (double)(i+1);
-    			result[i][0]= intensidad; // Paso a Amperios
+    			intensidad = new BigDecimal((double)0.005 * (double)(i+1));
+    			result[i][0]= intensidad.doubleValue(); // Paso a Amperios
     			result[i][1]=Teslamometro.calcula_campo(amplifica(intensidad), 0.02); 
     		}
         	
@@ -95,15 +98,16 @@ public class Teslamometro {
          */
         public static double[][] apartado2(){
         	int i = 0; 
-        	final int intensidad = 100; //100Amperios
+        	final BigDecimal intensidad = new BigDecimal(100); //100Amperios
         	double campo,campo2;
-        	double y = -0.0425;//de -4cm a 10cm en intervalos de 0.25 cm
+        	BigDecimal y = new BigDecimal(-0.0425).round(escala);//de -4cm a 10cm en intervalos de 0.25 cm
+        	BigDecimal intervalo = new BigDecimal(0.0025).round(escala);
         	double result[][] = new double[57][2];
-        	final double d = 0.065;//Distancia entre las dos barras del conductor (m).
-        	while(y < 0.1){
-        		y += 0.0025; 
-        		result[i][0] = y;
-       			result[i][1] = calcula_campo(amplifica(intensidad), y, d);
+        	final BigDecimal d = new BigDecimal(0.065);//Distancia entre las dos barras del conductor (m).
+        	while(y.doubleValue() < 0.1){
+        		y = y.add(intervalo);
+        		result[i][0] = y.setScale(5).doubleValue();
+       			result[i][1] = calcula_campo(amplifica(intensidad), y.doubleValue(), d.doubleValue());
        			i++;
         	}
 			return result;
@@ -122,15 +126,15 @@ public class Teslamometro {
          */
         public static double[][] apartado3(){
         	int i = 0; //de -4 a 10 en intervalos de 0.25
-        	final int intensidad = 100; //100Amperios
+        	final BigDecimal intensidad = new BigDecimal(100); //100Amperios
         	double campo,campo2;
-        	double y = -0.0425;
+        	BigDecimal y = new BigDecimal(-0.0425), intervalo = new BigDecimal(0.0025);
         	double result[][] = new double[57][2];
-        	final double d = 0.065;//Distancia entre las dos barras del conductor (m).
-        	while(y < 0.1){
-        		y += 0.0025; 
-        		result[i][0] = y;
-       			result[i][1] = calcula_campo_inverso(amplifica(intensidad), y, d);
+        	final BigDecimal d = new BigDecimal (0.065);//Distancia entre las dos barras del conductor (m).
+        	while(y.doubleValue() < 0.1){
+        		y = y.add(intervalo); 
+        		result[i][0] = y.doubleValue();
+       			result[i][1] = calcula_campo_inverso(amplifica(intensidad), y.doubleValue(), d.doubleValue());
        			i++;
         	}
 			return result;
@@ -142,8 +146,9 @@ public class Teslamometro {
          * por lo tarnto Ic = 2000 * I.
          * @return  2000 * I
          */
-        public static double amplifica(double I){
-			return 2000 * I; //Ic
+        public static double amplifica(BigDecimal I){
+        	//Ic = 2000 * I
+			return I.multiply(new BigDecimal(2000)).doubleValue(); //Ic
         	
         }
 }
