@@ -32,12 +32,9 @@ public class Teslamometro {
         	double campo1 = 0, campo2 = 0;
         	if(y != 0 && y != d){ //B = B1 + B2 
 	        	campo1 = calcula_campo(intensidad, y);
-	        	if(y < d){//siendo r= y-d
-	        		campo2 = calcula_campo(intensidad, y-d);
-	        	}else{ // siendo r= y+d
-	        		campo2 = calcula_campo(intensidad, y+d);
-	        	}
+	        	campo2 = calcula_campo(intensidad, y-d);
         	}else if(y == 0){ //B = B2
+        		System.out.println(y-d);
         		campo2 = calcula_campo(intensidad, y-d);
         	}else{//B=B1
 	        	campo1 = calcula_campo(intensidad, y);
@@ -57,11 +54,7 @@ public class Teslamometro {
         	double campo1 = 0, campo2 = 0;
         	if(y != 0 & y != d){
 	        	campo1 = calcula_campo(intensidad, y);
-	        	if(y < d){
-	        		campo2 = calcula_campo(-intensidad, y-d);
-	        	}else{
-	        		campo2 = calcula_campo(-intensidad, y+d);
-	        	}
+	        	campo2 = calcula_campo(-intensidad, y-d);
         	}else if(y == 0){
         		campo2 = calcula_campo(-intensidad, y-d);
         	}else{
@@ -128,12 +121,12 @@ public class Teslamometro {
         	int i = 0; //de -4 a 10 en intervalos de 0.25
         	final BigDecimal intensidad = new BigDecimal(100); //100Amperios
         	double campo,campo2;
-        	BigDecimal y = new BigDecimal(-0.0425), intervalo = new BigDecimal(0.0025);
+        	BigDecimal y = new BigDecimal(-0.0425).round(escala), intervalo = new BigDecimal(0.0025).round(escala);
         	double result[][] = new double[57][2];
         	final BigDecimal d = new BigDecimal (0.065);//Distancia entre las dos barras del conductor (m).
         	while(y.doubleValue() < 0.1){
         		y = y.add(intervalo); 
-        		result[i][0] = y.doubleValue();
+        		result[i][0] = y.setScale(5).doubleValue();
        			result[i][1] = calcula_campo_inverso(amplifica(intensidad), y.doubleValue(), d.doubleValue());
        			i++;
         	}
