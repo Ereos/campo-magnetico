@@ -1,6 +1,5 @@
 package com.example.campomagnetico;
 
-import java.util.ArrayList;
 
 import com.example.campomagnetico.R;
 import com.example.campomagnetico.R.id;
@@ -15,27 +14,26 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Se ha creado un metodo ViewHolder para no tener que buscar cada vez los recursos
- * Adaptadora para los productos
- *
- */
-public class Adapter_Componentes extends BaseAdapter {
+public class Adapter_Tabla extends BaseAdapter {
 	Activity activity;
-	ArrayList<Componente> componente = new ArrayList<Componente>();
+	String[][] listaValores;
 
-	public Adapter_Componentes(Activity activity, ArrayList<Componente> componente) {
+	public Adapter_Tabla(Activity activity, String[][] listaValores) {
 		super();
 		this.activity = activity;
-		this.componente = componente;
+		this.listaValores = listaValores;
 	}
 
 	public int getCount() {
-		return componente.size();
+		int tamano = 0;
+		
+		tamano = listaValores[1].length;
+		
+		return tamano;
 	}
 
 	public Object getItem(int position) {
-		return componente.get(position);
+		return listaValores[1][position];
 	}
 
 	public long getItemId(int position) {
@@ -50,9 +48,8 @@ public class Adapter_Componentes extends BaseAdapter {
 			view = inflater.inflate(R.layout.lista_componentes, null);
 			
 			holder= new ViewHolder();
-			holder.tvNombre = (TextView)view.findViewById(R.id.tvNombre);
-			holder.tvDescripcion = (TextView)view.findViewById(R.id.tvDescripcion);
-			holder.ivFoto = (ImageView)view.findViewById(R.id.ivImagenComponente);
+			holder.tvColumA = (TextView)view.findViewById(R.id.tvColumA);
+			holder.tvColumB = (TextView)view.findViewById(R.id.tvColumB);
 			
 			view.setTag(holder);
 			
@@ -60,19 +57,15 @@ public class Adapter_Componentes extends BaseAdapter {
 			holder = (ViewHolder)view.getTag();
 		}
 		
-		final Componente item = componente.get(position);
-		
-		holder.tvNombre.setText(item.getNombre());
-		holder.tvDescripcion.setText(item.getDescripcion());
-		holder.ivFoto.setImageResource(item.getIdFotoMini());
+		holder.tvColumA.setText(listaValores[1][position]);
+		holder.tvColumB.setText(listaValores[2][position]);
 		
 		
 		return view;
 	}
 	
 	private class ViewHolder {
-		TextView tvNombre;
-		TextView tvDescripcion;
-		ImageView ivFoto;	
+		TextView tvColumA;
+		TextView tvColumB;	
 	}
 }
