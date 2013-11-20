@@ -16,9 +16,9 @@ import android.widget.TextView;
 
 public class Adapter_Tabla extends BaseAdapter {
 	Activity activity;
-	String[][] listaValores;
+	double[][] listaValores;
 
-	public Adapter_Tabla(Activity activity, String[][] listaValores) {
+	public Adapter_Tabla(Activity activity, double[][] listaValores) {
 		super();
 		this.activity = activity;
 		this.listaValores = listaValores;
@@ -57,8 +57,8 @@ public class Adapter_Tabla extends BaseAdapter {
 			holder = (ViewHolder)view.getTag();
 		}
 		
-		holder.tvColumA.setText(listaValores[1][position]);
-		holder.tvColumB.setText(listaValores[2][position]);
+		holder.tvColumA.setText(listaValores[1][position]+"");
+		holder.tvColumB.setText(listaValores[2][position]+"");
 		
 		
 		return view;
