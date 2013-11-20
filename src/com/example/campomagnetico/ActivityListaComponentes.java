@@ -40,33 +40,36 @@ public class ActivityListaComponentes extends Activity {
 	public ArrayList<Componente> CargarComponentes(){
 		
 		ArrayList<Componente> losComponentes = new ArrayList<Componente>();
-		
-		Componente amperimetro = new Componente("Amper�metro", "des", R.drawable.amperimetro_mini, R.drawable.amperimetro);
-		losComponentes.add(amperimetro);
-		
-		Componente circuito = new Componente("Circuito", "des", R.drawable.circuito_mini, R.drawable.circuito);
-		losComponentes.add(circuito);
-		
-		Componente conductorA = new Componente("Conductor A", "des", R.drawable.conductor_a_mini, R.drawable.conductor_a);
-		losComponentes.add(conductorA);
-		
-		Componente conductorB = new Componente("Conductor B", "des", R.drawable.conductor_b_mini, R.drawable.conductor_b);
-		losComponentes.add(conductorB);
-		
-		Componente conductorC = new Componente("Conductor C", "des", R.drawable.conductor_c_mini, R.drawable.conductor_c);
-		losComponentes.add(conductorC);
-		
-		Componente cosa = new Componente("cosa", "des", R.drawable.cosa_mini, R.drawable.cosa);
-		losComponentes.add(cosa);
-		
-		Componente generador = new Componente("Generador", "des", R.drawable.generador_mini, R.drawable.generador);
+
+		Componente generador = new Componente("Fuente de alimentación", getString(R.string.DescFAlimentacion), R.drawable.generador_mini, R.drawable.generador);
 		losComponentes.add(generador);
 		
-		Componente pinzas = new Componente("Pinzas", "des", R.drawable.pinzas_mini, R.drawable.pinzas);
+		Componente cosa = new Componente("Transformador", getString(R.string.DescTransformador), R.drawable.cosa_mini, R.drawable.cosa);
+		losComponentes.add(cosa);
+		
+		Componente amperimetro = new Componente("Amperímetro", getString(R.string.DescAmperimetro), R.drawable.amperimetro_mini, R.drawable.amperimetro);
+		losComponentes.add(amperimetro);
+		
+		Componente pinzas = new Componente("Pinzas", getString(R.string.DescPinzaAmp), R.drawable.pinzas_mini, R.drawable.pinzas);
 		losComponentes.add(pinzas);
 		
-		Componente teslamometro = new Componente("Teslamometro", "des", R.drawable.teslamometro_mini, R.drawable.teslamometro);
+		Componente teslamometro = new Componente("Teslamometro", getString(R.string.DescTeslam), R.drawable.teslamometro_mini, R.drawable.teslamometro);
 		losComponentes.add(teslamometro);
+		
+		Componente SondaHall = new Componente("Sonda Hall", getString(R.string.DescSondaHall), R.drawable.teslamometro_mini, R.drawable.teslamometro);
+		losComponentes.add(SondaHall);
+		
+		Componente conductorA = new Componente("Conductor A", getString(R.string.DescConductorA), R.drawable.conductor_a_mini, R.drawable.conductor_a);
+		losComponentes.add(conductorA);
+		
+		Componente conductorB = new Componente("Conductor B", getString(R.string.DescConductorB), R.drawable.conductor_b_mini, R.drawable.conductor_b);
+		losComponentes.add(conductorB);
+		
+		Componente conductorC = new Componente("Conductor C", getString(R.string.DescConductorC), R.drawable.conductor_c_mini, R.drawable.conductor_c);
+		losComponentes.add(conductorC);
+		
+		Componente circuito = new Componente("Circuito", getString(R.string.DescCircuito), R.drawable.circuito_mini, R.drawable.circuito);
+		losComponentes.add(circuito);
 		
 		return losComponentes;
 		
