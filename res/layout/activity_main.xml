@@ -5,24 +5,28 @@
     android:orientation="vertical" >
 
     <Button
+        style="@style/btnStyle"
         android:id="@+id/bGuion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bGuionTeorico" />
 
     <Button
+        style="@style/btnStyle"
         android:id="@+id/bComponentes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bComponetes" />
 
     <Button
+        style="@style/btnStyle"
         android:id="@+id/bMontaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bMontaje" />
 
     <Button
+        style="@style/btnStyle"
         android:id="@+id/bSimulacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
