@@ -27,7 +27,7 @@ public class Adapter_Tabla extends BaseAdapter {
 	public int getCount() {
 		int tamano = 0;
 		
-		tamano = listaValores[1].length;
+		tamano = listaValores.length;
 		
 		return tamano;
 	}
@@ -57,8 +57,8 @@ public class Adapter_Tabla extends BaseAdapter {
 			holder = (ViewHolder)view.getTag();
 		}
 		
-		holder.tvColumA.setText(listaValores[1][position]+"");
-		holder.tvColumB.setText(listaValores[2][position]+"");
+		holder.tvColumA.setText(listaValores[position][0]+"");
+		holder.tvColumB.setText(listaValores[position][1]+"");
 		
 		
 		return view;
