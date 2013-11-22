@@ -10,8 +10,8 @@
 
         <ImageView
             android:id="@+id/ivImagenComponente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
             android:src="@drawable/ic_launcher" />
 
         <TextView
@@ -19,14 +19,24 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Large Text"
+            android:gravity="center"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/tvDescripcion"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView" />
+    
+     <View 
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:id="@+id/separador"
+        android:background="#125156"
+        android:paddingTop="1dip"
+        android:paddingBottom="6dip"/>
+    
 
 </LinearLayout>

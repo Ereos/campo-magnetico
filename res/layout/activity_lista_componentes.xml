@@ -10,7 +10,10 @@
         android:id="@+id/lvComponentes"
         android:layout_width="0dip"
         android:layout_height="wrap_content"
-        android:layout_weight="1" >
+        android:layout_weight="1"
+        android:paddingTop="5dip"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip" >
     </ListView>
 
 </LinearLayout>
