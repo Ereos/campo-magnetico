@@ -40,8 +40,7 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 
 				intent = new Intent("montaje");
-				startActivity(intent);
-				
+				startActivity(intent);	
 			}
 		});
 		
@@ -78,10 +77,6 @@ public class MainActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		
 	    switch (item.getItemId()) {
-	        case R.id.action_settings:
-	            return true;
-	        case R.id.action_inicio:
-	            return true;
 	        case R.id.action_acercaDe:
 	        	intent = new Intent("acerca_de");
 	        	startActivity(intent);

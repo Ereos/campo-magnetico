@@ -28,14 +28,9 @@ public class AcercaDeActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		
 	    switch (item.getItemId()) {
-	        case R.id.action_settings:
-	            return true;
 	        case R.id.action_inicio:
+	        	onBackPressed();
 	            return true;
-	        case R.id.action_acercaDe:
-	        	intent = new Intent("acerca_de");
-	        	startActivity(intent);
-	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }

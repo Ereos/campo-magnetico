@@ -19,7 +19,7 @@ public class ActivityMontaje extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.activity_montaje, menu);
 		return true;
 	}
 	
@@ -27,9 +27,8 @@ public class ActivityMontaje extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		
 	    switch (item.getItemId()) {
-	        case R.id.action_settings:
-	            return true;
 	        case R.id.action_inicio:
+	        	onBackPressed();
 	            return true;
 	        case R.id.action_acercaDe:
 	        	intent = new Intent("acerca_de");

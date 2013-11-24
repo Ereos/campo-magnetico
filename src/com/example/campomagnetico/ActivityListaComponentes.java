@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class ActivityListaComponentes extends Activity {
 
@@ -30,17 +31,25 @@ public class ActivityListaComponentes extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.activity_lista_componentes, menu);
 		return true;
 	}
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+		TextView tvDescripcion = (TextView)findViewById(R.id.tvDescripcion);
 		
 	    switch (item.getItemId()) {
-	        case R.id.action_settings:
-	            return true;
+    		case R.id.action_aumentar:
+    			
+    			//Aun no esta bien implementado
+    			float tamano = tvDescripcion.getTextSize();
+    			tamano += 1;
+    			tvDescripcion.setTextSize(tamano);
+    			adapterComp.notifyDataSetChanged();
+    			return true;
 	        case R.id.action_inicio:
+	        	onBackPressed();
 	            return true;
 	        case R.id.action_acercaDe:
 	        	intent = new Intent("acerca_de");
@@ -50,7 +59,6 @@ public class ActivityListaComponentes extends Activity {
 	            return super.onOptionsItemSelected(item);
 	    }
 	}
-	
 	
 	
 	/**
