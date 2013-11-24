@@ -19,8 +19,7 @@ public class ActivityListaComponentes extends Activity {
 		
 		adapterComp = new Adapter_Componentes(this,this.CargarComponentes());
 		
-		listaComponentes.setAdapter(adapterComp);	
-		
+		listaComponentes.setAdapter(adapterComp);		
 		
 	}
 
