@@ -6,23 +6,24 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class ActivityMontaje extends Activity {
+public class AcercaDeActivity extends Activity {
 
-	protected Intent intent;
+	Intent intent;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_montaje);
+		setContentView(R.layout.acerca_de);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.acerca_de, menu);
 		return true;
 	}
 	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		
