@@ -58,6 +58,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.campomagnetico.AcercaDeActivity"
+            android:label="@string/title_activity_acerca_de" >
+            <intent-filter>
+                <action android:name="acerca_de" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
