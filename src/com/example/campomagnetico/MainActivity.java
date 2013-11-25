@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				
-				intent = new Intent("guion");
+				intent = new Intent("android.intent.action.MAIN");
 				startActivity(intent);
 			}
 		});

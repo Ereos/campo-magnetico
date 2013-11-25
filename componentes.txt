@@ -1,4 +1,4 @@
---Fuente de alimentaci√≥n--
+--Fuente de alimentación--
 Genera la corriente necesaria para alimentar al transformador.
 El boton de encendido se encuentra en la parte trasera, y en la parte delantera cuenta con distintas conexiones por parejas y una rueda de desplacamiento que permite seleccionar el voltaje deseado, de 0 a 15 Voltios.
 
