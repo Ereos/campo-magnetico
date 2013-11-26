@@ -4,11 +4,16 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class ActivityListaComponentes extends Activity {
 
+	protected Intent intent;
+	
 	private Adapter_Componentes adapterComp;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +24,7 @@ public class ActivityListaComponentes extends Activity {
 		
 		adapterComp = new Adapter_Componentes(this,this.CargarComponentes());
 		
-		listaComponentes.setAdapter(adapterComp);	
-		
+		listaComponentes.setAdapter(adapterComp);		
 		
 	}
 
@@ -31,6 +35,30 @@ public class ActivityListaComponentes extends Activity {
 		return true;
 	}
 	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		TextView tvDescripcion = (TextView)findViewById(R.id.tvDescripcion);
+		
+	    switch (item.getItemId()) {
+    		case R.id.action_aumentar:
+    			
+    			//Aun no esta bien implementado
+    			float tamano = tvDescripcion.getTextSize();
+    			tamano += 1;
+    			tvDescripcion.setTextSize(tamano);
+    			adapterComp.notifyDataSetChanged();
+    			return true;
+	        case R.id.action_inicio:
+	        	onBackPressed();
+	            return true;
+	        case R.id.action_acercaDe:
+	        	intent = new Intent("acerca_de");
+	        	startActivity(intent);
+	        	return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
 	
 	
 	/**

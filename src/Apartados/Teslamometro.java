@@ -1,7 +1,7 @@
 package Apartados;
+
 import java.math.BigDecimal;
 import java.math.MathContext;
-import java.text.NumberFormat;
 
 public class Teslamometro {
         /**
@@ -34,7 +34,6 @@ public class Teslamometro {
 	        	campo1 = calcula_campo(intensidad, y);
 	        	campo2 = calcula_campo(intensidad, y-d);
         	}else if(y == 0){ //B = B2
-        		System.out.println(y-d);
         		campo2 = calcula_campo(intensidad, y-d);
         	}else{//B=B1
 	        	campo1 = calcula_campo(intensidad, y);
@@ -91,7 +90,7 @@ public class Teslamometro {
          */
         public static double[][] apartado2(){
         	int i = 0; 
-        	final BigDecimal intensidad = new BigDecimal(100); //100Amperios
+        	final BigDecimal intensidad = new BigDecimal(50); //100Amperios recorren el circuito y 50 por cada conductor a medir.
         	double campo,campo2;
         	BigDecimal y = new BigDecimal(-0.0425).round(escala);//de -4cm a 10cm en intervalos de 0.25 cm
         	BigDecimal intervalo = new BigDecimal(0.0025).round(escala);
@@ -100,7 +99,7 @@ public class Teslamometro {
         	while(y.doubleValue() < 0.1){
         		y = y.add(intervalo);
         		result[i][0] = y.setScale(5).doubleValue();
-       			result[i][1] = calcula_campo(amplifica(intensidad), y.doubleValue(), d.doubleValue());
+       			result[i][1] = calcula_campo(intensidad.doubleValue(), y.doubleValue(), d.doubleValue());
        			i++;
         	}
 			return result;
@@ -127,7 +126,7 @@ public class Teslamometro {
         	while(y.doubleValue() < 0.1){
         		y = y.add(intervalo); 
         		result[i][0] = y.setScale(5).doubleValue();
-       			result[i][1] = calcula_campo_inverso(amplifica(intensidad), y.doubleValue(), d.doubleValue());
+       			result[i][1] = calcula_campo_inverso(intensidad.doubleValue(), y.doubleValue(), d.doubleValue());
        			i++;
         	}
 			return result;
