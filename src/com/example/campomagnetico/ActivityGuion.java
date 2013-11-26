@@ -3,8 +3,10 @@ package com.example.campomagnetico;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TabHost;
 
 public class ActivityGuion extends Activity {
 	protected Intent intent;
@@ -13,6 +15,25 @@ public class ActivityGuion extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_guion);
+		
+		//Tabs
+		Resources res = getResources();
+		 
+		TabHost tabs=(TabHost)findViewById(android.R.id.tabhost);
+		tabs.setup();
+		 
+		TabHost.TabSpec spec=tabs.newTabSpec("tab1");
+		spec.setContent(R.id.tabFundTeori);
+		spec.setIndicator("Teoria", res.getDrawable(android.R.drawable.ic_btn_speak_now));
+		tabs.addTab(spec);
+		 
+		spec=tabs.newTabSpec("tab2");
+		spec.setContent(R.id.tabApartados);
+		spec.setIndicator("Apartados", res.getDrawable(android.R.drawable.ic_dialog_map));
+		tabs.addTab(spec);
+		 
+		tabs.setCurrentTab(0);
+		//Fin Tabs
 	}
 
 	@Override
