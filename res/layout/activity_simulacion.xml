@@ -40,8 +40,7 @@
 
          	        <LinearLayout
          	            android:layout_width="match_parent"
-         	            android:layout_height="wrap_content"
-         	            android:layout_weight="0.01" >
+         	            android:layout_height="wrap_content" >
 
          	            <SeekBar
          	                android:id="@+id/seekBarA"
@@ -55,7 +54,7 @@
          	                android:layout_width="42dp"
          	                android:layout_height="wrap_content"
          	                android:layout_weight="0.05"
-         	                android:text="0"
+         	                android:text="0 mA"
          	                android:textAppearance="?android:attr/textAppearanceSmall" />
          	        </LinearLayout>
 
@@ -65,10 +64,11 @@
 
          	            <TextView
          	                android:id="@+id/Tesla1"
-         	                android:layout_width="wrap_content"
+         	                android:layout_width="65dp"
          	                android:layout_height="wrap_content"
          	                android:layout_weight="1"
-         	                android:text="Teslamómetro"
+         	                android:paddingLeft="10dp"
+         	                android:text="0.0000 (mT)"
          	                android:textAppearance="?android:attr/textAppearanceMedium" />
 
          	            <Button
@@ -94,13 +94,126 @@
          	        android:layout_width="match_parent"
 				    android:layout_height="match_parent"
 				    android:orientation="vertical" 
-				    android:id="@+id/tabConductorB"/>
+				    android:id="@+id/tabConductorB">	
+
+         	        <ImageView
+         	            android:id="@+id/imageView2"
+         	            android:layout_width="wrap_content"
+         	            android:layout_height="wrap_content"
+         	            android:src="@drawable/conductor_b_mini" />
+
+         	        <LinearLayout
+         	            android:layout_width="match_parent"
+         	            android:layout_height="wrap_content"
+         	            android:orientation="horizontal" >
+
+         	            <SeekBar
+         	                android:id="@+id/seekBarB"
+         	                android:max="57"
+         	                android:layout_width="136dp"
+         	                android:layout_height="wrap_content" 
+         	                android:layout_weight="1.0"/>
+
+         	            <TextView
+         	                android:id="@+id/textSeekB"
+         	                 android:layout_width="42dp"
+         	                android:layout_height="wrap_content"
+         	                android:layout_weight="0.05"
+         	                android:text="0 mA"
+         	                android:textAppearance="?android:attr/textAppearanceSmall"/>
+         	        </LinearLayout>
+
+         	        <LinearLayout
+         	            android:layout_width="match_parent"
+         	            android:layout_height="wrap_content" >
+
+         	            <TextView
+         	                android:id="@+id/Tesla2"
+         	                android:layout_width="65dp"
+         	                android:layout_height="wrap_content"
+         	                android:layout_weight="1"
+         	                android:paddingLeft="10dp"
+         	                android:text="0.0000 (mT)"
+         	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+         	            <Button
+         	                android:id="@+id/buttonB"
+         	                 style="@style/btnStyle"
+         	                android:layout_width="wrap_content"
+         	                android:layout_height="wrap_content"
+         	                android:layout_weight="1"
+         	                android:layout_gravity="right"
+         	                android:text="Tomar Medida"/>
+
+         	        </LinearLayout>
+
+         	        <ListView
+         	            android:id="@+id/listView2"
+         	            android:layout_width="match_parent"
+         	            android:layout_height="wrap_content" >
+         	        </ListView>
+
+         	    </LinearLayout>
          	    
          	    <LinearLayout 
          	        android:layout_width="match_parent"
 				    android:layout_height="match_parent"
 				    android:orientation="vertical" 
-				    android:id="@+id/tabConductorC"/>
+				    android:id="@+id/tabConductorC">
+
+         	        <ImageView
+         	            android:id="@+id/imageView3"
+         	            android:layout_width="wrap_content"
+         	            android:layout_height="wrap_content"
+         	            android:src="@drawable/conductor_c_mini" />
+
+         	        <LinearLayout
+         	            android:layout_width="match_parent"
+         	            android:layout_height="wrap_content" >
+
+         	            <SeekBar
+         	                android:id="@+id/seekBarC"
+         	                android:max="57"
+         	                android:layout_width="136dp"
+         	                android:layout_height="wrap_content" 
+         	                android:layout_weight="1.0" />
+
+         	            <TextView
+         	                android:id="@+id/textSeekC"
+         	                 android:layout_width="42dp"
+         	                android:layout_height="wrap_content"
+         	                android:layout_weight="0.05"
+         	                android:text="0 mA"
+         	                android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+         	        </LinearLayout>
+
+         	        <LinearLayout
+         	            android:layout_width="match_parent"
+         	            android:layout_height="wrap_content"
+         	            android:orientation="horizontal" >
+
+         	            <TextView
+         	                android:id="@+id/Tesla3"
+         	                android:layout_width="65dp"
+         	                android:layout_height="wrap_content"
+         	                android:layout_weight="1"
+         	                android:paddingLeft="10dp"
+         	                android:text="0.0000 (mT)"
+         	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+         	            <Button
+         	                android:id="@+id/buttonC"
+         	                 style="@style/btnStyle"
+         	                android:layout_width="wrap_content"
+         	                android:layout_height="wrap_content"
+         	                android:layout_weight="1"
+         	                android:layout_gravity="right"
+         	                android:text="Tomar Medida" />
+
+         	        </LinearLayout>
+
+         	    </LinearLayout>
     
          	</FrameLayout>
     	</LinearLayout>
