@@ -3,8 +3,6 @@ package com.example.campomagnetico;
 import java.util.ArrayList;
 
 import com.example.campomagnetico.R;
-import com.example.campomagnetico.R.id;
-import com.example.campomagnetico.R.layout;
 
 import android.app.Activity;
 import android.content.Context;
