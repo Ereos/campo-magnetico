@@ -109,7 +109,7 @@ public class ActivitySimulacion extends Activity {
 		seektextB = (TextView) findViewById(R.id.textSeekB);
 		seekbarC = (SeekBar) findViewById(R.id.seekBarC);
 		seektextC = (TextView) findViewById(R.id.textSeekC);*/
-		//Fin SeekViews
+		//Fin SeekViews		
 	}
 
 	@Override
@@ -124,6 +124,7 @@ public class ActivitySimulacion extends Activity {
 	    switch (item.getItemId()) {
 	        case R.id.action_inicio:
 	        	onBackPressed();
+	        	
 	            return true;
 	        case R.id.action_acercaDe:
 	        	intent = new Intent("acerca_de");
