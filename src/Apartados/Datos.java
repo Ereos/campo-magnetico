@@ -12,6 +12,16 @@ public class Datos {
 		// TODO Auto-generated constructor stub
 		this.apartado = apartado;
 	}
+	/**
+	 * Es responsabilidad del usuario de esta clase, que
+	 * la el apartado al que corresponde la medida coincida
+	 * con el apartado de los Datos.
+	 * @param medida Medida con el mismo apartado que los Datos
+	 */
+	public void add_dato(Medida medida){
+		//TODO comprobar si esta la medida.
+		this.arrayDatos.add(medida);
+	}
 	
 	public void add_dato(double y, double campo){
 		if(apartado <= 1){

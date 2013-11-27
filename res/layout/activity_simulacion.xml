@@ -72,7 +72,7 @@
          	                android:textAppearance="?android:attr/textAppearanceMedium" />
 
          	            <Button
-         	                android:id="@+id/BttnA"
+         	                android:id="@+id/ButtonA"
          	                style="@style/btnStyle"
          	                android:layout_width="wrap_content"
          	                android:layout_height="wrap_content"
