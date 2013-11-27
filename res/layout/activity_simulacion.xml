@@ -109,7 +109,7 @@
 
          	            <SeekBar
          	                android:id="@+id/seekBarB"
-         	                android:max="57"
+         	                android:max="56"
          	                android:layout_width="136dp"
          	                android:layout_height="wrap_content" 
          	                android:layout_weight="1.0"/>
@@ -173,7 +173,7 @@
 
          	            <SeekBar
          	                android:id="@+id/seekBarC"
-         	                android:max="57"
+         	                android:max="56"
          	                android:layout_width="136dp"
          	                android:layout_height="wrap_content" 
          	                android:layout_weight="1.0" />

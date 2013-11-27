@@ -1,6 +1,8 @@
 package com.example.campomagnetico;
 
+import java.math.BigDecimal;
 import java.math.MathContext;
+import java.math.RoundingMode;
 
 import Apartados.Apartado;
 import android.os.Bundle;
@@ -104,11 +106,71 @@ public class ActivitySimulacion extends Activity {
 			}
 			
 		});
-		/* Seek aún no creados TODO
+		
 		seekbarB = (SeekBar) findViewById(R.id.seekBarB);
 		seektextB = (TextView) findViewById(R.id.textSeekB);
+		tesla2 = (TextView) findViewById(R.id.Tesla2);
+		seekbarB.setOnSeekBarChangeListener(new OnSeekBarChangeListener(){
+
+			@Override
+			/**
+			  * Evento encargado del control del estado del seekbar
+			  */
+			 public void onProgressChanged(SeekBar seekBar, int progress,
+			    		boolean fromUser) {
+					BigDecimal prog = new BigDecimal(-0.04 + 0.0025 * progress);
+					prog = prog.setScale(5, RoundingMode.HALF_UP);
+			    	// TODO Añadir una variable global que tenga el contenido?
+					seektextB.setText("" + (prog.multiply(new BigDecimal(100)).doubleValue()) + " cm");
+					tesla2.setText(""+ apartado2.getB(prog.doubleValue()) + " (mT)");
+			    }
+
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				// Nada que hacer
+				
+			}
+
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				// Nada que hacer
+				
+			}
+			
+		});
+		
 		seekbarC = (SeekBar) findViewById(R.id.seekBarC);
-		seektextC = (TextView) findViewById(R.id.textSeekC);*/
+		seektextC = (TextView) findViewById(R.id.textSeekC);
+		tesla3 = (TextView) findViewById(R.id.Tesla3);
+		seekbarC.setOnSeekBarChangeListener(new OnSeekBarChangeListener(){
+
+			@Override
+			/**
+			  * Evento encargado del control del estado del seekbar
+			  */
+			 public void onProgressChanged(SeekBar seekBar, int progress,
+			    		boolean fromUser) {
+					BigDecimal prog = new BigDecimal(-0.04 + 0.0025 * progress);
+					prog = prog.setScale(5, RoundingMode.HALF_UP);
+			    	// TODO Añadir una variable global que tenga el contenido?
+					seektextC.setText("" + (prog.multiply(new BigDecimal(100)).doubleValue()) + " cm");
+					tesla3.setText(""+ apartado3.getB(prog.doubleValue()) + " (mT)");
+			    }
+
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				// Nada que hacer
+				
+			}
+
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				// Nada que hacer
+				
+			}
+			
+		});
+		
 		//Fin SeekViews		
 	}
 
