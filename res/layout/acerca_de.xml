@@ -9,8 +9,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_height="238dp"
             android:layout_marginBottom="18dp" >
 
             <ImageView
@@ -22,12 +21,11 @@
                 android:src="@drawable/campo1" />
 
             <ImageView
-                android:id="@drawable/campo1"
+                android:id="@+id/imageView1"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
-                android:contentDescription="Universidad"
-                android:src="@drawable/campo1" />
+                android:src="@drawable/logotipouva" />
 
         </LinearLayout>
 
