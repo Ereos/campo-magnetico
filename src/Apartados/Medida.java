@@ -18,7 +18,12 @@ public class Medida {
 		this.valor2 = valor2;
 		this.apartado = 2;
 	}
-
+	/**
+	 * Constructor de Medida realizada en el apartado 1.
+	 * @param valor1 Valor de la intensidad marcado por la pinza amperimétrica reductora (mA).
+	 * @param valor2 Campo magnético calculado en el punto (mT).
+	 * @param valorIc Valor de la intensidad real que pasa por el circuito (A).
+	 */
 	public Medida(double valor1, double valor2, double valorIc) {
 		super();
 		this.valor1 = valor1;
@@ -48,6 +53,10 @@ public class Medida {
 
 	public double getValor2() {
 		return valor2;
+	}
+	
+	public double get_apartado(){
+		return apartado;
 	}
 	/**
 	 * Devuelve el valor de la corriente en Amperios

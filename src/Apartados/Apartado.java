@@ -41,6 +41,9 @@ public class Apartado {
 		
 		int indice;
 		if(tipo==1){
+			if(y==0){
+				return 0;
+			}
 			indice = (int) (y/5) - 1;
 		}else{
 			//y = -0.04 + 0.00025 * i
