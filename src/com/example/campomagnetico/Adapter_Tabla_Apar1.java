@@ -1,6 +1,9 @@
 package com.example.campomagnetico;
 
 
+import java.util.ArrayList;
+
+import Apartados.Medida;
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,8 +13,8 @@ import android.widget.TextView;
 
 public class Adapter_Tabla_Apar1 extends Adapter_Tabla{
 
-	public Adapter_Tabla_Apar1(Activity activity, double[][] listaValores) {
-		super(activity, listaValores);
+	public Adapter_Tabla_Apar1(Activity activity, ArrayList<Medida> arrayDatos) {
+		super(activity, arrayDatos);
 	}
 
 	@Override
@@ -33,9 +36,11 @@ public class Adapter_Tabla_Apar1 extends Adapter_Tabla{
 			holder = (ViewHolder)view.getTag();
 		}
 		
-		holder.tvColumA.setText(listaValores[position][0]+"");
-		holder.tvColumB.setText(listaValores[position][1]+"");
-		holder.tvColumC.setText("prueba");
+		Medida item = arrayDatos.get(position);
+		
+		holder.tvColumA.setText(item.getValor1()+"");
+		holder.tvColumB.setText(item.getValorIc()+"");
+		holder.tvColumC.setText(item.getValor2()+"");
 		
 		return view;
 	}
