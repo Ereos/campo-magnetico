@@ -12,7 +12,8 @@
             android:id="@+id/ivImagenComponente"
             android:layout_width="100dip"
             android:layout_height="100dip"
-            android:src="@drawable/ic_launcher" />
+            android:src="@drawable/ic_launcher" 
+            android:clickable="true"/>
 
         <TextView
             android:id="@+id/tvNombre"

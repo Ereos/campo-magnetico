@@ -72,7 +72,7 @@ public class ActivityListaComponentes extends Activity {
 		Componente generador = new Componente("Fuente de alimentación", getString(R.string.DescFAlimentacion), R.drawable.generador_mini, R.drawable.generador);
 		losComponentes.add(generador);
 		
-		Componente cosa = new Componente("Transformador", getString(R.string.DescTransformador), R.drawable.cosa_mini, R.drawable.cosa);
+		Componente cosa = new Componente("Transformador", getString(R.string.DescTransformador), R.drawable.transformador_mini, R.drawable.transformador);
 		losComponentes.add(cosa);
 		
 		Componente amperimetro = new Componente("Amperímetro", getString(R.string.DescAmperimetro), R.drawable.amperimetro_mini, R.drawable.amperimetro);
@@ -81,10 +81,10 @@ public class ActivityListaComponentes extends Activity {
 		Componente pinzas = new Componente("Pinzas", getString(R.string.DescPinzaAmp), R.drawable.pinzas_mini, R.drawable.pinzas);
 		losComponentes.add(pinzas);
 		
-		Componente teslamometro = new Componente("Teslamometro", getString(R.string.DescTeslam), R.drawable.teslamometro_mini, R.drawable.teslamometro);
+		Componente teslamometro = new Componente("Teslamometro", getString(R.string.DescTeslam), R.drawable.teslametro_mini, R.drawable.teslametro);
 		losComponentes.add(teslamometro);
 		
-		Componente SondaHall = new Componente("Sonda Hall", getString(R.string.DescSondaHall), R.drawable.teslamometro_mini, R.drawable.teslamometro);
+		Componente SondaHall = new Componente("Sonda Hall", getString(R.string.DescSondaHall), R.drawable.teslametro_mini, R.drawable.teslametro);
 		losComponentes.add(SondaHall);
 		
 		Componente conductorA = new Componente("Conductor A", getString(R.string.DescConductorA), R.drawable.conductor_a_mini, R.drawable.conductor_a);

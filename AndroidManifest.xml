@@ -7,6 +7,7 @@
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="18" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -64,6 +65,15 @@
             android:label="@string/title_activity_acerca_de" >
             <intent-filter>
                 <action android:name="acerca_de" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.campomagnetico.ImagenComponenteActivity"
+            android:label="@string/title_activity_imagen_componente" >
+            <intent-filter>
+                <action android:name="imagenComponente" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
