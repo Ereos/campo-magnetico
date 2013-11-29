@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="titulo_activity_main">Campo magnetico</string>
+    <string name="titulo_activity_main">Campo magnetico, conductores rectos</string>
     <string name="titulo_activity_guion">Guión de la practica</string>
     <string name="titulo_activity_componentes">Componentes de la practica</string>
     <string name="titulo_activity_montaje">Montaje de la practica</string>
@@ -8,5 +8,6 @@
     <string name="title_activity_acerca_de">Acerca de..</string>
     <string name="Autores">Autores:\n\tDiego Cubero Pascual\n\t Daniel Diaz Correa\n\t Sergio Modino Catalán</string>
     <string name="acerca_de">Aplicación encargada de explicar y simular el campo magnético generado por uno o más conductores rectilineos en un punto dado.</string>
+    <string name="NombreDeLaPractica">CAMPO MAGNÉTICO CREADO POR CONDUCTORES RECTOS</string>
     
 </resources>
