@@ -20,6 +20,7 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ActivitySimulacion extends Activity {
 	
@@ -49,6 +50,8 @@ public class ActivitySimulacion extends Activity {
 	protected Datos datosB = new Datos(2);
 	protected Datos datosC = new Datos(3);
 	
+	protected TabHost tabs;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +61,7 @@ public class ActivitySimulacion extends Activity {
 		//Tabs
 		Resources res = getResources();
 		 
-		TabHost tabs=(TabHost)findViewById(android.R.id.tabhost);
+		tabs=(TabHost)findViewById(android.R.id.tabhost);
 		tabs.setup();
 		 
 		TabHost.TabSpec spec=tabs.newTabSpec("tab1");
@@ -239,6 +242,19 @@ public class ActivitySimulacion extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
+	    
+	    	case R.id.action_csv:
+	    		if (tabs.getCurrentTabTag().equals("tab1")){
+	    			datosA.exportar_csv();
+	    		}else if (tabs.getCurrentTabTag().equals("tab2")){
+	    			datosB.exportar_csv();
+	    		}else if (tabs.getCurrentTabTag().equals("tab3")){
+	    			datosC.exportar_csv();
+	    		}
+	    		
+	    		
+	    	
+	    		return true;
 	        case R.id.action_inicio:
 	        	onBackPressed();
 	        	
