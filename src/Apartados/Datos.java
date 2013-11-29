@@ -14,13 +14,17 @@ public class Datos {
 	protected int apartado;
 	protected ArrayList<Medida> arrayDatos;
 	
-	
+	/**
+	 * Genera un nuevo contenido con Datos de un "apartado" determinado.
+	 * @param apartado Número del apartado al que serán dedicados los Datos.
+	 */
 	public Datos(int apartado) {
 		// TODO Auto-generated constructor stub
 		this.apartado = apartado;
 		this.arrayDatos = new ArrayList<Medida>();
 	}
 	/**
+	 * Añade una Medida al conjunto de datos.
 	 * Es responsabilidad del usuario de esta clase, que
 	 * la el apartado al que corresponde la medida coincida
 	 * con el apartado de los Datos.
@@ -31,6 +35,11 @@ public class Datos {
 		this.arrayDatos.add(medida);
 	}
 	
+	/**
+	 * Permite añadir los dos valores correspondientes a una medida al registro de Datos.
+	 * @param y Valor de la distancia (cm) o intensidad (mA) dependiendo del apartado de los Datos.
+	 * @param campo Valor del campo magnético correspondiente al valor "y".
+	 */
 	public void add_dato(double y, double campo){
 		if(apartado <= 1){
 			Medida medida = new Medida(y, campo, y*2);
@@ -40,12 +49,20 @@ public class Datos {
 			this.arrayDatos.add(medida);
 		}
 	}
-	
+	/**
+	 * 
+	 * @return Array de medidas de los Datos de un apartado indicado.
+	 */
 	public ArrayList<Medida> get_array(){
 		return arrayDatos;
 	}
-	
+	/**
+	 * A partir del indice devuelve el valor de la medida correspondiente  
+	 * @param indice Numero correspondiente a la posicion de la
+	 * @return
+	 */
 	public Medida get_medida(int indice){
+		//TODO control de errores
 		return arrayDatos.get(indice);
 	}
 	
@@ -61,23 +78,25 @@ public class Datos {
 		File rutaArchivo = new File(rutaCarpeta+"Apartado"+apartado+fecha+".csv");
 		
 		if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
-			//No esta presente la SD card o no se puede escribir
+			//TODO No esta presente la SD card o no se puede escribir
 		}else if (rutaCarpeta.isFile()){
-			//Hay un archivo presente en la SDcard que no es una carpeta
+			//TODO Hay un archivo presente en la SDcard que no es una carpeta
 		}else if (!rutaArchivo.mkdirs()){
-			//No se ha podido crear	
+			// TODO No se ha podido crear	
 		}else{
 			try {
 				FileWriter escritor = new FileWriter(rutaArchivo);
 				escritor.write(crearCSV());
 				escritor.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
-	
+	/**
+	 * Genera la cadena de caracteres necesaria para la creación de un archivo CSV estandar.
+	 * @return String con todas las medidas de los Datos, siguiendo el estandar de los archivos CSV.
+	 */
 	private String crearCSV(){
 		
 		if (apartado==1){

@@ -31,7 +31,10 @@ public class Medida {
 		this.valorIc = valorIc;
 		this.apartado = 1;
 	}
-	
+	/**
+	 * Devuelve el array con la medida.
+	 * @return Array de doubles con 2 ó 3 valores, dependiendo del apartado.
+	 */
 	public double[] get(){
 		if(apartado <= 1){
 			double result[] = new double[2];
@@ -46,15 +49,26 @@ public class Medida {
 			return result;
 		}
 	}
-
+	/**
+	 * Devolverá el valor de la distancia o la corriente dependiendo del apartado
+	 * de la medida
+	 * @return Un double con: la distancia del punto de medicion en el apartado1, e intensidad en el apartado 2 ó 3
+	 */
 	public double getValor1() {
 		return valor1;
 	}
-
+	/**
+	 * Devolverá el valor del Campo calculado.
+	 * @return Un valor double con el valor del campo correspondiente (mT) 
+	 */
 	public double getValor2() {
 		return valor2;
 	}
 	
+	/**
+	 * Apartado al que corresponde la Medida.
+	 * @return Apartado de la medida, valor de 1 a 3.
+	 */
 	public double get_apartado(){
 		return apartado;
 	}
