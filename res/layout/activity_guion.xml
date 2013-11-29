@@ -95,7 +95,83 @@
          	        android:layout_width="match_parent"
 				    android:layout_height="match_parent"
 				    android:orientation="vertical" 
-				    android:id="@+id/tabApartados"/>
+				    android:id="@+id/tabApartados">
+
+         	        <ScrollView
+         	            android:id="@+id/scrollView2"
+         	            android:layout_width="match_parent"
+         	            android:layout_height="wrap_content" >
+
+         	            <LinearLayout
+         	                android:layout_width="match_parent"
+         	                android:layout_height="match_parent"
+         	                android:orientation="vertical" >
+
+         	                <TextView
+         	                    android:id="@+id/textView7"
+         	                    android:layout_width="wrap_content"
+         	                    android:layout_height="wrap_content"
+         	                    android:text="@string/title_conductor1"
+         	                    android:textAppearance="?android:attr/textAppearanceLarge" />
+         	                
+         	                <ImageView
+         	                    android:id="@+id/imageView7"
+         	                    android:layout_width="wrap_content"
+         	                    android:layout_height="wrap_content"
+         	                    android:src="@drawable/conductor_a_mini" />
+
+         	                <TextView
+         	                    android:id="@+id/textView5"
+         	                    android:layout_width="wrap_content"
+         	                    android:layout_height="wrap_content"
+         	                    android:text="@string/DescApartado1"
+         	                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+         	                <TextView
+         	                    android:id="@+id/textView7"
+         	                    android:layout_width="wrap_content"
+         	                    android:layout_height="wrap_content"
+         	                    android:text="@string/title_conductor2"
+         	                    android:textAppearance="?android:attr/textAppearanceLarge" />
+         	                
+         	                <ImageView
+         	                    android:id="@+id/imageView4"
+         	                    android:layout_width="wrap_content"
+         	                    android:layout_height="wrap_content"
+         	                    android:src="@drawable/conductor_b_mini" />
+
+         	                <TextView
+         	                    android:id="@+id/textView6"
+         	                    android:layout_width="wrap_content"
+         	                    android:layout_height="wrap_content"
+         	                    android:text="@string/DescApartado2"
+         	                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+         	                <TextView
+         	                    android:id="@+id/textView7"
+         	                    android:layout_width="wrap_content"
+         	                    android:layout_height="wrap_content"
+         	                    android:text="@string/title_conductor3"
+         	                    android:textAppearance="?android:attr/textAppearanceLarge" />
+         	                
+         	                <ImageView
+         	                    android:id="@+id/imageView5"
+         	                    android:layout_width="wrap_content"
+         	                    android:layout_height="wrap_content"
+         	                    android:src="@drawable/conductor_c_mini" />
+
+         	                <TextView
+         	                    android:id="@+id/textView7"
+         	                    android:layout_width="wrap_content"
+         	                    android:layout_height="wrap_content"
+         	                    android:text="@string/DescApartado3"
+         	                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+         	            </LinearLayout>
+
+         	        </ScrollView>
+
+         	    </LinearLayout>
     
          	</FrameLayout>
     	</LinearLayout>
