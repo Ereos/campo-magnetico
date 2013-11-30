@@ -2,11 +2,8 @@ package com.example.campomagnetico;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.Menu;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 public class ImagenComponenteActivity extends Activity {
 
@@ -24,10 +21,9 @@ public class ImagenComponenteActivity extends Activity {
 		String desc = getIntent().getStringExtra("descripcion");
 		String img = getIntent().getStringExtra("foto");
 		int iimg = Integer.parseInt(img);
-		Toast toast1 = Toast.makeText(getApplicationContext(),iimg, Toast.LENGTH_SHORT);
-		toast1.show();
 		ImageView imagenMostrada = (ImageView) findViewById(R.id.imagenComponente);
 		imagenMostrada.setImageDrawable(getResources().getDrawable(iimg));
+		setTitle(getTitle() +" " + nombre);
 		return true;
 	}
 
