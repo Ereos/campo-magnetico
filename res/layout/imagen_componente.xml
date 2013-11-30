@@ -9,7 +9,7 @@
     tools:context=".ImagenComponenteActivity" >
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/imagenComponente"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_centerHorizontal="true"

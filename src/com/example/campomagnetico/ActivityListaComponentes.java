@@ -5,13 +5,24 @@ import java.util.ArrayList;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class ActivityListaComponentes extends Activity {
-
+	
+	
 	protected Intent intent;
 	
 	private Adapter_Componentes adapterComp;
@@ -25,6 +36,23 @@ public class ActivityListaComponentes extends Activity {
 		adapterComp = new Adapter_Componentes(this,this.CargarComponentes());
 		
 		listaComponentes.setAdapter(adapterComp);		
+		listaComponentes.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int posicion,
+					long id) {
+				Componente pulsado = (Componente) parent.getItemAtPosition(posicion);
+				intent = new Intent("imagenComponente");
+				intent.putExtra("nombre", "" + pulsado.getNombre());
+				intent.putExtra("descripcion", "" + pulsado.getDescripcion());
+				intent.putExtra("foto", "" + pulsado.getIdFoto());
+				
+				startActivity(intent);
+				
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		
 	}
 
