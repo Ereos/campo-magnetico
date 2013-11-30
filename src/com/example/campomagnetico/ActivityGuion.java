@@ -54,6 +54,9 @@ public class ActivityGuion extends Activity {
 	        	intent = new Intent("acerca_de");
 	        	startActivity(intent);
 	        	return true;
+	        case R.id.action_aumentar:
+	        	//TODO
+	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }

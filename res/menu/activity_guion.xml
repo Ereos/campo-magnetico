@@ -5,6 +5,18 @@
         android:title="Volver al inicio"
         android:orderInCategory="1"
         android:icon="@android:drawable/ic_menu_preferences"></item>
+   	<item 
+        android:id="@+id/action_aumentar" 
+        android:title="Aumentar el tamaño del texto"
+        android:orderInCategory="1"
+        android:icon="@android:drawable/ic_menu_preferences"></item>
+        
+	<item 
+        android:id="@+id/action_disminuir" 
+        android:title="Disminuir el tamaño del texto"
+        android:orderInCategory="1"
+        android:icon="@android:drawable/ic_menu_preferences"></item>
+    
     <item 
         android:id="@+id/action_acercaDe" 
         android:title="Acerca de..."
