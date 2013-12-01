@@ -12,12 +12,7 @@ public class ImagenComponenteActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.imagen_componente);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.imagen_componente, menu);
+		
 		/** Se recogen los valores enviados desde otro activity*/
 		String nombre = getIntent().getStringExtra("nombre");
 		String desc = getIntent().getStringExtra("descripcion");
@@ -30,6 +25,13 @@ public class ImagenComponenteActivity extends Activity {
 		setTitle(getTitle() +" " + nombre);
 		TextView descView = (TextView) findViewById(R.id.imagenDescripcion);
 		descView.setText(desc);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.imagen_componente, menu);
+		
 		return true;
 	}
 
