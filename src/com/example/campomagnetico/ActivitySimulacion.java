@@ -18,6 +18,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,11 +53,30 @@ public class ActivitySimulacion extends Activity {
 	
 	protected TabHost tabs;
 	
+	// Adaptadores de las tablas
+	protected Adapter_Tabla_Apar1 adaptador_apartado1;
+	protected Adapter_Tabla adaptador_apartado2;
+	protected Adapter_Tabla adaptador_apartado3;
+	
+	//ListView's
+	protected ListView lista_apartado1;
+	protected ListView lista_apartado2;
+	protected ListView lista_apartado3;
+	
+	//Activit actual
+	protected Activity activity;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_simulacion);
+		
+		activity = this;
+		//Inicializacion de los componentes de las listas
+		lista_apartado1 = (ListView)findViewById(R.id.lvApartado1);
+		lista_apartado2 = (ListView)findViewById(R.id.lvApartado2);
+		lista_apartado3 = (ListView)findViewById(R.id.lvApartado3);	
 		
 		//Tabs
 		Resources res = getResources();
@@ -101,6 +121,10 @@ public class ActivitySimulacion extends Activity {
 					int progress = seekbarA.getProgress();
 					Medida medA = new Medida(progress * 5, apartado1.getB(progress*5), progress * 5 * 2);
 					datosA.add_dato(medA);
+					
+					adaptador_apartado1 = new Adapter_Tabla_Apar1(activity, datosA.get_array());
+					lista_apartado1.setAdapter(adaptador_apartado1);
+					
 				}
 			});
 				
@@ -111,6 +135,9 @@ public class ActivitySimulacion extends Activity {
 					int progress = seekbarB.getProgress();
 					Medida medB = new Medida(progress * 5, apartado1.getB(progress*5), progress * 5 * 2);
 					datosB.add_dato(medB);
+					
+					adaptador_apartado2 = new Adapter_Tabla_Apar1(activity, datosB.get_array());
+					lista_apartado2.setAdapter(adaptador_apartado2);
 				}
 			});
 
@@ -121,6 +148,9 @@ public class ActivitySimulacion extends Activity {
 					int progress = seekbarC.getProgress();
 					Medida medC = new Medida(progress * 5, apartado1.getB(progress*5), progress * 5 * 2);
 					datosC.add_dato(medC);
+					
+					adaptador_apartado3 = new Adapter_Tabla_Apar1(activity, datosC.get_array());
+					lista_apartado3.setAdapter(adaptador_apartado3);
 				}
 			});
 		//Fin Botones
@@ -245,15 +275,16 @@ public class ActivitySimulacion extends Activity {
 	    
 	    	case R.id.action_csv:
 	    		if (tabs.getCurrentTabTag().equals("tab1")){
-	    			datosA.exportar_csv();
+	    			
+	    			String resultado = datosA.exportar_csv()+"";
+	    			Toast.makeText(activity, resultado, Toast.LENGTH_LONG).show();
+	    			
 	    		}else if (tabs.getCurrentTabTag().equals("tab2")){
 	    			datosB.exportar_csv();
 	    		}else if (tabs.getCurrentTabTag().equals("tab3")){
 	    			datosC.exportar_csv();
 	    		}
 	    		
-	    		
-	    	
 	    		return true;
 	        case R.id.action_inicio:
 	        	onBackPressed();

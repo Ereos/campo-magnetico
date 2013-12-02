@@ -30,7 +30,8 @@
          	        android:layout_width="match_parent"
 				    android:layout_height="match_parent"
 				    android:orientation="vertical" 
-				    android:id="@+id/tabConductorA">
+				    android:id="@+id/tabConductorA"
+				    android:padding="2dip">
 
          	        <ImageView
          	            android:id="@+id/imageView1"
@@ -82,10 +83,13 @@
          	        </LinearLayout>
 
          	        <ListView
-         	            android:id="@+id/listView1"
+         	            android:id="@+id/lvApartado1"
          	            android:layout_width="match_parent"
-         	            android:layout_height="wrap_content" 
-         	            android:layout_weight="2">
+         	            android:layout_height="0dip"
+         	            android:layout_weight="2"
+         	            android:paddingBottom="3dip"
+         	            android:paddingTop="5dip" >
+
          	        </ListView>
 
          	    </LinearLayout>
@@ -148,7 +152,7 @@
          	        </LinearLayout>
 
          	        <ListView
-         	            android:id="@+id/listView2"
+         	            android:id="@+id/lvApartado2"
          	            android:layout_width="match_parent"
          	            android:layout_height="wrap_content" >
          	        </ListView>
@@ -210,6 +214,14 @@
          	                android:layout_weight="1"
          	                android:layout_gravity="right"
          	                android:text="Tomar Medida" />
+         	            
+         	             <ListView
+         	            	android:id="@+id/lvApartado3"
+         	            	android:layout_width="match_parent"
+         	            	android:layout_height="wrap_content"
+         	            	android:layout_weight="2" >
+
+         	        </ListView>
 
          	        </LinearLayout>
 

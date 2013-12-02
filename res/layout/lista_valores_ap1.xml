@@ -2,78 +2,75 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:paddingRight="2dip"
+    android:paddingLeft="2dip" >
     
-    <View 
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:id="@+id/separador0"
-        android:background="#848484"
-        android:paddingTop="1dip"
-        android:paddingBottom="1dip"/>
+     <View
+    	android:layout_width="match_parent"
+    	android:layout_height="1dp"
+    	android:background="@android:color/black"/>
+    
 
-    <LinearLayout
+ <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal" >
         
-         <View
-            android:id="@+id/separador1"
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
-            android:background="#848484"
-            android:paddingBottom="1dip"
-            android:paddingTop="1dip" />
+        <View
+    		android:layout_width="1dp"
+    		android:layout_height="match_parent"
+    		android:background="@android:color/black"/>
+        
 
         <TextView
             android:id="@+id/tvColumA_1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
             android:text="TextView" />
 
         <View
-            android:id="@+id/separador2"
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
-            android:background="#848484"
-            android:paddingBottom="1dip"
-            android:paddingTop="1dip" />
+    		android:layout_width="1dp"
+    		android:layout_height="match_parent"
+    		android:background="@android:color/black"/>
+
 
         <TextView
             android:id="@+id/tvColumB_1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
             android:text="TextView" />
         
-         <View
-            android:id="@+id/separador3"
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
-            android:background="#848484"
-            android:paddingBottom="1dip"
-            android:paddingTop="1dip" />
+        <View
+    		android:layout_width="1dp"
+    		android:layout_height="match_parent"
+    		android:background="@android:color/black"/>
+        
+
 
          <TextView
              android:id="@+id/tvColumC_1"
-             android:layout_width="wrap_content"
+             android:layout_width="match_parent"
              android:layout_height="wrap_content"
+             android:layout_weight="2"
+             android:gravity="center"
              android:text="TextView" />
-
+         
          <View
-            android:id="@+id/separador4"
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
-            android:background="#848484"
-            android:paddingBottom="1dip"
-            android:paddingTop="1dip" />
+    		android:layout_width="1dp"
+    		android:layout_height="match_parent"
+    		android:background="@android:color/black"/>
+
+
     </LinearLayout>
     
-     <View 
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:id="@+id/separador5"
-        android:background="#848484"
-        android:paddingTop="1dip"
-        android:paddingBottom="1dip"/>
+     <View
+    		android:layout_width="match_parent"
+    		android:layout_height="1dp"
+    		android:background="@android:color/black"/>
 
 </LinearLayout>
