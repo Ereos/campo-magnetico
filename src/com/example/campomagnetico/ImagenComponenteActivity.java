@@ -1,13 +1,21 @@
 package com.example.campomagnetico;
 
+import java.math.BigDecimal;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ImagenComponenteActivity extends Activity {
 
+	private Intent intent;
+
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,4 +43,33 @@ public class ImagenComponenteActivity extends Activity {
 		return true;
 	}
 
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		TextView descView = (TextView) findViewById(R.id.imagenDescripcion);
+		BigDecimal tamanyo , aumento = new BigDecimal(20);
+		Toast toast;
+	    switch (item.getItemId()) {
+    		case R.id.action_aumentar:
+    			tamanyo = new BigDecimal(descView.getTextSize());
+    			//Aun no esta bien implementado
+    			tamanyo = tamanyo.add(aumento);
+    			descView.setTextSize(tamanyo.floatValue());
+    			return true;
+    		case R.id.action_disminuir:
+    			tamanyo = new BigDecimal(descView.getTextSize());
+    			//Aun no esta bien implementado
+    			tamanyo = tamanyo.subtract(aumento);
+    			descView.setTextSize(tamanyo.floatValue());
+    			return true;
+	        case R.id.action_inicio:
+	        	onBackPressed();
+	            return true;
+	        case R.id.action_acercaDe:
+	        	intent = new Intent("acerca_de");
+	        	startActivity(intent);
+	        	return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
 }
