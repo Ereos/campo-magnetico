@@ -60,5 +60,9 @@ public class Apartado {
 	public int size() {
 		return apartado.length;
 	}
+	
+	public int tipo_apartado(){
+		return this.tipo;
+	}
 
 }
