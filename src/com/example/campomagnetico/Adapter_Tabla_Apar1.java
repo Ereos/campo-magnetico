@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class Adapter_Tabla_Apar1 extends Adapter_Tabla{
+	
 
 	public Adapter_Tabla_Apar1(Activity activity, ArrayList<Medida> arrayDatos) {
 		super(activity, arrayDatos);
@@ -37,10 +38,11 @@ public class Adapter_Tabla_Apar1 extends Adapter_Tabla{
 		}
 		
 		Medida item = arrayDatos.get(position);
-		
+			
 		holder.tvColumA.setText(item.getValor1()+"");
 		holder.tvColumB.setText(item.getValorIc()+"");
-		holder.tvColumC.setText(item.getValor2()+"");
+		holder.tvColumC.setText(item.getValor2()+"");		
+
 		
 		return view;
 	}
