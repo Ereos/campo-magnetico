@@ -133,10 +133,13 @@ public class ActivitySimulacion extends Activity {
 				@Override
 				public void onClick(View arg0) {
 					int progress = seekbarB.getProgress();
-					Medida medB = new Medida(progress * 5, apartado1.getB(progress*5), progress * 5 * 2);
+					BigDecimal prog = new BigDecimal(-0.04 + 0.0025 * progress);
+					prog = prog.setScale(5, RoundingMode.HALF_UP);
+					double progDouble = prog.doubleValue();
+					Medida medB = new Medida(progDouble, apartado2.getB(progDouble));
 					datosB.add_dato(medB);
 					
-					adaptador_apartado2 = new Adapter_Tabla_Apar1(activity, datosB.get_array());
+					adaptador_apartado2 = new Adapter_Tabla(activity, datosB.get_array());
 					lista_apartado2.setAdapter(adaptador_apartado2);
 				}
 			});
@@ -146,10 +149,13 @@ public class ActivitySimulacion extends Activity {
 				@Override
 				public void onClick(View arg0) {
 					int progress = seekbarC.getProgress();
-					Medida medC = new Medida(progress * 5, apartado1.getB(progress*5), progress * 5 * 2);
+					BigDecimal prog = new BigDecimal(-0.04 + 0.0025 * progress);
+					prog = prog.setScale(5, RoundingMode.HALF_UP);
+					double progDouble = prog.doubleValue();
+					Medida medC = new Medida(progDouble, apartado2.getB(progDouble));
 					datosC.add_dato(medC);
 					
-					adaptador_apartado3 = new Adapter_Tabla_Apar1(activity, datosC.get_array());
+					adaptador_apartado3 = new Adapter_Tabla(activity, datosC.get_array());
 					lista_apartado3.setAdapter(adaptador_apartado3);
 				}
 			});
