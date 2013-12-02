@@ -66,7 +66,7 @@ public class Datos {
 		return arrayDatos.get(indice);
 	}
 	
-	public void exportar_csv(){
+	public String exportar_csv(){
 		
 		Calendar cal = Calendar.getInstance(); 
 		SimpleDateFormat formato = new SimpleDateFormat("HH:mm:ss_dd-MM-yyyy");
@@ -75,21 +75,26 @@ public class Datos {
 		
 		File rutaSD = new File(Environment.getExternalStorageDirectory().toString());
 		File rutaCarpeta = new File(rutaSD+"/SimuCampoMagnetico");
-		File rutaArchivo = new File(rutaCarpeta+"Apartado"+apartado+fecha+".csv");
+		File rutaArchivo = new File(rutaCarpeta+"/Apartado"+apartado+fecha+".csv");
 		
 		if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
-			//TODO No esta presente la SD card o no se puede escribir
+			//No esta presente la SD card o no se puede escribir
+			return "1";
 		}else if (rutaCarpeta.isFile()){
-			//TODO Hay un archivo presente en la SDcard que no es una carpeta
+			//Hay un archivo presente en la SDcard que no es una carpeta
+			return "2";
 		}else if (!rutaArchivo.mkdirs()){
-			// TODO No se ha podido crear	
+			//No se ha podido crear
+			return rutaArchivo.toString();
 		}else{
 			try {
 				FileWriter escritor = new FileWriter(rutaArchivo);
 				escritor.write(crearCSV());
 				escritor.close();
+				return "0";
 			} catch (IOException e) {
 				e.printStackTrace();
+				return "4";
 			}
 		}
 	}

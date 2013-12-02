@@ -4,61 +4,51 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-    <View 
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:id="@+id/separador"
-        android:background="#848484"
-        android:paddingTop="1dip"
-        android:paddingBottom="1dip"/>
+    <View
+    	android:layout_width="match_parent"
+    	android:layout_height="1dp"
+    	android:background="@android:color/black"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
         
-         <View
-            android:id="@+id/separador"
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
-            android:background="#848484"
-            android:paddingBottom="1dip"
-            android:paddingTop="1dip" />
+     <View
+    	android:layout_width="1dp"
+    	android:layout_height="match_parent"
+    	android:background="@android:color/black"/>
 
         <TextView
             android:id="@+id/tvColumA_23"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
             android:text="TextView" />
 
         <View
-            android:id="@+id/separador"
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
-            android:background="#848484"
-            android:paddingBottom="1dip"
-            android:paddingTop="1dip" />
+    		android:layout_width="1dp"
+    		android:layout_height="match_parent"
+    		android:background="@android:color/black"/>
 
         <TextView
             android:id="@+id/tvColumB_23"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
             android:text="TextView" />
         
          <View
-            android:id="@+id/separador"
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
-            android:background="#848484"
-            android:paddingBottom="1dip"
-            android:paddingTop="1dip" />
+    		android:layout_width="1dp"
+    		android:layout_height="match_parent"
+    		android:background="@android:color/black"/>
+         
     </LinearLayout>
     
-     <View 
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:id="@+id/separador"
-        android:background="#848484"
-        android:paddingTop="1dip"
-        android:paddingBottom="1dip"/>
+     <View
+    	android:layout_width="1dp"
+    	android:layout_height="match_parent"
+    	android:background="@android:color/black"/>
 
 </LinearLayout>
