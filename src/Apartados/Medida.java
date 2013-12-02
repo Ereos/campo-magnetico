@@ -36,9 +36,9 @@ public class Medida {
 	 * @return Array de doubles con 2 ó 3 valores, dependiendo del apartado.
 	 */
 	public double[] get(){
-		if(apartado <= 1){
+		if(apartado == 2){
 			double result[] = new double[2];
-			result[0] = valor1;
+			result[0] = valor1*100; //valor en centimetros
 			result[1] = valor2;
 			return result;
 		}else{
@@ -55,6 +55,9 @@ public class Medida {
 	 * @return Un double con: la distancia del punto de medicion en el apartado1, e intensidad en el apartado 2 ó 3
 	 */
 	public double getValor1() {
+		if(apartado==2){
+			return valor1 * 100; //Devuelve el valor en centimetros
+		}
 		return valor1;
 	}
 	/**
