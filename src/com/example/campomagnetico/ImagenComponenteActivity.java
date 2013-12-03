@@ -45,21 +45,24 @@ public class ImagenComponenteActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		TextView descView = (TextView) findViewById(R.id.imagenDescripcion);
-		BigDecimal tamanyo , aumento = new BigDecimal(20);
-		Toast toast;
+		TextView tvDescripcion = (TextView) findViewById(R.id.imagenDescripcion);
+		
+		float tamano;
+		
 	    switch (item.getItemId()) {
     		case R.id.action_aumentar:
-    			tamanyo = new BigDecimal(descView.getTextSize());
-    			//Aun no esta bien implementado
-    			tamanyo = tamanyo.add(aumento);
-    			descView.setTextSize(tamanyo.floatValue());
+    			
+    			tamano = tvDescripcion.getTextSize();
+    			tamano +=1;
+    			tvDescripcion.setTextSize(tamano);
+    			
     			return true;
     		case R.id.action_disminuir:
-    			tamanyo = new BigDecimal(descView.getTextSize());
-    			//Aun no esta bien implementado
-    			tamanyo = tamanyo.subtract(aumento);
-    			descView.setTextSize(tamanyo.floatValue());
+    			
+    			tamano = tvDescripcion.getTextSize();
+    			tamano -=1;
+    			tvDescripcion.setTextSize(tamano);
+    			
     			return true;
 	        case R.id.action_inicio:
 	        	onBackPressed();
