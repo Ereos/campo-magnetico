@@ -1,15 +1,13 @@
 package com.example.campomagnetico;
 
-import java.math.BigDecimal;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ImagenComponenteActivity extends Activity {
 
@@ -54,14 +52,14 @@ public class ImagenComponenteActivity extends Activity {
     			
     			tamano = tvDescripcion.getTextSize();
     			tamano +=1;
-    			tvDescripcion.setTextSize(tamano);
+    			tvDescripcion.setTextSize(TypedValue.COMPLEX_UNIT_PX, tamano);
     			
     			return true;
     		case R.id.action_disminuir:
     			
     			tamano = tvDescripcion.getTextSize();
     			tamano -=1;
-    			tvDescripcion.setTextSize(tamano);
+    			tvDescripcion.setTextSize(TypedValue.COMPLEX_UNIT_PX, tamano);
     			
     			return true;
 	        case R.id.action_inicio:

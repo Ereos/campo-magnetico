@@ -9,7 +9,7 @@
     <item 
         android:id="@+id/action_inicio" 
         android:title="Volver al inicio"
-        android:orderInCategory="50"
+        android:orderInCategory="100"
         android:icon="@android:drawable/ic_menu_revert"></item>
     <item 
         android:id="@+id/action_acercaDe" 
