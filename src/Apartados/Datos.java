@@ -1,8 +1,11 @@
 package Apartados;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -66,36 +69,47 @@ public class Datos {
 		return arrayDatos.get(indice);
 	}
 	
-	public String exportar_csv(){
+	/**
+	 * Exporta los datos del apartado a un archivo CSV para su posterior tratamiento, el formato del archivo
+	 * es UTF-8
+	 * @return 0 Si se ha creado el archivo 1 Si la SD no esta montada, 2 si existe un archivo con el nombre de la carpeta, 3 Si no se ha podido crear el archivo
+	 * 4 si no se soprta el "encoding" 
+	 * 
+	 */
+	public int exportar_csv(){
 		
 		Calendar cal = Calendar.getInstance(); 
-		SimpleDateFormat formato = new SimpleDateFormat("HH:mm:ss_dd-MM-yyyy");
+		SimpleDateFormat formato = new SimpleDateFormat("HHmmss_ddMMyyyy");
 		String fecha = formato.format(cal.getTime());
+		String nombreArchivo = "Apartado_"+apartado+"_"+fecha+".csv";
 		
 		
 		File rutaSD = new File(Environment.getExternalStorageDirectory().toString());
-		File rutaCarpeta = new File(rutaSD+"/SimuCampoMagnetico");
-		File rutaArchivo = new File(rutaCarpeta+"/Apartado"+apartado+fecha+".csv");
+		File rutaCarpeta = new File(rutaSD+File.separator+"SimuCampoMagnetico");
+		File rutaArchivo = new File(rutaCarpeta+File.separator+nombreArchivo);
 		
 		if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
-			//No esta presente la SD card o no se puede escribir
-			return "1";
-		}else if (rutaCarpeta.isFile()){
-			//Hay un archivo presente en la SDcard que no es una carpeta
-			return "2";
-		}else if (!rutaArchivo.mkdirs()){
-			//No se ha podido crear
-			return rutaArchivo.toString();
-		}else{
+			//No esta presente la SD card
+			return 1;
+		}else if (!rutaCarpeta.isFile()){
+			rutaCarpeta.mkdirs();
 			try {
-				FileWriter escritor = new FileWriter(rutaArchivo);
+				PrintWriter escritor = new PrintWriter(rutaArchivo, "UTF-8");
 				escritor.write(crearCSV());
 				escritor.close();
-				return "0";
-			} catch (IOException e) {
-				e.printStackTrace();
-				return "4";
+				return 0;
+				
+			} catch (FileNotFoundException e) {
+				//No se ha creado bien el archivo
+				return 3;
+			} catch (UnsupportedEncodingException e) {
+				//No se soporta el encoding
+				return 4;
 			}
+				
+		}else{
+			//Existe UN ARCHIVO con el mismo nombre que nuestra carpeta
+			return 2;
 		}
 	}
 	/**

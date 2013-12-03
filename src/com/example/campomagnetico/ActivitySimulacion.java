@@ -280,16 +280,32 @@ public class ActivitySimulacion extends Activity {
 	    switch (item.getItemId()) {
 	    
 	    	case R.id.action_csv:
+	    		
+	    		//Almaceno el resultado de la creacion del CSV
+	    		int resultado = 100;
+	    		
 	    		if (tabs.getCurrentTabTag().equals("tab1")){
-	    			
-	    			String resultado = datosA.exportar_csv()+"";
-	    			Toast.makeText(activity, resultado, Toast.LENGTH_LONG).show();
-	    			
+	    			resultado = datosA.exportar_csv();
 	    		}else if (tabs.getCurrentTabTag().equals("tab2")){
-	    			datosB.exportar_csv();
+	    			resultado = datosB.exportar_csv();
 	    		}else if (tabs.getCurrentTabTag().equals("tab3")){
-	    			datosC.exportar_csv();
+	    			resultado = datosC.exportar_csv();
 	    		}
+	    		
+    			if (resultado == 1){
+    				Toast.makeText(activity, "No se ha encontrado el\nalmacemiento externo (SD)", Toast.LENGTH_LONG).show();
+    			}else if (resultado == 2){
+    				Toast.makeText(activity, "Existe un archivo con el mismo nombre que la carpeta. "
+    						+ "Por favor borre o renombre el archivo", Toast.LENGTH_LONG).show();
+    			}else if (resultado == 3){
+    				Toast.makeText(activity, "No se ha podido crear el archivo", Toast.LENGTH_LONG).show();
+    			}else if (resultado == 4){
+    				Toast.makeText(activity, "No se soporta el encoding de archivo", Toast.LENGTH_LONG).show();
+    			}else if (resultado == 0){
+    				Toast.makeText(activity, "Archivo guardado", Toast.LENGTH_LONG).show();
+    			}else {
+    				Toast.makeText(activity, "La verdad, no se como has llegado a aqu’", Toast.LENGTH_LONG).show();
+    			}
 	    		
 	    		return true;
 	        case R.id.action_inicio:
@@ -304,7 +320,4 @@ public class ActivitySimulacion extends Activity {
 	            return super.onOptionsItemSelected(item);
 	    }
 	}
-	 
-	 
-
 }

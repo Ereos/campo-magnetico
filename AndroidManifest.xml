@@ -8,7 +8,7 @@
         android:minSdkVersion="10"
         android:targetSdkVersion="18" />
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -17,7 +17,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.campomagnetico.MainActivity"
-            android:label="@string/titulo_activity_main" >
+            android:label="@string/titulo_activity_main"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +27,8 @@
         </activity>
         <activity
             android:name="com.example.campomagnetico.ActivityGuion"
-            android:label="@string/titulo_activity_guion" >
+            android:label="@string/titulo_activity_guion"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="guion" />
 
@@ -35,7 +37,8 @@
         </activity>
         <activity
             android:name="com.example.campomagnetico.ActivityListaComponentes"
-            android:label="@string/titulo_activity_componentes" >
+            android:label="@string/titulo_activity_componentes"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="componentes" />
 
@@ -44,7 +47,8 @@
         </activity>
         <activity
             android:name="com.example.campomagnetico.ActivityMontaje"
-            android:label="@string/titulo_activity_montaje" >
+            android:label="@string/titulo_activity_montaje"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="montaje" />
 
@@ -53,7 +57,8 @@
         </activity>
         <activity
             android:name="com.example.campomagnetico.ActivitySimulacion"
-            android:label="@string/titulo_activity_simulacion" >
+            android:label="@string/titulo_activity_simulacion"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="simulacion" />
 
@@ -62,7 +67,8 @@
         </activity>
         <activity
             android:name="com.example.campomagnetico.AcercaDeActivity"
-            android:label="@string/title_activity_acerca_de" >
+            android:label="@string/title_activity_acerca_de"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="acerca_de" />
 
@@ -71,7 +77,8 @@
         </activity>
         <activity
             android:name="com.example.campomagnetico.ImagenComponenteActivity"
-            android:label="@string/title_activity_imagen_componente" >
+            android:label="@string/title_activity_imagen_componente"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="imagenComponente" />
 
