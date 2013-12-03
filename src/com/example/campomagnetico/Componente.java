@@ -1,7 +1,5 @@
 package com.example.campomagnetico;
 
-import java.util.ArrayList;
-
 
 public class Componente {
 	

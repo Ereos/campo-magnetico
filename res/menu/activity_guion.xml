@@ -2,24 +2,24 @@
     
     <item 
         android:id="@+id/action_inicio" 
-        android:title="Volver al inicio"
+        android:title="@string/menu_inicio"
         android:orderInCategory="100"
         android:icon="@android:drawable/ic_menu_revert"></item>
    	<item 
         android:id="@+id/action_aumentar" 
-        android:title="Aumentar el tamaño del texto"
+        android:title="@string/menu_aumentarTexto"
         android:orderInCategory="1"
         android:icon="@android:drawable/ic_menu_zoom"></item>
         
 	<item 
         android:id="@+id/action_disminuir" 
-        android:title="Disminuir el tamaño del texto"
+        android:title="@string/menu_disminuirTexto"
         android:orderInCategory="2"
         android:icon="@android:drawable/ic_menu_search"></item>
     
     <item 
         android:id="@+id/action_acercaDe" 
-        android:title="Acerca de..."
+        android:title="@string/menu_acercaDe"
         android:orderInCategory="100"
         android:icon="@android:drawable/ic_menu_crop"></item>
 

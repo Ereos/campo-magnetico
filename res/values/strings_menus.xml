@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_acercaDe">Acerca de&#8230;</string>
+    <string name="menu_aumentarTexto">Aumentar el tamaño del texto</string>
+    <string name="menu_disminuirTexto">Disminuir el tamaño del texto</string>
+    <string name="menu_inicio">Volver al inicio</string>
+    <string name="menu_exportarCSV">Exportar a CSV</string>
+    <string name="menu_volverLista">Volver a la lista</string>
+    <string name="menu_aumentarDescripcion">Aumentar el tamaño de la descripción</string>
+    <string name="menu_disminuirDescripcion">Disminuir el tamaño de la descripción</string>
+    
+</resources>

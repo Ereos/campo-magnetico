@@ -3,7 +3,7 @@
     
     <item 
         android:id="@+id/action_acercaDe" 
-        android:title="Acerca de..."
+        android:title="@string/menu_acercaDe"
         android:orderInCategory="100"
         android:icon="@android:drawable/ic_menu_crop"></item>
 

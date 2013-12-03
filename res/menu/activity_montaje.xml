@@ -2,12 +2,12 @@
 
     <item 
         android:id="@+id/action_inicio" 
-        android:title="Volver al inicio"
+        android:title="@string/menu_inicio"
         android:orderInCategory="1"
         android:icon="@android:drawable/ic_menu_revert"></item>
     <item 
         android:id="@+id/action_acercaDe" 
-        android:title="Acerca de..."
+        android:title="@string/menu_acercaDe"
         android:orderInCategory="100"
         android:icon="@android:drawable/ic_menu_crop"></item>
 
