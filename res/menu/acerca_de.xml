@@ -4,6 +4,6 @@
         android:id="@+id/action_inicio" 
         android:title="Volver al inicio"
         android:orderInCategory="1"
-        android:icon="@android:drawable/ic_menu_preferences"></item>
+        android:icon="@android:drawable/ic_menu_revert"></item>
 
 </menu>

@@ -5,23 +5,12 @@
         android:id="@+id/action_inicio" 
         android:title="Volver al inicio"
         android:orderInCategory="1"
-        android:icon="@android:drawable/ic_menu_preferences"></item>
-    <item 
-        android:id="@+id/action_aumentar" 
-        android:title="Aumentar el tamaño de la descripción"
-        android:orderInCategory="1"
-        android:icon="@android:drawable/ic_menu_preferences"></item>
-        
-	<item 
-        android:id="@+id/action_disminuir" 
-        android:title="Disminuir el tamaño de la descripción"
-        android:orderInCategory="1"
-        android:icon="@android:drawable/ic_menu_preferences"></item>
+        android:icon="@android:drawable/ic_menu_revert"></item>
     
     <item 
         android:id="@+id/action_acercaDe" 
         android:title="Acerca de..."
         android:orderInCategory="100"
-        android:icon="@android:drawable/ic_menu_preferences"></item>
+        android:icon="@android:drawable/ic_menu_crop"></item>
 
 </menu>

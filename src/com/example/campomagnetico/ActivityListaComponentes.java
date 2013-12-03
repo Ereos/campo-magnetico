@@ -65,17 +65,7 @@ public class ActivityListaComponentes extends Activity {
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		TextView tvDescripcion = (TextView)findViewById(R.id.tvDescripcion);
-		
 	    switch (item.getItemId()) {
-    		case R.id.action_aumentar:
-    			
-    			//Aun no esta bien implementado
-    			float tamano = tvDescripcion.getTextSize();
-    			tamano += 1;
-    			tvDescripcion.setTextSize(tamano);
-    			adapterComp.notifyDataSetChanged();
-    			return true;
 	        case R.id.action_inicio:
 	        	onBackPressed();
 	            return true;
@@ -87,7 +77,6 @@ public class ActivityListaComponentes extends Activity {
 	            return super.onOptionsItemSelected(item);
 	    }
 	}
-	
 	
 	/**
 	 * Llena un arrayList con los componentes

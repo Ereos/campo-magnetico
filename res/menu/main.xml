@@ -5,6 +5,6 @@
         android:id="@+id/action_acercaDe" 
         android:title="Acerca de..."
         android:orderInCategory="100"
-        android:icon="@android:drawable/ic_menu_preferences"></item>
+        android:icon="@android:drawable/ic_menu_crop"></item>
 
 </menu>
