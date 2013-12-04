@@ -108,7 +108,7 @@ public class ActivitySimulacion extends Activity {
 		
 		//Fin Teslamometros
 		
-		tomarMedA = (Button) findViewById(R.id.ButtonA);
+		tomarMedA = (Button) findViewById(R.id.buttonA);
 		tomarMedB = (Button) findViewById(R.id.buttonB);
 		tomarMedC = (Button) findViewById(R.id.buttonC);
 		
