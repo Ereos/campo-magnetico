@@ -70,7 +70,6 @@ public class Medida {
 			res = res.multiply(new BigDecimal(100)); //valor en centimetros
 			res.setScale(2, RoundingMode.HALF_EVEN);
 			float aux = res.floatValue();
-			Log.e("VALOR1", aux + "");
 			return res.floatValue(); //Devuelve el valor en centimetros
 		}
 		return valor1;
