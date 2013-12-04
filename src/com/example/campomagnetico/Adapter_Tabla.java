@@ -1,6 +1,6 @@
 package com.example.campomagnetico;
 
-
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import com.example.campomagnetico.R;

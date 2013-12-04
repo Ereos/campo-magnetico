@@ -1,11 +1,17 @@
 package Apartados;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
+
+import android.util.Log;
+
 public class Medida {
 
-	double valor1;
-	double valor2;
-	double valorIc;
-	int apartado;
+	protected double valor1;
+	protected double valor2;
+	protected double valorIc;
+	protected int apartado;
 	
 	/**
 	 * Creador de una medida realizada para los apartados 2 y 3.
@@ -38,7 +44,10 @@ public class Medida {
 	public double[] get(){
 		if(apartado == 2){
 			double result[] = new double[2];
-			result[0] = valor1*100; //valor en centimetros
+			BigDecimal res = new BigDecimal(valor1);
+			res = res.multiply(new BigDecimal(100)); //valor en centimetros
+			res.setScale(2, RoundingMode.HALF_EVEN);
+			result[0] = res.doubleValue();
 			result[1] = valor2;
 			return result;
 		}else{
@@ -55,8 +64,14 @@ public class Medida {
 	 * @return Un double con: la distancia del punto de medicion en el apartado1, e intensidad en el apartado 2 ó 3
 	 */
 	public double getValor1() {
+		BigDecimal res = new BigDecimal(valor1);
 		if(apartado==2){
-			return valor1 * 100; //Devuelve el valor en centimetros
+			res.setScale(2, RoundingMode.HALF_EVEN);
+			res = res.multiply(new BigDecimal(100)); //valor en centimetros
+			res.setScale(2, RoundingMode.HALF_EVEN);
+			float aux = res.floatValue();
+			Log.e("VALOR1", aux + "");
+			return res.floatValue(); //Devuelve el valor en centimetros
 		}
 		return valor1;
 	}
