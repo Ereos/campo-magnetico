@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:baselineAligned="false"
-    tools:context=".ActivityListaComponentes" >
+    tools:context=".ActivityListaComponentes"
+    android:background="@drawable/fondo1" >
 
     <ListView
         android:id="@+id/lvComponentes"

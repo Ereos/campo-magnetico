@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityGuion" >
+    tools:context=".ActivityGuion" 
+    android:background="@drawable/fondo1">
 
     <TabHost 
         android:id="@android:id/tabhost"
@@ -138,7 +139,7 @@
          	                    android:id="@+id/imageView5"
          	                    android:layout_width="wrap_content"
          	                    android:layout_height="wrap_content"
-         	                    android:src="@drawable/conductor_a_mini" />
+         	                    android:src="@drawable/conductor_a_dibu" />
 
          	                <TextView
          	                    android:id="@+id/textView7"
@@ -158,7 +159,7 @@
          	                    android:id="@+id/imageView6"
          	                    android:layout_width="wrap_content"
          	                    android:layout_height="wrap_content"
-         	                    android:src="@drawable/conductor_b_mini" />
+         	                    android:src="@drawable/conductor_b_dibu" />
 
          	                <TextView
          	                    android:id="@+id/textView9"
@@ -178,7 +179,7 @@
          	                    android:id="@+id/imageView7"
          	                    android:layout_width="wrap_content"
          	                    android:layout_height="wrap_content"
-         	                    android:src="@drawable/conductor_c_mini" />
+         	                    android:src="@drawable/conductor_c_dibu" />
 
          	                <TextView
          	                    android:id="@+id/textView11"
