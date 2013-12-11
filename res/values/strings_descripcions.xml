@@ -28,4 +28,6 @@
 	<string name="Montaje3">3º. La pinza amperimetrica reductora (que tiene un factor de reduccion de 2000) se debe situar en torno al conductor y unida al miliamperimetro. Escala de medida: 200mA.\n</string>
 	<string name="Montaje4">4º. Asignar la escala del Teslámetro a 20 mT y unirlo a la sonda Hall.\n</string>
 	<string name="Montaje5">5º. Situar la sonda Hall a una altura aproximada de 25 cm respecto a la mesa de trabajo. La sonda debe estar siempre perpendicular al plano del conductor problema y con su extremo libre contenido en dicho plano (por ser una sonda axial su eje debe coincidir con la dirección del vector campo magnético que se va a medir).</string>
+	<string name="tabTeoria">Teoría</string>
+	<string name="tabApartados">Apartados</string>
 </resources>

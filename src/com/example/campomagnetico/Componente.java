@@ -13,6 +13,7 @@ public class Componente {
 		this.descripcion = descripcion;
 		this.idFotoMini = idFotoMini;
 		this.idFoto = idFoto;
+		
 	}
 	
 	public String getNombre() {
