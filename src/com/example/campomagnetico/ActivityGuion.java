@@ -71,7 +71,7 @@ public class ActivityGuion extends Activity {
 	        	return true;
 	        	
 	        case R.id.action_disminuir:
-	        	//recorrerTextView(vista, 1);
+	        	recorrerTextView(vista, 1);
 	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
@@ -91,16 +91,14 @@ public class ActivityGuion extends Activity {
                 	if (child instanceof TextView){
                 		tvGuion = (TextView)child;
                 		
-                		if ((tvGuion.getText().toString().compareTo(getString(R.string.tabTeoria))==0)||(tvGuion.getText().toString().compareTo(getString(R.string.tabApartados))==0)){
-                			
-                		}
-                		
-                		tamano = tvGuion.getTextSize();
-                		if (opcion == 0){
-                			tamano++;
-                		}else {
-                			tamano--;
-                		}
+                		if (!(tvGuion.getText().toString().compareTo(getString(R.string.tabTeoria))==0)&&  !(tvGuion.getText().toString().compareTo(getString(R.string.tabApartados))==0)){
+                			tamano = tvGuion.getTextSize();
+                    		if (opcion == 0){
+                    			tamano++;
+                    		}else {
+                    			tamano--;
+                    		}
+                		}	
                 		
                 		tvGuion.setTextSize(TypedValue.COMPLEX_UNIT_PX, tamano);
                 	}
