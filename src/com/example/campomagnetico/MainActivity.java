@@ -1,6 +1,7 @@
 package com.example.campomagnetico;
 
 
+import Apartados.GestoraInformacion;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -22,6 +23,9 @@ public class MainActivity extends Activity {
 		final Button bMontaje = (Button)findViewById(R.id.bMontaje);
 		final Button bComponentes = (Button)findViewById(R.id.bComponentes);
 		final Button bSimulacion = (Button)findViewById(R.id.bSimulacion);
+		
+		//Pa' guardar los datos
+		final GestoraInformacion gestor = new GestoraInformacion();
 
 		
 		bGuion.setOnClickListener(new OnClickListener() {
