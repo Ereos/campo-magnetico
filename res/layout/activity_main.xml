@@ -45,5 +45,15 @@
         android:layout_below="@+id/bMontaje"
         android:layout_marginTop="25dp"
         android:text="@string/bSimulacion" />
+
+    <Button
+        android:id="@+id/bAyuda"
+        style="@style/btnStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/bSimulacion"
+        android:layout_marginTop="20dp"
+        android:text="@string/title_activity_ayuda" />
    
 </RelativeLayout>

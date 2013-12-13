@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tabAyuda">Inicio</string>
+    <string name="AyudaInicio">En la pantalla inicial se encuentran 4 opciones diferenciadas por botones:</string>
+    <string name="AyudaInicioGuion"> <b>Guión teórico</b>: Donde se encuentra el fundamento teórico necesario para la realización de la práctica.</string>
+    <string name="AyudaInicioCompon"><b>Componentes de la práctica</b>: En este apartado se mostrará cada uno de los componentes que se utilizarán para el montaje y realización de la práctica.</string>
+    <string name="AyudaInicioMontaje"><b>Como montar la práctica</b>: Sección donde se muestran unas imágenes y una descripción de la forma correcta de realizar el montaje.</string>
+    <string name="AyudaInicioSimulación"><b>Simulación de la práctica</b>:Apartado que cuenta con tres secciones, una por cada simulación llevada a cabo. Cada simulación está explicada en el apartado <i>guión teórico</i>.</string>
+	<string name="AyudaSimulacion">Moviendo la barra de desplazamiento mostrada en el centro de la pantalla se modificarán los datos mostrados, y al pulsar en el botón <i>tomar medida</i> los datos se almacenarán en la lista inferior.</string>
+	<string name="AyudaExportar">Pulsa "menu" y luego en "Exportar a CSV" para exportar las medidas tomadas en la simulación en un archivo CSV para añadirlo después en tu informe de la práctica.</string>
+	<string name="Guion">En el <i>Guión Teórico</i> se encontrarán dos secciones:</string>
+	<string name="Guion2"><b>Teoría</b>: Sección en la que se explican los princípios teóricos necesarios para la realización de la práctica.</string>
+	<string name="Guion3"><b>Apartados</b>: Sección dedicada a la explicación del procedimiento experimental para las 3 secciones de la práctica, así como algunos apuntes que facilitan su realización.</string>
+	<string name="Componentes1">En esta pantalla se realiza una explicación por cada uno de los componentes que se utilizarán en la práctica.</string>
+	<string name="Componentes2">Se puede pulsar en cada componente para ver la imagen en mayor tamaño y ampliar la descripción.</string>
+	<string name="Componentes3">Al igual que pasa en otras secciones de la aplicación el menú contextual emergente que se mostrará cuando pulses la tecla menú de tu dispositivo después de seleccionar un componente, tendrá la opción de aumentar y disminuir el texto de la descripción.</string>
+	<string name="Simulacion1">Cada una de las pestañas corresponde a un apartado de la práctica, cambiando el correspondiente conductor y las medidas tomadas.</string>
+	<string name="Simulacion2">En cada apartado se cambiará el valor de la medida tomada con la barra de desplazamiento que hay debajo de la figura del circuito. Y se pueden guardar esas medidas pulsando en el botón <i>"tomar medida"</i></string>
+	<string name="Simulacion3">Como complemento a la toma de medidas y para facilitar su almacenamiento, pulsando en el botón de menú de tu dispositivo puedes acceder a la opción "<i>Exportar a CSV</i>" que guardará los datos obtenidos hasta ahora en ese apartado en un archivo .CSV en la carpeta <i>SimuCampoMagnetico</i> de tu tarjeta SD.</string>
+	<string name="Simulacion4">Los archivos .CSV guardados seran nombrados de esta forma: \n<i>Apartado</i>_""NROdelApartado"_<i>Hora</i>_<i>Fecha</i>.csv ,\n para que distintas tomas de medidas en distintos momentos se puedan diferenciar con un simple vistazo al nombre del archivo.</string>
+	<string name="Menu1">En cada una de las ventanas de la aplicación se ha implementado un menú desplegable que facilita el uso de la misma, se accede a el pulsando en el botón <b>menú</b> de tu dispositivo.</string>
+	<string name="Menu2">El menú desplegable implementa, dependiendo de la parte de la aplicación en la que se abra, aumentar y disminuir el tamaño del texto, volver a la pantalla de inicio, acceder a la pantalla de información de la aplicación ("Acerca de") e incluso guardar las medidas tomadas en un archivo .CSV para poder añadir los resultados a la documentación de la práctica que se presente al profesor.</string>
+
+
+</resources>

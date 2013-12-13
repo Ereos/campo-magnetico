@@ -1,9 +1,11 @@
 package com.example.campomagnetico;
 
 
+import Apartados.GestoraInformacion;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +24,10 @@ public class MainActivity extends Activity {
 		final Button bMontaje = (Button)findViewById(R.id.bMontaje);
 		final Button bComponentes = (Button)findViewById(R.id.bComponentes);
 		final Button bSimulacion = (Button)findViewById(R.id.bSimulacion);
+		final Button bAyuda = (Button)findViewById(R.id.bAyuda);
+		
+		//Pa' guardar los datos
+		final GestoraInformacion gestor = new GestoraInformacion();
 
 		
 		bGuion.setOnClickListener(new OnClickListener() {
@@ -62,6 +68,15 @@ public class MainActivity extends Activity {
 				intent = new Intent("simulacion");
 				startActivity(intent);
 				
+			}
+		});
+		
+		bAyuda.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				intent = new Intent("AAyuda");
+				startActivity(intent);
 			}
 		});
 	}

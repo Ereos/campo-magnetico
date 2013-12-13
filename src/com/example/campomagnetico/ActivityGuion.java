@@ -29,7 +29,7 @@ public class ActivityGuion extends Activity {
 		//Tabs
 		Resources res = getResources();
 		 
-		TabHost tabs=(TabHost)findViewById(android.R.id.tabhost);
+		tabs=(TabHost)findViewById(android.R.id.tabhost);
 		tabs.setup();
 		
 		vista = tabs;
