@@ -371,11 +371,24 @@ public class ActivitySimulacion extends Activity {
 	    		int resultado = 100;
 	    		
 	    		if (tabs.getCurrentTabTag().equals("tab1")){
-	    			resultado = datosA.exportar_csv();
+	    			if (datosA.get_array().isEmpty()){
+	    				resultado = 5;
+	    			}else{
+	    				resultado = datosA.exportar_csv();
+	    			}
+	    			
 	    		}else if (tabs.getCurrentTabTag().equals("tab2")){
-	    			resultado = datosB.exportar_csv();
+	    			if (datosB.get_array().isEmpty()){
+	    				resultado = 5;
+	    			}else{
+	    				resultado = datosB.exportar_csv();
+	    			}
 	    		}else if (tabs.getCurrentTabTag().equals("tab3")){
-	    			resultado = datosC.exportar_csv();
+	    			if (datosC.get_array().isEmpty()){
+	    				resultado = 5;
+	    			}else{
+	    				resultado = datosC.exportar_csv();
+	    			}
 	    		}
 	    		
     			if (resultado == 1){
@@ -389,6 +402,8 @@ public class ActivitySimulacion extends Activity {
     				Toast.makeText(activity, "No se soporta el encoding de archivo", Toast.LENGTH_LONG).show();
     			}else if (resultado == 0){
     				Toast.makeText(activity, "Archivo guardado", Toast.LENGTH_LONG).show();
+    			}else if (resultado == 5){
+    				Toast.makeText(activity, "No has tomado ninguna medida en este apartado\nHaz alguna medicion antes de exportarlas", Toast.LENGTH_LONG).show();
     			}else {
     				Toast.makeText(activity, "La verdad, no se como has llegado a aqu’", Toast.LENGTH_LONG).show();
     			}
