@@ -90,17 +90,16 @@ public class ActivityGuion extends Activity {
                 if (child != null) {
                 	if (child instanceof TextView){
                 		tvGuion = (TextView)child;
-                		
-                		if (!(tvGuion.getText().toString().compareTo(getString(R.string.tabTeoria))==0)&&  !(tvGuion.getText().toString().compareTo(getString(R.string.tabApartados))==0)){
+                		if (!(tvGuion.getText().toString() == (getString(R.string.tabTeoria))) && !(tvGuion.getText().toString() ==(getString(R.string.tabApartados)))){
+                		//TODO siguiente if hay q borrarlo
                 			tamano = tvGuion.getTextSize();
                     		if (opcion == 0){
                     			tamano++;
                     		}else {
                     			tamano--;
                     		}
-                		}	
-                		
                 		tvGuion.setTextSize(TypedValue.COMPLEX_UNIT_PX, tamano);
+                		}
                 	}
                 }
             }
