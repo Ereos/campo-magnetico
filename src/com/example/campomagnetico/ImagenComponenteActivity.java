@@ -51,14 +51,14 @@ public class ImagenComponenteActivity extends Activity {
     		case R.id.action_aumentar:
     			
     			tamano = tvDescripcion.getTextSize();
-    			tamano +=1;
+    			tamano +=5;
     			tvDescripcion.setTextSize(TypedValue.COMPLEX_UNIT_PX, tamano);
     			
     			return true;
     		case R.id.action_disminuir:
     			
     			tamano = tvDescripcion.getTextSize();
-    			tamano -=1;
+    			tamano -=5;
     			tvDescripcion.setTextSize(TypedValue.COMPLEX_UNIT_PX, tamano);
     			
     			return true;
