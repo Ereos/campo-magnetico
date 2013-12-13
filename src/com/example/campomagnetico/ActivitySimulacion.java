@@ -16,7 +16,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -75,7 +77,7 @@ public class ActivitySimulacion extends Activity {
 		//Inicializacion de los componentes de las listas
 		lista_apartado1 = (ListView)findViewById(R.id.lvApartado1);
 		lista_apartado2 = (ListView)findViewById(R.id.lvApartado2);
-		lista_apartado3 = (ListView)findViewById(R.id.lvApartado3);	
+		lista_apartado3 = (ListView)findViewById(R.id.lvApartado3);
 		
 		//Tabs
 		Resources res = getResources();
@@ -136,8 +138,8 @@ public class ActivitySimulacion extends Activity {
 					prog = prog.setScale(5, RoundingMode.HALF_UP);
 					double progDouble = prog.doubleValue();
 					Medida medB = new Medida(progDouble, apartado2.getB(progDouble));
-					datosB.add_dato(medB);
 					
+					datosB.add_dato(medB);
 					adaptador_apartado2 = new Adapter_Tabla(activity, datosB.get_array());
 					lista_apartado2.setAdapter(adaptador_apartado2);
 				}
@@ -263,6 +265,20 @@ public class ActivitySimulacion extends Activity {
 		});
 		
 		//Fin SeekViews		
+		
+		
+		//Logica borar una medicion
+		this.registerForContextMenu(lista_apartado1);
+		lista_apartado1.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> arg0, View v, int position, long arg3) {
+				datosA.get_array().remove(position);
+				adaptador_apartado1 = new Adapter_Tabla_Apar1(activity, datosA.get_array());
+				lista_apartado1.setAdapter(adaptador_apartado1);	
+				return false;
+			}
+		});
 		
 		
 	}
