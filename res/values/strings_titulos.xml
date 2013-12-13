@@ -11,7 +11,7 @@
     <string name="titulo_conductor3"><b>Conductor C</b></string>
     <string name="titulo_teoria"><b>Ley de Biot y Savart</b></string>
     <string name="titulo_montaje"><b>Procedimiento Experimental</b></string>
-    <string name="Autores">Autores:\n\tDiego Cubero Pascual\n\tDaniel Diaz Correa\n\tSergio Modino Catalán</string>
+    <string name="Autores"><b>Autores:</b>\n\tDiego Cubero Pascual\n\tDaniel Diaz Correa\n\tSergio Modino Catalán\n\n En colaboración con el departamento de Física de la Escuela Técnica Superior de Ingeniería Informatica(Universidad de Valladolid)</string>
     <string name="acerca_de">Aplicación encargada de explicar y simular el campo magnético generado por uno o más conductores rectilineos en un punto dado.</string>
     <string name="NombreDeLaPractica">CAMPO MAGNÉTICO CREADO POR CONDUCTORES RECTOS</string>
     
