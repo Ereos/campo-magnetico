@@ -94,9 +94,9 @@ public class ActivityGuion extends Activity {
                 		//TODO siguiente if hay q borrarlo
                 			tamano = tvGuion.getTextSize();
                     		if (opcion == 0){
-                    			tamano++;
+                    			tamano+=5;
                     		}else {
-                    			tamano--;
+                    			tamano-=5;
                     		}
                 		tvGuion.setTextSize(TypedValue.COMPLEX_UNIT_PX, tamano);
                 		}
