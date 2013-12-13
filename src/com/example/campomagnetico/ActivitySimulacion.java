@@ -8,6 +8,8 @@ import Apartados.Datos;
 import Apartados.Medida;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.view.Menu;
@@ -273,14 +275,83 @@ public class ActivitySimulacion extends Activity {
 
 			@Override
 			public boolean onItemLongClick(AdapterView<?> arg0, View v, int position, long arg3) {
-				datosA.get_array().remove(position);
-				adaptador_apartado1 = new Adapter_Tabla_Apar1(activity, datosA.get_array());
-				lista_apartado1.setAdapter(adaptador_apartado1);	
-				return false;
+				
+				final int pos = position;
+				
+		    	AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+		    	builder
+		    	.setTitle("Borrar medida")
+		    	.setMessage("ÀSeguro que quieres borrar la medida seleccionada?")
+		    	.setIcon(android.R.drawable.ic_dialog_alert)
+		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+		    	    public void onClick(DialogInterface dialog, int which) {			      	
+		    	    	datosA.get_array().remove(pos);
+						adaptador_apartado1 = new Adapter_Tabla_Apar1(activity, datosA.get_array());
+						lista_apartado1.setAdapter(adaptador_apartado1);	
+						
+		    	    }
+		    	})
+		    	.setNegativeButton("No", null)
+		    	.show();
+		    	return false;
+				
 			}
 		});
 		
+		this.registerForContextMenu(lista_apartado2);
+		lista_apartado2.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> arg0, View v, int position, long arg3) {
+				
+				final int pos = position;
+				
+		    	AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+		    	builder
+		    	.setTitle("Borrar medida")
+		    	.setMessage("ÀSeguro que quieres borrar la medida seleccionada?")
+		    	.setIcon(android.R.drawable.ic_dialog_alert)
+		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+		    	    public void onClick(DialogInterface dialog, int which) {			      	
+		    	    	datosB.get_array().remove(pos);
+						adaptador_apartado2 = new Adapter_Tabla(activity, datosB.get_array());
+						lista_apartado2.setAdapter(adaptador_apartado2);
+		    	    }
+		    	})
+		    	.setNegativeButton("No", null)
+		    	.show();
+		    	return false;
+				
+			}
+		});
 		
+		this.registerForContextMenu(lista_apartado3);
+		lista_apartado3.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> arg0, View v, int position, long arg3) {
+				
+				final int pos = position;
+				
+		    	AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+		    	builder
+		    	.setTitle("Borrar medida")
+		    	.setMessage("ÀSeguro que quieres borrar la medida seleccionada?")
+		    	.setIcon(android.R.drawable.ic_dialog_alert)
+		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+		    	    public void onClick(DialogInterface dialog, int which) {			      	
+		    	    	datosC.get_array().remove(pos);
+						adaptador_apartado3 = new Adapter_Tabla(activity, datosC.get_array());
+						lista_apartado3.setAdapter(adaptador_apartado3);	
+						
+		    	    }
+		    	})
+		    	.setNegativeButton("No", null)
+		    	.show();
+		    	return false;
+				
+			}
+		});		
 	}
 
 	@Override
