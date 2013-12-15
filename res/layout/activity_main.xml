@@ -12,6 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="60dp"
         android:text="@string/bGuionTeorico" />
     
@@ -23,6 +25,8 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/bGuion"
         android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:text="@string/bComponetes" />
     
     
@@ -34,6 +38,8 @@
         android:layout_alignParentLeft="true"
 		android:layout_below="@+id/bComponentes"
 		android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:text="@string/bMontaje" />
 
     <Button
@@ -44,6 +50,8 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/bMontaje"
         android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:text="@string/bSimulacion" />
 
     <Button
@@ -53,7 +61,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/bSimulacion"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:text="@string/title_activity_ayuda" />
    
 </RelativeLayout>
