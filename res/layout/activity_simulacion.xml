@@ -80,10 +80,18 @@
          	            android:text="Tomar medida" />
 
          	        <ListView
+         	            android:id="@+id/lvCabecera1"
+         	            android:layout_width="match_parent"
+         	            android:paddingTop="5dp"
+         	            android:paddingBottom="1dp"
+         	            android:clickable="false"
+         	            android:layout_height="wrap_content" >
+         	        </ListView>
+
+         	        <ListView
          	            android:id="@+id/lvApartado1"
          	            android:layout_width="match_parent"
          	            android:layout_height="wrap_content"
-         	            android:paddingTop="5dp"
          	            android:paddingBottom="2dp" >
          	        </ListView>
 
@@ -139,12 +147,20 @@
          	            android:layout_height="wrap_content"
          	            android:layout_gravity="right"
          	            android:text="Tomar medida" />
+         	        
+         	        <ListView
+         	            android:id="@+id/lvCabecera2"
+         	            android:layout_width="match_parent"
+         	            android:paddingTop="5dp"
+         	            android:paddingBottom="1dp"
+         	            android:clickable="false"
+         	            android:layout_height="wrap_content" >
+         	        </ListView>
 
          	        <ListView
          	            android:id="@+id/lvApartado2"
          	            android:layout_width="match_parent"
          	            android:layout_height="wrap_content"
-         	            android:paddingTop="5dp"
          	            android:paddingBottom="2dp" >
          	        </ListView>
 
@@ -200,12 +216,20 @@
          	            android:layout_height="wrap_content"
          	            android:layout_gravity="right"
          	            android:text="Tomar medida" />
+         	        
+         	          <ListView
+         	            android:id="@+id/lvCabecera3"
+         	            android:layout_width="match_parent"
+         	            android:paddingTop="5dp"
+         	            android:paddingBottom="1dp"
+         	            android:clickable="false"
+         	            android:layout_height="wrap_content" >
+         	        </ListView>
 
          	        <ListView
          	            android:id="@+id/lvApartado3"
          	            android:layout_width="match_parent"
          	            android:layout_height="wrap_content"
-         	            android:paddingTop="5dp"
          	            android:paddingBottom="2dp" >
          	        </ListView>
 

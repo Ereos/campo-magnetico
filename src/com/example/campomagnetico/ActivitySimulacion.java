@@ -2,6 +2,7 @@ package com.example.campomagnetico;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 
 import Apartados.Apartado;
 import Apartados.Datos;
@@ -18,7 +19,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.SeekBar;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -60,11 +60,17 @@ public class ActivitySimulacion extends Activity {
 	protected Adapter_Tabla_Apar1 adaptador_apartado1;
 	protected Adapter_Tabla adaptador_apartado2;
 	protected Adapter_Tabla adaptador_apartado3;
+	protected Adapter_Cabecera_Tabla_1 adaptador_cabecera1;
+	protected Adapter_Cabecera_Tabla adaptador_cabecera2;
+	protected Adapter_Cabecera_Tabla adaptador_cabecera3;
 	
 	//ListView's
 	protected ListView lista_apartado1;
 	protected ListView lista_apartado2;
 	protected ListView lista_apartado3;
+	protected ListView cabecera_apartado1;
+	protected ListView cabecera_apartado2;
+	protected ListView cabecera_apartado3;
 	
 	//Activit actual
 	protected Activity activity;
@@ -80,6 +86,28 @@ public class ActivitySimulacion extends Activity {
 		lista_apartado1 = (ListView)findViewById(R.id.lvApartado1);
 		lista_apartado2 = (ListView)findViewById(R.id.lvApartado2);
 		lista_apartado3 = (ListView)findViewById(R.id.lvApartado3);
+		
+		cabecera_apartado1 = (ListView)findViewById(R.id.lvCabecera1);
+		cabecera_apartado2 = (ListView)findViewById(R.id.lvCabecera2);
+		cabecera_apartado3 = (ListView)findViewById(R.id.lvCabecera3);
+		
+		
+		//Creacion de las cabeceras
+		ArrayList<String> cabecera1 = new ArrayList<String>();
+		cabecera1.add("Intensidad(mA)-Intensidad_C(A)-Campo(T)");
+		
+		adaptador_cabecera1 = new Adapter_Cabecera_Tabla_1(activity, cabecera1);
+		cabecera_apartado1.setAdapter(adaptador_cabecera1);
+		
+		ArrayList<String> cabecera23 = new ArrayList<String>();
+		cabecera23.add("Intensidad(mA):Campo(T)");
+		
+		adaptador_cabecera2 = new Adapter_Cabecera_Tabla(activity, cabecera23);
+		cabecera_apartado2.setAdapter(adaptador_cabecera2);
+		
+		adaptador_cabecera3 = new Adapter_Cabecera_Tabla(activity, cabecera23);
+		cabecera_apartado3.setAdapter(adaptador_cabecera3);
+		
 		
 		//Tabs
 		Resources res = getResources();
