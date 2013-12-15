@@ -5,7 +5,7 @@
     <string name="AyudaInicioGuion"> <b>Guión teórico</b>: Donde se encuentra el fundamento teórico necesario para la realización de la práctica.</string>
     <string name="AyudaInicioCompon"><b>Componentes de la práctica</b>: En este apartado se mostrará cada uno de los componentes que se utilizarán para el montaje y realización de la práctica.</string>
     <string name="AyudaInicioMontaje"><b>Como montar la práctica</b>: Sección donde se muestran unas imágenes y una descripción de la forma correcta de realizar el montaje.</string>
-    <string name="AyudaInicioSimulación"><b>Simulación de la práctica</b>:Apartado que cuenta con tres secciones, una por cada simulación llevada a cabo. Cada simulación está explicada en el apartado <i>guión teórico</i>.</string>
+    <string name="AyudaInicioSimulacion"><b>Simulación de la práctica</b>:Apartado que cuenta con tres secciones, una por cada simulación llevada a cabo. Cada simulación está explicada en el apartado <i>guión teórico</i>.</string>
 	<string name="AyudaSimulacion">Moviendo la barra de desplazamiento mostrada en el centro de la pantalla se modificarán los datos mostrados, y al pulsar en el botón <i>tomar medida</i> los datos se almacenarán en la lista inferior.</string>
 	<string name="AyudaExportar">Pulsa "menu" y luego en "Exportar a CSV" para exportar las medidas tomadas en la simulación en un archivo CSV para añadirlo después en tu informe de la práctica.</string>
 	<string name="Guion">En el <i>Guión Teórico</i> se encontrarán dos secciones:</string>
