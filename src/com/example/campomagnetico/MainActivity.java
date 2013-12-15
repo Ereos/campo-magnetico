@@ -5,7 +5,6 @@ import Apartados.GestoraInformacion;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -70,13 +69,15 @@ public class MainActivity extends Activity {
 				
 			}
 		});
-		
 		bAyuda.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
+
 				intent = new Intent("AAyuda");
+				intent.putExtra("tab", 0);
 				startActivity(intent);
+				
 			}
 		});
 	}
