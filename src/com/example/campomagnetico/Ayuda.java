@@ -5,13 +5,18 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TabHost;
+import android.widget.TextView;
 
 public class Ayuda extends Activity {
 	protected Intent intent;
 	protected TabHost tabs;
+	protected ViewGroup vista;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -52,7 +57,8 @@ public class Ayuda extends Activity {
 			tabs.setCurrentTab(activo);
 		}else
 			tabs.setCurrentTab(0);
-		Log.e(activo + "","activo");
+		
+		vista = tabs;
 	}
 	
 
@@ -61,6 +67,61 @@ public class Ayuda extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.ayuda, menu);
 		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		
+	    switch (item.getItemId()) {
+	        case R.id.action_inicio:
+	        	onBackPressed();
+	            return true;
+	        case R.id.action_acercaDe:
+	        	intent = new Intent("acerca_de");
+	        	startActivity(intent);
+	        	return true;
+	        case R.id.action_aumentar:
+	        	recorrerTextView(vista, 0);
+	        	return true;
+	        	
+	        case R.id.action_disminuir:
+	        	recorrerTextView(vista, 1);
+	        	return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
+	
+	protected void recorrerTextView (ViewGroup parent, int opcion){
+		float tamano = 0;
+		TextView tvGuion;
+		
+		for (int i = parent.getChildCount() - 1; i >= 0; i--) {
+            final View child = parent.getChildAt(i);
+            if (child instanceof ViewGroup) {
+                recorrerTextView((ViewGroup) child, opcion);
+            } else {
+                if (child != null) {
+                	if (child instanceof TextView){
+                		tvGuion = (TextView)child;
+                		if (!(tvGuion.getText().toString() == (getString(R.string.bComponetesSort))) 
+                				&& !(tvGuion.getText().toString() ==(getString(R.string.bGuionTeoricoSort)))
+	                			&& !(tvGuion.getText().toString() ==(getString(R.string.bMenuDespleg)))
+								&& !(tvGuion.getText().toString() ==(getString(R.string.bMontajeSort)))
+								&& !(tvGuion.getText().toString() ==(getString(R.string.bSimulacionSort)))
+								&& !(tvGuion.getText().toString() ==(getString(R.string.tabAyuda)))){
+                			tamano = tvGuion.getTextSize();
+                    		if (opcion == 0){
+                    			tamano+=5;
+                    		}else {
+                    			tamano-=5;
+                    		}
+                		tvGuion.setTextSize(TypedValue.COMPLEX_UNIT_PX, tamano);
+                		}
+                	}
+                }
+            }
+        }
 	}
 
 }
