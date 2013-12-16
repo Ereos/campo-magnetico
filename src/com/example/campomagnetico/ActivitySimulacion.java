@@ -474,16 +474,81 @@ public class ActivitySimulacion extends Activity {
     			}else {
     				Toast.makeText(activity, "La verdad, no se como has llegado a aqu’", Toast.LENGTH_LONG).show();
     			}
-	    		
 	    		return true;
+	    		
 	        case R.id.action_inicio:
 	        	onBackPressed();
-	        	
 	            return true;
+	            
 	        case R.id.action_acercaDe:
 	        	intent = new Intent("acerca_de");
 	        	startActivity(intent);
 	        	return true;
+	            
+	        case R.id.action_borrar_datos:
+	        	if (tabs.getCurrentTabTag().equals("tab1")){
+	        		
+	        		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+			    	builder
+			    	.setTitle("Borrar Todas las Medidas")
+			    	.setMessage("¿Seguro que quieres borrar todas las medidas de este apartado?")
+			    	.setIcon(android.R.drawable.ic_dialog_alert)
+			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+			    	    public void onClick(DialogInterface dialog, int which) {			      	
+			    	    	datosA.get_array().clear();
+			    	    	
+			    	    	GestoraInformacion.setDatosA(datosA.get_array());
+			    	    	
+							lista_apartado1.setAdapter(null);
+			    	    }
+			    	})
+			    	.setNegativeButton("No", null)
+			    	.show();
+			    	return false;
+			    	
+	    		}else if (tabs.getCurrentTabTag().equals("tab2")){
+	    			
+	    			AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+			    	builder
+			    	.setTitle("Borrar Todas las Medidas")
+			    	.setMessage("¿Seguro que quieres borrar todas las medidas de este apartado?")
+			    	.setIcon(android.R.drawable.ic_dialog_alert)
+			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+			    	    public void onClick(DialogInterface dialog, int which) {			      	
+			    	    	datosB.get_array().clear();
+			    	    	
+			    	    	GestoraInformacion.setDatosB(datosB.get_array());
+			    	    	
+							lista_apartado2.setAdapter(null);
+			    	    }
+			    	})
+			    	.setNegativeButton("No", null)
+			    	.show();
+			    	return false;
+	    			
+	    		}else if (tabs.getCurrentTabTag().equals("tab3")){
+	    			
+	    			AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+			    	builder
+			    	.setTitle("Borrar Todas las Medidas")
+			    	.setMessage("¿Seguro que quieres borrar todas las medidas de este apartado?")
+			    	.setIcon(android.R.drawable.ic_dialog_alert)
+			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+			    	    public void onClick(DialogInterface dialog, int which) {			      	
+			    	    	datosC.get_array().clear();
+			    	    	
+			    	    	GestoraInformacion.setDatosC(datosC.get_array());
+			    	    	
+							lista_apartado3.setAdapter(null);
+			    	    }
+			    	})
+			    	.setNegativeButton("No", null)
+			    	.show();
+			    	return false;
+	    			
+	    		}
+	        	return true;
+	        	
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }

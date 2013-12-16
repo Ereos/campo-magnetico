@@ -7,6 +7,12 @@
         android:icon="@android:drawable/ic_menu_edit"></item>
     
     <item 
+        android:id= "@+id/action_borrar_datos"
+        android:title="@string/menu_borrarDatos"
+        android:orderInCategory="2"
+        android:icon="@android:drawable/ic_input_delete"></item>
+    
+    <item 
         android:id="@+id/action_inicio" 
         android:title="@string/menu_inicio"
         android:orderInCategory="100"

@@ -8,5 +8,6 @@
     <string name="menu_volverLista">Volver a la lista</string>
     <string name="menu_aumentarDescripcion">Aumentar el tamaño de la descripción</string>
     <string name="menu_disminuirDescripcion">Disminuir el tamaño de la descripción</string>
+    <string name="menu_borrarDatos">Borrar Todos los Datos</string>
     
 </resources>
