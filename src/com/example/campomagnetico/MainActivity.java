@@ -25,8 +25,6 @@ public class MainActivity extends Activity {
 		final Button bSimulacion = (Button)findViewById(R.id.bSimulacion);
 		final Button bAyuda = (Button)findViewById(R.id.bAyuda);
 		
-		//Pa' guardar los datos
-		final GestoraInformacion gestor = new GestoraInformacion();
 
 		
 		bGuion.setOnClickListener(new OnClickListener() {

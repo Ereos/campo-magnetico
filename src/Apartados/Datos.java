@@ -58,6 +58,10 @@ public class Datos {
 	public ArrayList<Medida> get_array(){
 		return arrayDatos;
 	}
+
+	public void setArrayDatos(ArrayList<Medida> arrayDatos) {
+		this.arrayDatos = arrayDatos;
+	}
 	/**
 	 * A partir del indice devuelve el valor de la medida correspondiente  
 	 * @param indice Numero correspondiente a la posicion de la

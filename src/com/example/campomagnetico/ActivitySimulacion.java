@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import Apartados.Apartado;
 import Apartados.Datos;
+import Apartados.GestoraInformacion;
 import Apartados.Medida;
 import android.os.Bundle;
 import android.app.Activity;
@@ -72,6 +73,10 @@ public class ActivitySimulacion extends Activity {
 	protected ListView cabecera_apartado2;
 	protected ListView cabecera_apartado3;
 	
+	
+	//ArrayLists Datos
+	
+	
 	//Activit actual
 	protected Activity activity;
 	
@@ -107,6 +112,25 @@ public class ActivitySimulacion extends Activity {
 		
 		adaptador_cabecera3 = new Adapter_Cabecera_Tabla(activity, cabecera23);
 		cabecera_apartado3.setAdapter(adaptador_cabecera3);
+		
+		
+		
+		//Si existen datos en los arrays de la gestora de informacion
+		if (!GestoraInformacion.getDatosA().isEmpty()){
+			datosA.setArrayDatos(GestoraInformacion.getDatosA());
+			adaptador_apartado1 = new Adapter_Tabla_Apar1(activity, GestoraInformacion.getDatosA());
+			lista_apartado1.setAdapter(adaptador_apartado1);
+		}
+		if (!GestoraInformacion.getDatosB().isEmpty()){
+			datosB.setArrayDatos(GestoraInformacion.getDatosB());
+			adaptador_apartado2 = new Adapter_Tabla(activity, GestoraInformacion.getDatosB());
+			lista_apartado2.setAdapter(adaptador_apartado2);
+		}
+		if (!GestoraInformacion.getDatosC().isEmpty()){
+			datosC.setArrayDatos(GestoraInformacion.getDatosC());
+			adaptador_apartado3 = new Adapter_Tabla(activity, GestoraInformacion.getDatosC());
+			lista_apartado3.setAdapter(adaptador_apartado3);
+		}
 		
 		
 		//Tabs
@@ -153,6 +177,9 @@ public class ActivitySimulacion extends Activity {
 					Medida medA = new Medida(progress * 5, apartado1.getB(progress*5), progress * 5 * 2);
 					datosA.add_dato(medA);
 					
+					GestoraInformacion.setDatosA(datosA.get_array());
+					
+					
 					adaptador_apartado1 = new Adapter_Tabla_Apar1(activity, datosA.get_array());
 					lista_apartado1.setAdapter(adaptador_apartado1);
 					
@@ -168,8 +195,11 @@ public class ActivitySimulacion extends Activity {
 					prog = prog.setScale(5, RoundingMode.HALF_UP);
 					double progDouble = prog.doubleValue();
 					Medida medB = new Medida(progDouble, apartado2.getB(progDouble));
-					
 					datosB.add_dato(medB);
+					
+					GestoraInformacion.setDatosB(datosB.get_array());
+					
+					
 					adaptador_apartado2 = new Adapter_Tabla(activity, datosB.get_array());
 					lista_apartado2.setAdapter(adaptador_apartado2);
 				}
@@ -186,6 +216,7 @@ public class ActivitySimulacion extends Activity {
 					Medida medC = new Medida(progDouble, apartado2.getB(progDouble));
 					datosC.add_dato(medC);
 					
+					GestoraInformacion.setDatosC(datosC.get_array());
 					adaptador_apartado3 = new Adapter_Tabla(activity, datosC.get_array());
 					lista_apartado3.setAdapter(adaptador_apartado3);
 				}
@@ -312,8 +343,11 @@ public class ActivitySimulacion extends Activity {
 		    	.setMessage("ÀSeguro que quieres borrar la medida seleccionada?")
 		    	.setIcon(android.R.drawable.ic_dialog_alert)
 		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
-		    	    public void onClick(DialogInterface dialog, int which) {			      	
+		    	    public void onClick(DialogInterface dialog, int which) {
+		    	    	
 		    	    	datosA.get_array().remove(pos);
+		    	    	GestoraInformacion.setDatosA(datosA.get_array());
+		    	    	
 						adaptador_apartado1 = new Adapter_Tabla_Apar1(activity, datosA.get_array());
 						lista_apartado1.setAdapter(adaptador_apartado1);	
 						
@@ -342,6 +376,9 @@ public class ActivitySimulacion extends Activity {
 		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 		    	    public void onClick(DialogInterface dialog, int which) {			      	
 		    	    	datosB.get_array().remove(pos);
+		    	    	
+		    	    	GestoraInformacion.setDatosB(datosB.get_array());
+		    	    	
 						adaptador_apartado2 = new Adapter_Tabla(activity, datosB.get_array());
 						lista_apartado2.setAdapter(adaptador_apartado2);
 		    	    }
@@ -369,6 +406,8 @@ public class ActivitySimulacion extends Activity {
 		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 		    	    public void onClick(DialogInterface dialog, int which) {			      	
 		    	    	datosC.get_array().remove(pos);
+		    	    	
+		    	    	GestoraInformacion.setDatosC(datosC.get_array());
 						adaptador_apartado3 = new Adapter_Tabla(activity, datosC.get_array());
 						lista_apartado3.setAdapter(adaptador_apartado3);	
 						
