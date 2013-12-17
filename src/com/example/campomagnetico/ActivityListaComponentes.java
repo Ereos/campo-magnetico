@@ -65,11 +65,6 @@ public class ActivityListaComponentes extends Activity {
 	        	intent = new Intent("acerca_de");
 	        	startActivity(intent);
 	        	return true;
-	        case R.id.action_ayuda:
-				intent = new Intent("AAyuda");
-				intent.putExtra("tab", 2);
-				startActivity(intent);
-				return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
