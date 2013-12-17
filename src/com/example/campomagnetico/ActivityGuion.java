@@ -73,6 +73,11 @@ public class ActivityGuion extends Activity {
 	        case R.id.action_disminuir:
 	        	recorrerTextView(vista, 1);
 	        	return true;
+	        case R.id.action_ayuda:
+	        	intent = new Intent("AAyuda");
+	        	intent.putExtra("tab", 1);
+	        	startActivity(intent);
+	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
