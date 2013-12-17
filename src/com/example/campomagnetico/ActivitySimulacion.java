@@ -3,6 +3,7 @@ package com.example.campomagnetico;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import Apartados.Apartado;
 import Apartados.Datos;
@@ -14,6 +15,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -92,6 +94,7 @@ public class ActivitySimulacion extends Activity {
 		lista_apartado2 = (ListView)findViewById(R.id.lvApartado2);
 		lista_apartado3 = (ListView)findViewById(R.id.lvApartado3);
 		
+		//Inicializacion de las lista que funcionana como cabeceras
 		cabecera_apartado1 = (ListView)findViewById(R.id.lvCabecera1);
 		cabecera_apartado2 = (ListView)findViewById(R.id.lvCabecera2);
 		cabecera_apartado3 = (ListView)findViewById(R.id.lvCabecera3);
@@ -114,7 +117,6 @@ public class ActivitySimulacion extends Activity {
 		cabecera_apartado3.setAdapter(adaptador_cabecera3);
 		
 		
-		
 		//Si existen datos en los arrays de la gestora de informacion
 		if (!GestoraInformacion.getDatosA().isEmpty()){
 			datosA.setArrayDatos(GestoraInformacion.getDatosA());
@@ -131,6 +133,7 @@ public class ActivitySimulacion extends Activity {
 			adaptador_apartado3 = new Adapter_Tabla(activity, GestoraInformacion.getDatosC());
 			lista_apartado3.setAdapter(adaptador_apartado3);
 		}
+		
 		
 		
 		//Tabs
@@ -177,8 +180,8 @@ public class ActivitySimulacion extends Activity {
 					Medida medA = new Medida(progress * 5, apartado1.getB(progress*5), progress * 5 * 2);
 					datosA.add_dato(medA);
 					
+					Collections.sort(datosA.get_array(), new ComparadorMedidas());
 					GestoraInformacion.setDatosA(datosA.get_array());
-					
 					
 					adaptador_apartado1 = new Adapter_Tabla_Apar1(activity, datosA.get_array());
 					lista_apartado1.setAdapter(adaptador_apartado1);
@@ -197,8 +200,8 @@ public class ActivitySimulacion extends Activity {
 					Medida medB = new Medida(progDouble, apartado2.getB(progDouble));
 					datosB.add_dato(medB);
 					
+					Collections.sort(datosB.get_array(), new ComparadorMedidas());
 					GestoraInformacion.setDatosB(datosB.get_array());
-					
 					
 					adaptador_apartado2 = new Adapter_Tabla(activity, datosB.get_array());
 					lista_apartado2.setAdapter(adaptador_apartado2);
@@ -216,7 +219,9 @@ public class ActivitySimulacion extends Activity {
 					Medida medC = new Medida(progDouble, apartado2.getB(progDouble));
 					datosC.add_dato(medC);
 					
+					Collections.sort(datosC.get_array(), new ComparadorMedidas());
 					GestoraInformacion.setDatosC(datosC.get_array());
+					
 					adaptador_apartado3 = new Adapter_Tabla(activity, datosC.get_array());
 					lista_apartado3.setAdapter(adaptador_apartado3);
 				}
@@ -250,13 +255,11 @@ public class ActivitySimulacion extends Activity {
 			@Override
 			public void onStartTrackingTouch(SeekBar seekBar) {
 				// Nada que hacer
-				
 			}
 
 			@Override
 			public void onStopTrackingTouch(SeekBar seekBar) {
 				// Nada que hacer
-				
 			}
 			
 		});
@@ -282,13 +285,11 @@ public class ActivitySimulacion extends Activity {
 			@Override
 			public void onStartTrackingTouch(SeekBar seekBar) {
 				// Nada que hacer
-				
 			}
 
 			@Override
 			public void onStopTrackingTouch(SeekBar seekBar) {
 				// Nada que hacer
-				
 			}
 			
 		});
@@ -324,9 +325,7 @@ public class ActivitySimulacion extends Activity {
 			}
 			
 		});
-		
 		//Fin SeekViews		
-		
 		
 		//Logica borar una medicion
 		this.registerForContextMenu(lista_apartado1);

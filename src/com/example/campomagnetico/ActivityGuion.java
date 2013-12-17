@@ -4,14 +4,12 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TabHost;
-import android.widget.TabWidget;
 import android.widget.TextView;
 
 public class ActivityGuion extends Activity {
@@ -23,8 +21,6 @@ public class ActivityGuion extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_guion);
-		
-		
 		
 		//Tabs
 		Resources res = getResources();
@@ -103,8 +99,6 @@ public class ActivityGuion extends Activity {
                 	}
                 }
             }
-        }
-		
-		
+        }	
 	}
 }

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import com.example.campomagnetico.R;
 
-import Apartados.Medida;
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -60,7 +59,9 @@ public class Adapter_Cabecera_Tabla extends BaseAdapter {
 		
 		
 		holder.tvColumA.setText(temp[0]);
+		holder.tvColumA.setBackgroundResource(R.color.verdeApp);
 		holder.tvColumB.setText(temp[1]);
+		holder.tvColumB.setBackgroundResource(R.color.verdeApp);
 		
 		return view;
 	}

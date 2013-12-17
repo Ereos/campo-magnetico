@@ -41,10 +41,12 @@ public class Adapter_Cabecera_Tabla_1 extends Adapter_Cabecera_Tabla {
 		String [] temp = item.split("-");
 			
 		holder.tvColumA.setText(temp[0]);
+		holder.tvColumA.setBackgroundResource(R.color.verdeApp);
 		holder.tvColumB.setText(temp[1]);
+		holder.tvColumB.setBackgroundResource(R.color.verdeApp);
 		holder.tvColumC.setText(temp[2]);
+		holder.tvColumC.setBackgroundResource(R.color.verdeApp);
 
-			
 		return view;
 	}
 		
