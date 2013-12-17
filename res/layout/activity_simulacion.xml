@@ -71,32 +71,29 @@
          	            android:layout_margin="10dp"
          	            android:max="10" />
 
-         	        <LinearLayout
+         	        <RelativeLayout
          	            android:layout_width="match_parent"
-         	            android:layout_height="wrap_content"
-         	            android:orientation="horizontal" >
-
-         	            <Button
-         	                android:id="@+id/btnOrdenarA"
-         	                style="@style/btnStyle"
-         	                android:layout_width="wrap_content"
-         	                android:layout_height="wrap_content"
-         	                android:layout_gravity="left"
-         	                android:layout_weight="3"
-         	                android:paddingRight="15dip"
-         	                android:text="Ordenar Medidas" />
+         	            android:layout_height="wrap_content" >
 
          	            <Button
          	                android:id="@+id/buttonA"
          	                style="@style/btnStyle"
          	                android:layout_width="wrap_content"
          	                android:layout_height="wrap_content"
-         	                android:layout_gravity="right"
-         	                android:layout_weight="3"
-         	                android:paddingLeft="15dip"
-         	                android:text="Tomar medida" />
+         	                android:layout_alignParentRight="true"
+         	                android:layout_alignParentTop="true"
+         	                android:text="@string/bTomarMedida" />
 
-         	        </LinearLayout>
+         	            <Button
+         	                android:id="@+id/btnOrdenarA"
+         	                style="@style/btnStyle"
+         	                android:layout_width="wrap_content"
+         	                android:layout_height="wrap_content"
+         	                android:layout_alignParentLeft="true"
+         	                android:layout_alignParentTop="true"
+         	                android:text="@string/bOrdenarMedidas" />
+
+         	        </RelativeLayout>
 
          	        <ListView
          	            android:id="@+id/lvCabecera1"
@@ -159,7 +156,7 @@
          	            android:layout_margin="10dp"
          	            android:max="56" />
 
-         	        <LinearLayout
+         	        <RelativeLayout
          	            android:layout_width="match_parent"
          	            android:layout_height="wrap_content" >
 
@@ -168,16 +165,20 @@
          	                style="@style/btnStyle"
          	                android:layout_width="wrap_content"
          	                android:layout_height="wrap_content"
-         	                android:text="Ordenar Medidas" />
+         	                android:layout_alignParentLeft="true"
+         	                android:layout_alignParentTop="true"
+         	                android:text="@string/bOrdenarMedidas" />
 
          	            <Button
          	                android:id="@+id/buttonB"
          	                style="@style/btnStyle"
          	                android:layout_width="wrap_content"
          	                android:layout_height="wrap_content"
-         	                android:text="Tomar medida" />
+         	                android:layout_alignParentRight="true"
+         	                android:layout_alignParentTop="true"
+         	                android:text="@string/bTomarMedida" />
 
-         	        </LinearLayout>
+         	        </RelativeLayout>
          	        
          	        <ListView
          	            android:id="@+id/lvCabecera2"
@@ -240,7 +241,7 @@
          	            android:layout_margin="10dp"
          	            android:max="56" />
 
-         	        <LinearLayout
+         	        <RelativeLayout
          	            android:layout_width="match_parent"
          	            android:layout_height="wrap_content" >
 
@@ -249,16 +250,20 @@
          	                style="@style/btnStyle"
          	                android:layout_width="wrap_content"
          	                android:layout_height="wrap_content"
-         	                android:text="Ordenar Medidas" />
+         	                android:layout_alignParentLeft="true"
+         	                android:layout_alignParentTop="true"
+         	                android:text="@string/bOrdenarMedidas" />
 
          	            <Button
          	                android:id="@+id/buttonC"
          	                style="@style/btnStyle"
          	                android:layout_width="wrap_content"
          	                android:layout_height="wrap_content"
-         	                android:text="Tomar medida" />
+         	                android:layout_alignParentRight="true"
+         	                android:layout_alignParentTop="true"
+         	                android:text="@string/bTomarMedida" />
 
-         	        </LinearLayout>
+         	        </RelativeLayout>
          	        
          	          <ListView
          	            android:id="@+id/lvCabecera3"

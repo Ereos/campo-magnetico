@@ -9,5 +9,7 @@
     <string name="bMontajeSort">Montaje</string>
     <string name="bSimulacionSort">Simulación</string>
     <string name="bMenuDespleg">Menús</string>
+    <string name="bTomarMedida">Tomar Medida</string>
+    <string name="bOrdenarMedidas">Ordenas las medidas</string>
     
 </resources>
