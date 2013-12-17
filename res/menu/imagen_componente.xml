@@ -16,6 +16,11 @@
         android:title="@string/menu_disminuirDescripcion"
         android:orderInCategory="2"
         android:icon="@android:drawable/ic_menu_search"></item>
+    <item 
+        android:id="@+id/action_ayuda" 
+        android:title="@string/title_activity_ayuda"
+        android:orderInCategory="1"
+        android:icon="@android:drawable/ic_menu_revert"></item>
     
     <item 
         android:id="@+id/action_acercaDe" 

@@ -339,7 +339,7 @@ public class ActivitySimulacion extends Activity {
 		    	AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 		    	builder
 		    	.setTitle("Borrar medida")
-		    	.setMessage("ÀSeguro que quieres borrar la medida seleccionada?")
+		    	.setMessage("ï¿½Seguro que quieres borrar la medida seleccionada?")
 		    	.setIcon(android.R.drawable.ic_dialog_alert)
 		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 		    	    public void onClick(DialogInterface dialog, int which) {
@@ -370,7 +370,7 @@ public class ActivitySimulacion extends Activity {
 		    	AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 		    	builder
 		    	.setTitle("Borrar medida")
-		    	.setMessage("ÀSeguro que quieres borrar la medida seleccionada?")
+		    	.setMessage("ï¿½Seguro que quieres borrar la medida seleccionada?")
 		    	.setIcon(android.R.drawable.ic_dialog_alert)
 		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 		    	    public void onClick(DialogInterface dialog, int which) {			      	
@@ -400,7 +400,7 @@ public class ActivitySimulacion extends Activity {
 		    	AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 		    	builder
 		    	.setTitle("Borrar medida")
-		    	.setMessage("ÀSeguro que quieres borrar la medida seleccionada?")
+		    	.setMessage("ï¿½Seguro que quieres borrar la medida seleccionada?")
 		    	.setIcon(android.R.drawable.ic_dialog_alert)
 		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 		    	    public void onClick(DialogInterface dialog, int which) {			      	
@@ -471,7 +471,7 @@ public class ActivitySimulacion extends Activity {
     			}else if (resultado == 5){
     				Toast.makeText(activity, "No has tomado ninguna medida en este apartado\nHaz alguna medicion antes de exportarlas", Toast.LENGTH_LONG).show();
     			}else {
-    				Toast.makeText(activity, "La verdad, no se como has llegado a aqu’", Toast.LENGTH_LONG).show();
+    				Toast.makeText(activity, "La verdad, no se como has llegado a aquï¿½", Toast.LENGTH_LONG).show();
     			}
 	    		return true;
 	    		
@@ -483,6 +483,11 @@ public class ActivitySimulacion extends Activity {
 	        	intent = new Intent("acerca_de");
 	        	startActivity(intent);
 	        	return true;
+	        case R.id.action_ayuda:
+	        	intent = new Intent("AAyuda");
+	        	intent.putExtra("tab", 3);
+	        	startActivity(intent);
+	        	return true;
 	            
 	        case R.id.action_borrar_datos:
 	        	if (tabs.getCurrentTabTag().equals("tab1")){
@@ -490,7 +495,7 @@ public class ActivitySimulacion extends Activity {
 	        		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 			    	builder
 			    	.setTitle("Borrar Todas las Medidas")
-			    	.setMessage("¿Seguro que quieres borrar todas las medidas de este apartado?")
+			    	.setMessage("ï¿½Seguro que quieres borrar todas las medidas de este apartado?")
 			    	.setIcon(android.R.drawable.ic_dialog_alert)
 			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 			    	    public void onClick(DialogInterface dialog, int which) {			      	
@@ -510,7 +515,7 @@ public class ActivitySimulacion extends Activity {
 	    			AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 			    	builder
 			    	.setTitle("Borrar Todas las Medidas")
-			    	.setMessage("¿Seguro que quieres borrar todas las medidas de este apartado?")
+			    	.setMessage("ï¿½Seguro que quieres borrar todas las medidas de este apartado?")
 			    	.setIcon(android.R.drawable.ic_dialog_alert)
 			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 			    	    public void onClick(DialogInterface dialog, int which) {			      	
@@ -530,7 +535,7 @@ public class ActivitySimulacion extends Activity {
 	    			AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 			    	builder
 			    	.setTitle("Borrar Todas las Medidas")
-			    	.setMessage("¿Seguro que quieres borrar todas las medidas de este apartado?")
+			    	.setMessage("ï¿½Seguro que quieres borrar todas las medidas de este apartado?")
 			    	.setIcon(android.R.drawable.ic_dialog_alert)
 			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 			    	    public void onClick(DialogInterface dialog, int which) {			      	
