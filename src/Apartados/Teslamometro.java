@@ -91,7 +91,7 @@ public class Teslamometro {
         public static double[][] apartado2(){
         	int i = 0; 
         	final BigDecimal intensidad = new BigDecimal(50); //100Amperios recorren el circuito y 50 por cada conductor a medir.
-        	double campo,campo2;
+        	//double campo,campo2;
         	BigDecimal y = new BigDecimal(-0.0425).round(escala);//de -4cm a 10cm en intervalos de 0.25 cm
         	BigDecimal intervalo = new BigDecimal(0.0025).round(escala);
         	double result[][] = new double[57][2];
@@ -119,7 +119,7 @@ public class Teslamometro {
         public static double[][] apartado3(){
         	int i = 0; //de -4 a 10 en intervalos de 0.25
         	final BigDecimal intensidad = new BigDecimal(100); //100Amperios
-        	double campo,campo2;
+        	//double campo,campo2;
         	BigDecimal y = new BigDecimal(-0.0425).round(escala), intervalo = new BigDecimal(0.0025).round(escala);
         	double result[][] = new double[57][2];
         	final BigDecimal d = new BigDecimal (0.065);//Distancia entre las dos barras del conductor (m).

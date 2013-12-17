@@ -1,10 +1,7 @@
 package Apartados;
 
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.math.RoundingMode;
-
-import android.util.Log;
 
 public class Medida {
 
@@ -69,7 +66,7 @@ public class Medida {
 			res.setScale(2, RoundingMode.HALF_EVEN);
 			res = res.multiply(new BigDecimal(100)); //valor en centimetros
 			res.setScale(2, RoundingMode.HALF_EVEN);
-			float aux = res.floatValue();
+			//float aux = res.floatValue();
 			return res.floatValue(); //Devuelve el valor en centimetros
 		}
 		return valor1;

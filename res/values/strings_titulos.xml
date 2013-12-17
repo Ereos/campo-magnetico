@@ -5,7 +5,7 @@
     <string name="titulo_activity_componentes">Componentes de la practica</string>
     <string name="titulo_activity_montaje">Montaje de la practica</string>
     <string name="titulo_activity_simulacion">Simulacion de la practica</string>
-    <string name="title_activity_acerca_de">Acerca de..</string>
+    <string name="title_activity_acerca_de">Acerca de&#8230;</string>
     <string name="titulo_conductor1"><b>Conductor A</b></string>
     <string name="titulo_conductor2"><b>Conductor B</b></string>
     <string name="titulo_conductor3"><b>Conductor C</b></string>

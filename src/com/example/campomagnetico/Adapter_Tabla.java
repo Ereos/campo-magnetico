@@ -13,6 +13,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+/**
+ * Clase que se encarga de generar los compoenentes de la lista con
+ * dos valores
+ *
+ */
 public class Adapter_Tabla extends BaseAdapter {
 	Activity activity;
 	int numApartado;

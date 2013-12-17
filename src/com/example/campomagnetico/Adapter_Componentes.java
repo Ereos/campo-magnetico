@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 /**
  * Se ha creado un metodo ViewHolder para no tener que buscar cada vez los recursos
- * Adaptadora para los productos
+ * Adaptadora
  *
  */
 public class Adapter_Componentes extends BaseAdapter {
