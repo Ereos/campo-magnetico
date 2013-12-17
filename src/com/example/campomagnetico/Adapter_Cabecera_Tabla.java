@@ -60,8 +60,10 @@ public class Adapter_Cabecera_Tabla extends BaseAdapter {
 		
 		holder.tvColumA.setText(temp[0]);
 		holder.tvColumA.setBackgroundResource(R.color.verdeApp);
+		holder.tvColumA.setTextAppearance(activity, R.style.boldText);
 		holder.tvColumB.setText(temp[1]);
 		holder.tvColumB.setBackgroundResource(R.color.verdeApp);
+		holder.tvColumB.setTextAppearance(activity, R.style.boldText);
 		
 		return view;
 	}
