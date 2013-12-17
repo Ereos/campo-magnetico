@@ -15,8 +15,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Color;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -82,9 +80,6 @@ public class ActivitySimulacion extends Activity {
 	protected ListView cabecera_apartado3;
 	
 	
-	//ArrayLists Datos
-	
-	
 	//Activit actual
 	protected Activity activity;
 	
@@ -93,6 +88,18 @@ public class ActivitySimulacion extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_simulacion);
+		
+		//Si existen datos en los arrays de la gestora de informacion se los asignamos a los arrays de esta clase
+		if (!GestoraInformacion.getDatosA().isEmpty()){
+			datosA.setArrayDatos(GestoraInformacion.getDatosA());
+		}
+		if (!GestoraInformacion.getDatosB().isEmpty()){
+			datosB.setArrayDatos(GestoraInformacion.getDatosB());
+		}
+		if (!GestoraInformacion.getDatosC().isEmpty()){
+			datosC.setArrayDatos(GestoraInformacion.getDatosC());
+		}
+		
 		
 		activity = this;
 		//Inicializacion de los componentes de las listas
@@ -132,26 +139,6 @@ public class ActivitySimulacion extends Activity {
 		
 		adaptador_cabecera3 = new Adapter_Cabecera_Tabla(activity, cabecera23);
 		cabecera_apartado3.setAdapter(adaptador_cabecera3);
-		
-		
-		//Si existen datos en los arrays de la gestora de informacion
-		if (!GestoraInformacion.getDatosA().isEmpty()){
-			datosA.setArrayDatos(GestoraInformacion.getDatosA());
-			
-			for (Medida ob:datosA.get_array()){
-				Log.e("SAB", ob.getValor1()+"");
-			}
-			
-			adaptador_apartado1.notifyDataSetChanged();
-		}
-		if (!GestoraInformacion.getDatosB().isEmpty()){
-			datosB.setArrayDatos(GestoraInformacion.getDatosB());
-			adaptador_apartado2.notifyDataSetChanged();
-		}
-		if (!GestoraInformacion.getDatosC().isEmpty()){
-			datosC.setArrayDatos(GestoraInformacion.getDatosC());
-			adaptador_apartado3.notifyDataSetChanged();
-		}
 		
 		
 		//Tabs

@@ -1,7 +1,5 @@
 package com.example.campomagnetico;
 
-
-import Apartados.GestoraInformacion;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
