@@ -485,7 +485,7 @@ public class ActivitySimulacion extends Activity {
 	        	return true;
 	        case R.id.action_ayuda:
 	        	intent = new Intent("AAyuda");
-	        	intent.putExtra("tab", 3);
+//	        	intent.putExtra("tab", 0);
 	        	startActivity(intent);
 	        	return true;
 	            

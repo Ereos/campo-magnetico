@@ -52,14 +52,15 @@ public class Ayuda extends Activity {
 		spec.setIndicator(getString(R.string.bMenuDespleg),res.getDrawable(android.R.drawable.ic_menu_add));
 		tabs.addTab(spec);
 
-		int activo = getIntent().getIntExtra("tab", 0);
-		if(activo <= 4){
-			tabs.setCurrentTab(activo);
-		}else
-			tabs.setCurrentTab(0);
-		
 		vista = tabs;
-	}
+		
+		Log.e("llega", "llega");
+//		int activo = getIntent().getIntExtra("tab", 0);
+//		if(activo <= 4){
+//			tabs.setCurrentTab(activo);
+//		}else{
+			tabs.setCurrentTab(0);}
+//	}
 	
 
 	@Override
