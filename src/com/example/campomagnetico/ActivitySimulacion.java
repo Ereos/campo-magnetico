@@ -15,7 +15,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -52,6 +51,11 @@ public class ActivitySimulacion extends Activity {
 	protected Button tomarMedB;
 	protected Button tomarMedC;
 	
+	/** Un boton para ordenar las medidas por apartado */
+	protected Button ordenarA;
+	protected Button ordenarB;
+	protected Button ordenarC;
+	
 	/** Un Array de Medidas por apartado */
 	protected Datos datosA = new Datos(1);
 	protected Datos datosB = new Datos(2);
@@ -76,9 +80,6 @@ public class ActivitySimulacion extends Activity {
 	protected ListView cabecera_apartado3;
 	
 	
-	//ArrayLists Datos
-	
-	
 	//Activit actual
 	protected Activity activity;
 	
@@ -88,11 +89,34 @@ public class ActivitySimulacion extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_simulacion);
 		
+		//Si existen datos en los arrays de la gestora de informacion se los asignamos a los arrays de esta clase
+		if (!GestoraInformacion.getDatosA().isEmpty()){
+			datosA.setArrayDatos(GestoraInformacion.getDatosA());
+		}
+		if (!GestoraInformacion.getDatosB().isEmpty()){
+			datosB.setArrayDatos(GestoraInformacion.getDatosB());
+		}
+		if (!GestoraInformacion.getDatosC().isEmpty()){
+			datosC.setArrayDatos(GestoraInformacion.getDatosC());
+		}
+		
+		
 		activity = this;
 		//Inicializacion de los componentes de las listas
 		lista_apartado1 = (ListView)findViewById(R.id.lvApartado1);
 		lista_apartado2 = (ListView)findViewById(R.id.lvApartado2);
 		lista_apartado3 = (ListView)findViewById(R.id.lvApartado3);
+		
+		//Asignamos los adaptadores (si hace en cada ejecion del evento del boton se sobrecarga)
+		adaptador_apartado1 = new Adapter_Tabla_Apar1(activity, datosA.get_array());
+		lista_apartado1.setAdapter(adaptador_apartado1);
+		
+		adaptador_apartado2 = new Adapter_Tabla(activity, datosB.get_array());
+		lista_apartado2.setAdapter(adaptador_apartado2);
+		
+		adaptador_apartado3 = new Adapter_Tabla(activity, datosC.get_array());
+		lista_apartado3.setAdapter(adaptador_apartado3);
+		
 		
 		//Inicializacion de las lista que funcionana como cabeceras
 		cabecera_apartado1 = (ListView)findViewById(R.id.lvCabecera1);
@@ -115,25 +139,6 @@ public class ActivitySimulacion extends Activity {
 		
 		adaptador_cabecera3 = new Adapter_Cabecera_Tabla(activity, cabecera23);
 		cabecera_apartado3.setAdapter(adaptador_cabecera3);
-		
-		
-		//Si existen datos en los arrays de la gestora de informacion
-		if (!GestoraInformacion.getDatosA().isEmpty()){
-			datosA.setArrayDatos(GestoraInformacion.getDatosA());
-			adaptador_apartado1 = new Adapter_Tabla_Apar1(activity, GestoraInformacion.getDatosA());
-			lista_apartado1.setAdapter(adaptador_apartado1);
-		}
-		if (!GestoraInformacion.getDatosB().isEmpty()){
-			datosB.setArrayDatos(GestoraInformacion.getDatosB());
-			adaptador_apartado2 = new Adapter_Tabla(activity, GestoraInformacion.getDatosB());
-			lista_apartado2.setAdapter(adaptador_apartado2);
-		}
-		if (!GestoraInformacion.getDatosC().isEmpty()){
-			datosC.setArrayDatos(GestoraInformacion.getDatosC());
-			adaptador_apartado3 = new Adapter_Tabla(activity, GestoraInformacion.getDatosC());
-			lista_apartado3.setAdapter(adaptador_apartado3);
-		}
-		
 		
 		
 		//Tabs
@@ -172,62 +177,87 @@ public class ActivitySimulacion extends Activity {
 		tomarMedC = (Button) findViewById(R.id.buttonC);
 		
 		//Botones
-			tomarMedA.setOnClickListener(new OnClickListener() {
+		tomarMedA.setOnClickListener(new OnClickListener() {
 				
-				@Override
-				public void onClick(View arg0) {
-					int progress = seekbarA.getProgress();
-					Medida medA = new Medida(progress * 5, apartado1.getB(progress*5), progress * 5 * 2);
-					datosA.add_dato(medA);
-					
-					Collections.sort(datosA.get_array(), new ComparadorMedidas());
-					GestoraInformacion.setDatosA(datosA.get_array());
-					
-					adaptador_apartado1 = new Adapter_Tabla_Apar1(activity, datosA.get_array());
-					lista_apartado1.setAdapter(adaptador_apartado1);
-					
-				}
-			});
+			@Override
+			public void onClick(View arg0) {
+				int progress = seekbarA.getProgress();
+				Medida medA = new Medida(progress * 5, apartado1.getB(progress*5), progress * 5 * 2);
 				
-			tomarMedB.setOnClickListener(new OnClickListener() {
-					
-				@Override
-				public void onClick(View arg0) {
-					int progress = seekbarB.getProgress();
-					BigDecimal prog = new BigDecimal(-0.04 + 0.0025 * progress);
-					prog = prog.setScale(5, RoundingMode.HALF_UP);
-					double progDouble = prog.doubleValue();
-					Medida medB = new Medida(progDouble, apartado2.getB(progDouble));
-					datosB.add_dato(medB);
-					
-					Collections.sort(datosB.get_array(), new ComparadorMedidas());
-					GestoraInformacion.setDatosB(datosB.get_array());
-					
-					adaptador_apartado2 = new Adapter_Tabla(activity, datosB.get_array());
-					lista_apartado2.setAdapter(adaptador_apartado2);
-				}
-			});
+				datosA.add_dato(medA);
+				GestoraInformacion.setDatosA(datosB.get_array());
+				adaptador_apartado1.notifyDataSetChanged();
+			}
+		});
+				
+		tomarMedB.setOnClickListener(new OnClickListener() {
+				
+			@Override
+			public void onClick(View arg0) {
+				int progress = seekbarB.getProgress();
+				BigDecimal prog = new BigDecimal(-0.04 + 0.0025 * progress);
+				prog = prog.setScale(5, RoundingMode.HALF_UP);
+				double progDouble = prog.doubleValue();
+				Medida medB = new Medida(progDouble, apartado2.getB(progDouble));
+				
+				datosB.add_dato(medB);
+				GestoraInformacion.setDatosB(datosB.get_array());
+				adaptador_apartado2.notifyDataSetChanged();
+			}
+		});
 
-			tomarMedC.setOnClickListener(new OnClickListener() {
+		tomarMedC.setOnClickListener(new OnClickListener() {
 				
-				@Override
-				public void onClick(View arg0) {
-					int progress = seekbarC.getProgress();
-					BigDecimal prog = new BigDecimal(-0.04 + 0.0025 * progress);
-					prog = prog.setScale(5, RoundingMode.HALF_UP);
-					double progDouble = prog.doubleValue();
-					Medida medC = new Medida(progDouble, apartado2.getB(progDouble));
-					datosC.add_dato(medC);
-					
-					Collections.sort(datosC.get_array(), new ComparadorMedidas());
-					GestoraInformacion.setDatosC(datosC.get_array());
-					
-					adaptador_apartado3 = new Adapter_Tabla(activity, datosC.get_array());
-					lista_apartado3.setAdapter(adaptador_apartado3);
+			@Override
+			public void onClick(View arg0) {
+				int progress = seekbarC.getProgress();
+				BigDecimal prog = new BigDecimal(-0.04 + 0.0025 * progress);
+				prog = prog.setScale(5, RoundingMode.HALF_UP);
+				double progDouble = prog.doubleValue();
+				Medida medC = new Medida(progDouble, apartado2.getB(progDouble));
+				
+				datosC.add_dato(medC);
+				GestoraInformacion.setDatosC(datosC.get_array());
+				adaptador_apartado3.notifyDataSetChanged();
 				}
 			});
 		//Fin Botones
+			
+		//Botones Ordenar
+		ordenarA = (Button) findViewById(R.id.btnOrdenarA);
+		ordenarB = (Button) findViewById(R.id.btnOrdenarB);
+		ordenarC = (Button) findViewById(R.id.btnOrdenarC);
 		
+		ordenarA.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Collections.sort(datosA.get_array(), new ComparadorMedidas());
+				GestoraInformacion.setDatosA(datosA.get_array());
+				adaptador_apartado1.notifyDataSetChanged();
+			}
+		});
+		
+		ordenarB.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Collections.sort(datosB.get_array(), new ComparadorMedidas());
+				GestoraInformacion.setDatosB(datosB.get_array());
+				adaptador_apartado2.notifyDataSetChanged();
+			}
+		});
+		
+		ordenarC.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Collections.sort(datosC.get_array(), new ComparadorMedidas());
+				GestoraInformacion.setDatosC(datosC.get_array());
+				adaptador_apartado3.notifyDataSetChanged();
+				
+			}
+		});
 		
 		//Seekbars y sus textview asociados
 
@@ -339,23 +369,19 @@ public class ActivitySimulacion extends Activity {
 		    	AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 		    	builder
 		    	.setTitle("Borrar medida")
-		    	.setMessage("ï¿½Seguro que quieres borrar la medida seleccionada?")
+		    	.setMessage("¿Seguro que quieres borrar la medida seleccionada?")
 		    	.setIcon(android.R.drawable.ic_dialog_alert)
 		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 		    	    public void onClick(DialogInterface dialog, int which) {
 		    	    	
 		    	    	datosA.get_array().remove(pos);
 		    	    	GestoraInformacion.setDatosA(datosA.get_array());
-		    	    	
-						adaptador_apartado1 = new Adapter_Tabla_Apar1(activity, datosA.get_array());
-						lista_apartado1.setAdapter(adaptador_apartado1);	
-						
+						adaptador_apartado1.notifyDataSetChanged();
 		    	    }
 		    	})
 		    	.setNegativeButton("No", null)
 		    	.show();
-		    	return false;
-				
+		    	return false;	
 			}
 		});
 		
@@ -373,13 +399,11 @@ public class ActivitySimulacion extends Activity {
 		    	.setMessage("ï¿½Seguro que quieres borrar la medida seleccionada?")
 		    	.setIcon(android.R.drawable.ic_dialog_alert)
 		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
-		    	    public void onClick(DialogInterface dialog, int which) {			      	
+		    	    public void onClick(DialogInterface dialog, int which) {
+		    	    	
 		    	    	datosB.get_array().remove(pos);
-		    	    	
 		    	    	GestoraInformacion.setDatosB(datosB.get_array());
-		    	    	
-						adaptador_apartado2 = new Adapter_Tabla(activity, datosB.get_array());
-						lista_apartado2.setAdapter(adaptador_apartado2);
+						adaptador_apartado2.notifyDataSetChanged();
 		    	    }
 		    	})
 		    	.setNegativeButton("No", null)
@@ -400,15 +424,14 @@ public class ActivitySimulacion extends Activity {
 		    	AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 		    	builder
 		    	.setTitle("Borrar medida")
-		    	.setMessage("ï¿½Seguro que quieres borrar la medida seleccionada?")
+		    	.setMessage("¿Seguro que quieres borrar la medida seleccionada?")
 		    	.setIcon(android.R.drawable.ic_dialog_alert)
 		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
-		    	    public void onClick(DialogInterface dialog, int which) {			      	
-		    	    	datosC.get_array().remove(pos);
+		    	    public void onClick(DialogInterface dialog, int which) {
 		    	    	
+		    	    	datosC.get_array().remove(pos);
 		    	    	GestoraInformacion.setDatosC(datosC.get_array());
-						adaptador_apartado3 = new Adapter_Tabla(activity, datosC.get_array());
-						lista_apartado3.setAdapter(adaptador_apartado3);	
+						adaptador_apartado3.notifyDataSetChanged();	
 						
 		    	    }
 		    	})
@@ -467,11 +490,11 @@ public class ActivitySimulacion extends Activity {
     			}else if (resultado == 4){
     				Toast.makeText(activity, "No se soporta el encoding de archivo", Toast.LENGTH_LONG).show();
     			}else if (resultado == 0){
-    				Toast.makeText(activity, "Archivo guardado", Toast.LENGTH_LONG).show();
+    				Toast.makeText(activity, "Archivo guardado en la SD", Toast.LENGTH_LONG).show();
     			}else if (resultado == 5){
     				Toast.makeText(activity, "No has tomado ninguna medida en este apartado\nHaz alguna medicion antes de exportarlas", Toast.LENGTH_LONG).show();
     			}else {
-    				Toast.makeText(activity, "La verdad, no se como has llegado a aquï¿½", Toast.LENGTH_LONG).show();
+    				Toast.makeText(activity, "La verdad, no se como has llegado a aqui!", Toast.LENGTH_LONG).show();
     			}
 	    		return true;
 	    		
@@ -495,15 +518,14 @@ public class ActivitySimulacion extends Activity {
 	        		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 			    	builder
 			    	.setTitle("Borrar Todas las Medidas")
-			    	.setMessage("ï¿½Seguro que quieres borrar todas las medidas de este apartado?")
+			    	.setMessage("¿Seguro que quieres borrar todas las medidas de este apartado?")
 			    	.setIcon(android.R.drawable.ic_dialog_alert)
 			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
-			    	    public void onClick(DialogInterface dialog, int which) {			      	
+			    	    public void onClick(DialogInterface dialog, int which) {
+			    	    	
 			    	    	datosA.get_array().clear();
-			    	    	
 			    	    	GestoraInformacion.setDatosA(datosA.get_array());
-			    	    	
-							lista_apartado1.setAdapter(null);
+							adaptador_apartado1.notifyDataSetChanged();
 			    	    }
 			    	})
 			    	.setNegativeButton("No", null)
@@ -515,15 +537,14 @@ public class ActivitySimulacion extends Activity {
 	    			AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 			    	builder
 			    	.setTitle("Borrar Todas las Medidas")
-			    	.setMessage("ï¿½Seguro que quieres borrar todas las medidas de este apartado?")
+			    	.setMessage("¿Seguro que quieres borrar todas las medidas de este apartado?")
 			    	.setIcon(android.R.drawable.ic_dialog_alert)
 			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
-			    	    public void onClick(DialogInterface dialog, int which) {			      	
+			    	    public void onClick(DialogInterface dialog, int which) {
+			    	    	
 			    	    	datosB.get_array().clear();
-			    	    	
 			    	    	GestoraInformacion.setDatosB(datosB.get_array());
-			    	    	
-							lista_apartado2.setAdapter(null);
+			    	    	adaptador_apartado2.notifyDataSetChanged();
 			    	    }
 			    	})
 			    	.setNegativeButton("No", null)
@@ -535,15 +556,14 @@ public class ActivitySimulacion extends Activity {
 	    			AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 			    	builder
 			    	.setTitle("Borrar Todas las Medidas")
-			    	.setMessage("ï¿½Seguro que quieres borrar todas las medidas de este apartado?")
+			    	.setMessage("¿Seguro que quieres borrar todas las medidas de este apartado?")
 			    	.setIcon(android.R.drawable.ic_dialog_alert)
 			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
-			    	    public void onClick(DialogInterface dialog, int which) {			      	
+			    	    public void onClick(DialogInterface dialog, int which) {
+			    	    	
 			    	    	datosC.get_array().clear();
-			    	    	
 			    	    	GestoraInformacion.setDatosC(datosC.get_array());
-			    	    	
-							lista_apartado3.setAdapter(null);
+							adaptador_apartado3.notifyDataSetChanged();
 			    	    }
 			    	})
 			    	.setNegativeButton("No", null)
