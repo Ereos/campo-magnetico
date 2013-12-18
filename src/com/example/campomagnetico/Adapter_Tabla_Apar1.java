@@ -11,6 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+/**
+ * Clase que extiende Adapter_Tabla para que sea capaz de manejar
+ * tres valores
+ *
+ */
 public class Adapter_Tabla_Apar1 extends Adapter_Tabla{
 	
 

@@ -4,6 +4,11 @@ import java.util.Comparator;
 
 import Apartados.Medida;
 
+/**
+ * Clase que se encarga de ordenar los datos por el Campo1
+ * 
+ *
+ */
 public class ComparadorMedidas implements Comparator<Medida>{
 
 	@Override

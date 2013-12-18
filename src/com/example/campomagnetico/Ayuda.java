@@ -54,7 +54,6 @@ public class Ayuda extends Activity {
 
 		vista = tabs;
 		
-		Log.e("llega", "llega");
 //		int activo = getIntent().getIntExtra("tab", 0);
 //		if(activo <= 4){
 //			tabs.setCurrentTab(activo);

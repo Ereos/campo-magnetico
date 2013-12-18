@@ -23,8 +23,7 @@ public class MainActivity extends Activity {
 		final Button bSimulacion = (Button)findViewById(R.id.bSimulacion);
 		final Button bAyuda = (Button)findViewById(R.id.bAyuda);
 		
-
-		
+		//Botones con las llamadas a otras activities
 		bGuion.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -65,6 +64,7 @@ public class MainActivity extends Activity {
 				
 			}
 		});
+		
 		bAyuda.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -76,6 +76,8 @@ public class MainActivity extends Activity {
 				
 			}
 		});
+		//Fin de los botones
+		
 	}
 
 	@Override

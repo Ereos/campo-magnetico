@@ -1,6 +1,5 @@
 package com.example.campomagnetico;
 
-
 public class Componente {
 	
 	private String nombre;
@@ -19,6 +18,7 @@ public class Componente {
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}

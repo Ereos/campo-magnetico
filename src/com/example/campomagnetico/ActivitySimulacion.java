@@ -185,7 +185,7 @@ public class ActivitySimulacion extends Activity {
 				Medida medA = new Medida(progress * 5, apartado1.getB(progress*5), progress * 5 * 2);
 				
 				datosA.add_dato(medA);
-				GestoraInformacion.setDatosA(datosB.get_array());
+				GestoraInformacion.setDatosA(datosA.get_array());
 				adaptador_apartado1.notifyDataSetChanged();
 			}
 		});

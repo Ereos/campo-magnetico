@@ -40,9 +40,6 @@ public class ActivityListaComponentes extends Activity {
 				intent.putExtra("foto", "" + pulsado.getIdFoto());
 				
 				startActivity(intent);
-				
-				// TODO Auto-generated method stub
-				
 			}
 		});
 		
