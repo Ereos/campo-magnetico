@@ -87,7 +87,7 @@ public class ActivityListaComponentes extends Activity {
 		Componente pinzas = new Componente("Pinzas", getString(R.string.DescPinzaAmp), R.drawable.pinzas_mini, R.drawable.pinzas);
 		losComponentes.add(pinzas);
 		
-		Componente teslamometro = new Componente("Teslamometro", getString(R.string.DescTeslam), R.drawable.teslametro_mini, R.drawable.teslametro);
+		Componente teslamometro = new Componente("Teslámetro", getString(R.string.DescTeslam), R.drawable.teslametro_mini, R.drawable.teslametro);
 		losComponentes.add(teslamometro);
 		
 		Componente SondaHall = new Componente("Sonda Hall", getString(R.string.DescSondaHall), R.drawable.teslametro_mini, R.drawable.teslametro);

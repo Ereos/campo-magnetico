@@ -392,7 +392,7 @@ public class ActivitySimulacion extends Activity {
 		    	AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 		    	builder
 		    	.setTitle("Borrar medida")
-		    	.setMessage("�Seguro que quieres borrar la medida seleccionada?")
+		    	.setMessage("¿Seguro que quieres borrar la medida seleccionada?")
 		    	.setIcon(android.R.drawable.ic_dialog_alert)
 		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 		    	    public void onClick(DialogInterface dialog, int which) {
@@ -419,7 +419,7 @@ public class ActivitySimulacion extends Activity {
 		    	AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 		    	builder
 		    	.setTitle("Borrar medida")
-		    	.setMessage("�Seguro que quieres borrar la medida seleccionada?")
+		    	.setMessage("¿Seguro que quieres borrar la medida seleccionada?")
 		    	.setIcon(android.R.drawable.ic_dialog_alert)
 		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 		    	    public void onClick(DialogInterface dialog, int which) {
@@ -447,7 +447,7 @@ public class ActivitySimulacion extends Activity {
 		    	AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 		    	builder
 		    	.setTitle("Borrar medida")
-		    	.setMessage("�Seguro que quieres borrar la medida seleccionada?")
+		    	.setMessage("¿Seguro que quieres borrar la medida seleccionada?")
 		    	.setIcon(android.R.drawable.ic_dialog_alert)
 		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 		    	    public void onClick(DialogInterface dialog, int which) {
@@ -515,9 +515,9 @@ public class ActivitySimulacion extends Activity {
     			}else if (resultado == 0){
     				Toast.makeText(activity, "Archivo guardado en la SD", Toast.LENGTH_LONG).show();
     			}else if (resultado == 5){
-    				Toast.makeText(activity, "No has tomado ninguna medida en este apartado\nHaz alguna medicion antes de exportarlas", Toast.LENGTH_LONG).show();
+    				Toast.makeText(activity, "No has tomado ninguna medida en este apartado\nHaz alguna medición antes de exportarlas", Toast.LENGTH_LONG).show();
     			}else {
-    				Toast.makeText(activity, "La verdad, no se como has llegado a aqui!", Toast.LENGTH_LONG).show();
+    				Toast.makeText(activity, "La verdad, no se como has llegado a aquí!", Toast.LENGTH_LONG).show();
     			}
 	    		return true;
 	    		
@@ -532,11 +532,13 @@ public class ActivitySimulacion extends Activity {
 	            
 	        case R.id.action_borrar_datos:
 	        	if (tabs.getCurrentTabTag().equals("tab1")){
-	        		
+	        		if(datosA.get_array().isEmpty()){
+	    				Toast.makeText(activity, R.string.vacio, Toast.LENGTH_LONG ).show();
+	        		}else{
 	        		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 			    	builder
 			    	.setTitle("Borrar Todas las Medidas")
-			    	.setMessage("�Seguro que quieres borrar todas las medidas de este apartado?")
+			    	.setMessage(R.string.seguro_borrar)
 			    	.setIcon(android.R.drawable.ic_dialog_alert)
 			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 			    	    public void onClick(DialogInterface dialog, int which) {
@@ -548,14 +550,17 @@ public class ActivitySimulacion extends Activity {
 			    	})
 			    	.setNegativeButton("No", null)
 			    	.show();
+	        		}
 			    	return false;
-			    	
 	    		}else if (tabs.getCurrentTabTag().equals("tab2")){
+	        		if(datosA.get_array().isEmpty()){
+	    				Toast.makeText(activity, R.string.vacio, Toast.LENGTH_LONG ).show();
+	        		}else{
 	    			
 	    			AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 			    	builder
 			    	.setTitle("Borrar Todas las Medidas")
-			    	.setMessage("�Seguro que quieres borrar todas las medidas de este apartado?")
+			    	.setMessage(R.string.seguro_borrar)
 			    	.setIcon(android.R.drawable.ic_dialog_alert)
 			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 			    	    public void onClick(DialogInterface dialog, int which) {
@@ -567,14 +572,18 @@ public class ActivitySimulacion extends Activity {
 			    	})
 			    	.setNegativeButton("No", null)
 			    	.show();
+	        		}
 			    	return false;
 	    			
 	    		}else if (tabs.getCurrentTabTag().equals("tab3")){
+	        		if(datosA.get_array().isEmpty()){
+	    				Toast.makeText(activity, R.string.vacio, Toast.LENGTH_LONG ).show();
+	        		}else{
 	    			
 	    			AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 			    	builder
 			    	.setTitle("Borrar Todas las Medidas")
-			    	.setMessage("�Seguro que quieres borrar todas las medidas de este apartado?")
+			    	.setMessage(R.string.seguro_borrar)
 			    	.setIcon(android.R.drawable.ic_dialog_alert)
 			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 			    	    public void onClick(DialogInterface dialog, int which) {
@@ -586,6 +595,7 @@ public class ActivitySimulacion extends Activity {
 			    	})
 			    	.setNegativeButton("No", null)
 			    	.show();
+	        		}
 			    	return false;
 	    			
 	    		}
