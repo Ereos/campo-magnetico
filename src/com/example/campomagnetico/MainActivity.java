@@ -71,7 +71,6 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 
 				intent = new Intent("AAyuda");
-				intent.putExtra("tab", 0);
 				startActivity(intent);
 				
 			}

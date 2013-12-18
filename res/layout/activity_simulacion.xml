@@ -35,11 +35,10 @@
 				    android:padding="2dip">
 
          	        <ImageView
-         	            android:id="@+id/imageView1"
+         	            android:id="@+id/ImageViewA"
          	            android:layout_width="match_parent"
          	            android:layout_height="180dp"
-         	            android:adjustViewBounds="false"
-         	            android:src="@drawable/simulacion" />
+         	            android:adjustViewBounds="false" />
 
          	        <LinearLayout
          	            android:layout_width="match_parent"
@@ -121,10 +120,9 @@
 				    android:padding="2dip">	
 
          	        <ImageView
-         	            android:id="@+id/imageView2"
+         	            android:id="@+id/imageViewB"
          	            android:layout_width="fill_parent"
-         	            android:layout_height="180dp"
-         	            android:src="@drawable/simulacion_b" />
+         	            android:layout_height="180dp" />
 
          	        <LinearLayout
          	            android:layout_width="match_parent"
@@ -206,10 +204,9 @@
 				    android:padding="2dip">
 
          	        <ImageView
-         	            android:id="@+id/imageView3"
+         	            android:id="@+id/imageViewC"
          	            android:layout_width="match_parent"
-         	            android:layout_height="180dp"
-         	            android:src="@drawable/simulacion_c" />
+         	            android:layout_height="180dp" />
 
          	        <LinearLayout
          	            android:layout_width="match_parent"

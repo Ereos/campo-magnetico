@@ -1,15 +1,16 @@
 package com.example.campomagnetico;
 
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
@@ -17,13 +18,16 @@ public class Ayuda extends Activity {
 	protected Intent intent;
 	protected TabHost tabs;
 	protected ViewGroup vista;
+	protected Activity activity;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ayuda);
 		
+		activity = this;
 		//Tabs
-		Resources res = getResources();
+		final Resources res = getResources();
 		tabs = (TabHost)findViewById(android.R.id.tabhost);
 		tabs.setup();
 		
@@ -41,26 +45,52 @@ public class Ayuda extends Activity {
 		spec.setContent(R.id.AyudaComponentes);
 		spec.setIndicator(getString(R.string.bComponetesSort),res.getDrawable(android.R.drawable.ic_dialog_info));
 		tabs.addTab(spec);
-		
+				
 		spec = tabs.newTabSpec("TabAyudaSimulacion");
 		spec.setContent(R.id.AyudaSimulacion);
 		spec.setIndicator(getString(R.string.bSimulacionSort),res.getDrawable(android.R.drawable.ic_lock_idle_charging));
 		tabs.addTab(spec);
-		
+			
 		spec = tabs.newTabSpec("TabAyudaMenu");
 		spec.setContent(R.id.AyudaMenu);
 		spec.setIndicator(getString(R.string.bMenuDespleg),res.getDrawable(android.R.drawable.ic_menu_add));
 		tabs.addTab(spec);
-
+				
 		vista = tabs;
+		tabs.setCurrentTab(0);
 		
-//		int activo = getIntent().getIntExtra("tab", 0);
-//		if(activo <= 4){
-//			tabs.setCurrentTab(activo);
-//		}else{
-			tabs.setCurrentTab(0);}
-//	}
-	
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+			
+				
+				ImageView temporal = (ImageView)findViewById(R.id.ivComponentes1);
+				temporal.setImageResource(R.drawable.componentes1);
+				
+				temporal = (ImageView)findViewById(R.id.ivComponentes2);
+				temporal.setImageResource(R.drawable.componentes2);
+				
+				temporal = (ImageView)findViewById(R.id.ivAyudaComp2);
+				temporal.setImageResource(R.drawable.componentes2);
+				
+//				temporal = (ImageView)findViewById(R.id.ivInicio1);
+//				temporal.setImageResource(R.drawable.inicio1);
+				
+				temporal = (ImageView)findViewById(R.id.ivSimulacion3);
+				temporal.setImageResource(R.drawable.simulacion3);
+				
+				temporal = (ImageView)findViewById(R.id.ivSimulacion2);
+				temporal.setImageResource(R.drawable.simulacion2);
+				
+				temporal = (ImageView)findViewById(R.id.ivSimulacion1);
+				temporal.setImageResource(R.drawable.simulacion1);
+				
+			}
+		}).start();
+		
+		
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

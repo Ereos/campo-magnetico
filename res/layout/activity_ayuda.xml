@@ -24,7 +24,7 @@
 
                 <TabWidget
                     android:id="@android:id/tabs"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" >
                 </TabWidget>
 
@@ -48,7 +48,7 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="vertical" >
 
                             <TextView
@@ -57,13 +57,6 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/AyudaInicio"
                                 android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                            <ImageView
-                                android:id="@+id/imageView1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="300dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/inicio1" />
 
                             <TextView
                                 android:id="@+id/textView2"
@@ -82,7 +75,7 @@
                                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
                             <TextView
-                                android:id="@+id/TextView01"
+                                android:id="@+id/TextView011"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="10dp"
@@ -90,7 +83,7 @@
                                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
                             <TextView
-                                android:id="@+id/TextView01"
+                                android:id="@+id/TextView012"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="10dp"
@@ -123,12 +116,7 @@
                                 android:text="@string/Guion"
                                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
-                            <ImageView
-                                android:id="@+id/imageView31"
-                                android:layout_width="wrap_content"
-                                android:layout_height="300dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/guion1" />
+                     
                             
                             <TextView
                                 android:id="@+id/textView31"
@@ -171,11 +159,10 @@
                                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
                             <ImageView
-                                android:id="@+id/imageView3"
+                                android:id="@+id/ivComponentes1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="300dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/componentes1" />
+                                android:layout_gravity="center" />
 
                             <TextView
                                 android:id="@+id/textView40"
@@ -183,13 +170,6 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/Componentes2"
                                 android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                            <ImageView
-                                android:id="@+id/imageView30"
-                                android:layout_width="wrap_content"
-                                android:layout_height="300dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/componentes3" />
                             
                             <TextView
                                 android:id="@+id/textView4"
@@ -199,10 +179,9 @@
                                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
                             <ImageView
-                                android:id="@+id/imageView30"
+                                android:id="@+id/ivComponentes2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="300dp"
-                                android:src="@drawable/componentes2" />
+                                android:layout_height="300dp" />
                         </LinearLayout>
                     </ScrollView>
                 </LinearLayout>
@@ -231,11 +210,10 @@
                                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
                             <ImageView
-                                android:id="@+id/imageView4"
+                                android:id="@+id/ivSimulacion3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="300dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/simulacion3" />
+                                android:layout_gravity="center" />
 
                             <TextView
                                 android:id="@+id/textView6"
@@ -245,11 +223,10 @@
                                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
                             <ImageView
-                                android:id="@+id/imageView5"
+                                android:id="@+id/ivSimulacion2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="300dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/simulacion2" />
+                                android:layout_gravity="center" />
                             <TextView
                                 android:id="@+id/textView50"
                                 android:layout_width="wrap_content"
@@ -258,11 +235,10 @@
                                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
                             <ImageView
-                                android:id="@+id/imageView40"
+                                android:id="@+id/ivSimulacion1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="300dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/simulacion1" />
+                                android:layout_gravity="center" />
 
                             <TextView
                                 android:id="@+id/textView60"
@@ -270,13 +246,6 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/Simulacion4"
                                 android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                            <ImageView
-                                android:id="@+id/imageView50"
-                                android:layout_width="wrap_content"
-                                android:layout_height="300dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/exportar" />
                         </LinearLayout>
 
                     </ScrollView>
@@ -306,11 +275,10 @@
                                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
                             <ImageView
-                                android:id="@+id/imageView6"
+                                android:id="@+id/ivAyudaComp2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="300dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/componentes2" />
+                                android:layout_gravity="center" />
 
                             <TextView
                                 android:id="@+id/textView8"

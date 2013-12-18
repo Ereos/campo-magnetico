@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -99,6 +100,28 @@ public class ActivitySimulacion extends Activity {
 		if (!GestoraInformacion.getDatosC().isEmpty()){
 			datosC.setArrayDatos(GestoraInformacion.getDatosC());
 		}
+		
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				
+				
+				ImageView temporal = (ImageView)findViewById(R.id.ImageViewA);
+				temporal.setImageResource(R.drawable.simulacion);
+				
+				temporal = (ImageView)findViewById(R.id.imageViewB);
+				temporal.setImageResource(R.drawable.simulacion_b);
+				
+				temporal = (ImageView)findViewById(R.id.imageViewC);
+				temporal.setImageResource(R.drawable.simulacion_c);
+				
+//				temporal = (ImageView)findViewById(R.id.ivComponentes3);
+//				temporal.setImageResource(R.drawable.componentes3);
+				
+			}
+		}).start();
 		
 		
 		activity = this;
