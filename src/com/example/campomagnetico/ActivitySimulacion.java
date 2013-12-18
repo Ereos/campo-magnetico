@@ -509,7 +509,9 @@ public class ActivitySimulacion extends Activity {
 	            
 	        case R.id.action_borrar_datos:
 	        	if (tabs.getCurrentTabTag().equals("tab1")){
-	        		
+	        		if(datosA.get_array().isEmpty()){
+	    				Toast.makeText(activity, R.string.vacio, Toast.LENGTH_LONG ).show();
+	        		}else{
 	        		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 			    	builder
 			    	.setTitle("Borrar Todas las Medidas")
@@ -525,9 +527,12 @@ public class ActivitySimulacion extends Activity {
 			    	})
 			    	.setNegativeButton("No", null)
 			    	.show();
+	        		}
 			    	return false;
-			    	
 	    		}else if (tabs.getCurrentTabTag().equals("tab2")){
+	        		if(datosA.get_array().isEmpty()){
+	    				Toast.makeText(activity, R.string.vacio, Toast.LENGTH_LONG ).show();
+	        		}else{
 	    			
 	    			AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 			    	builder
@@ -544,9 +549,13 @@ public class ActivitySimulacion extends Activity {
 			    	})
 			    	.setNegativeButton("No", null)
 			    	.show();
+	        		}
 			    	return false;
 	    			
 	    		}else if (tabs.getCurrentTabTag().equals("tab3")){
+	        		if(datosA.get_array().isEmpty()){
+	    				Toast.makeText(activity, R.string.vacio, Toast.LENGTH_LONG ).show();
+	        		}else{
 	    			
 	    			AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 			    	builder
@@ -563,6 +572,7 @@ public class ActivitySimulacion extends Activity {
 			    	})
 			    	.setNegativeButton("No", null)
 			    	.show();
+	        		}
 			    	return false;
 	    			
 	    		}
