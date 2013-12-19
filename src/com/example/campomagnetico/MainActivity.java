@@ -30,6 +30,7 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 				
 				intent = new Intent("guion");
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent);
 			}
 		});
@@ -40,6 +41,7 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 
 				intent = new Intent("montaje");
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent);	
 			}
 		});
@@ -50,6 +52,7 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 
 				intent = new Intent("componentes");
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent);
 			}
 		});
@@ -60,6 +63,7 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 
 				intent = new Intent("simulacion");
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent);
 				
 			}
@@ -71,7 +75,6 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 
 				intent = new Intent("AAyuda");
-				intent.putExtra("tab", 0);
 				startActivity(intent);
 				
 			}
