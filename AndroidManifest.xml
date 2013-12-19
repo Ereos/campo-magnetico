@@ -58,7 +58,8 @@
         <activity
             android:name="com.example.campomagnetico.ActivitySimulacion"
             android:label="@string/titulo_activity_simulacion"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:noHistory="true" >
             <intent-filter>
                 <action android:name="simulacion" />
 
@@ -87,7 +88,9 @@
         </activity>
         <activity
             android:name="com.example.campomagnetico.Ayuda"
-            android:label="@string/title_activity_ayuda" >
+            android:label="@string/title_activity_ayuda"
+            android:noHistory="true"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="AAyuda" />
 
