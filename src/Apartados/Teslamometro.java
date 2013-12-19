@@ -2,6 +2,7 @@ package Apartados;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.util.Random;
 
 public class Teslamometro {
         /**
@@ -17,7 +18,7 @@ public class Teslamometro {
          * @return Valor del campo magnético en el punto indicado.
          */
         public static double calcula_campo(double intensidad, double distancia){
-                return (permeabilidad * intensidad)/(2* Math.PI* distancia);
+                return ((permeabilidad * intensidad)/(2* Math.PI* distancia)); 
         }
         
         /**
@@ -142,5 +143,16 @@ public class Teslamometro {
         	//Ic = 2000 * I
 			return I.multiply(new BigDecimal(2000)).doubleValue(); //Ic
         	
+        }
+        
+        protected static BigDecimal genera_aleatorio(){
+        	Random rand = new Random();
+        	BigDecimal resultado; 
+        	final int error = 10;
+        	/*	aleatorio = (-1^random) * error * 0.0001*/
+        	double aleatorio = Math.pow(1, rand.nextInt(10)) * rand.nextInt(error) * 0.0001;
+        	resultado = new BigDecimal(aleatorio).round(escala);
+        	resultado = resultado.setScale(5);
+        	return resultado;
         }
 }

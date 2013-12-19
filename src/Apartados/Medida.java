@@ -18,7 +18,7 @@ public class Medida {
 	public Medida(double valor1, double valor2) {
 		super();
 		this.valor1 = valor1;
-		this.valor2 = valor2;
+		this.valor2 = valor2 + Teslamometro.genera_aleatorio().doubleValue();
 		this.apartado = 2;
 	}
 	/**
@@ -30,7 +30,7 @@ public class Medida {
 	public Medida(double valor1, double valor2, double valorIc) {
 		super();
 		this.valor1 = valor1;
-		this.valor2 = valor2;
+		this.valor2 = valor2 + Teslamometro.genera_aleatorio().doubleValue();
 		this.valorIc = valorIc;
 		this.apartado = 1;
 	}
@@ -39,18 +39,20 @@ public class Medida {
 	 * @return Array de doubles con 2 ó 3 valores, dependiendo del apartado.
 	 */
 	public double[] get(){
+			BigDecimal res ,res2 = new BigDecimal(valor2);
+			res2.setScale(4, RoundingMode.HALF_EVEN);
 		if(apartado == 2){
 			double result[] = new double[2];
-			BigDecimal res = new BigDecimal(valor1);
+			res = new BigDecimal(valor1);
 			res = res.multiply(new BigDecimal(100)); //valor en centimetros
 			res.setScale(2, RoundingMode.HALF_EVEN);
 			result[0] = res.doubleValue();
-			result[1] = valor2;
+			result[1] = res2.doubleValue();
 			return result;
 		}else{
 			double result[] = new double[3];
 			result[0] = valor1;
-			result[1] = valor2;
+			result[1] = res2.doubleValue();
 			result[2] = valorIc;
 			return result;
 		}
@@ -76,7 +78,9 @@ public class Medida {
 	 * @return Un valor double con el valor del campo correspondiente (mT) 
 	 */
 	public double getValor2() {
-		return valor2;
+		BigDecimal res2 = new BigDecimal(valor2);
+		res2 = res2.setScale(4, RoundingMode.HALF_EVEN);
+		return res2.doubleValue();
 	}
 	
 	/**
