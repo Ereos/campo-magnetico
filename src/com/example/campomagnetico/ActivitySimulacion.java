@@ -530,14 +530,14 @@ public class ActivitySimulacion extends Activity {
 	        	startActivity(intent);
 	        	return true;
 	            
-	        case R.id.action_borrar_datos:
+	        case R.id.action_borrar_medidas:
 	        	if (tabs.getCurrentTabTag().equals("tab1")){
 	        		if(datosA.get_array().isEmpty()){
 	    				Toast.makeText(activity, R.string.vacio, Toast.LENGTH_LONG ).show();
 	        		}else{
 	        		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 			    	builder
-			    	.setTitle("Borrar Todas las Medidas")
+			    	.setTitle(R.string.menu_borrarMedidas)
 			    	.setMessage(R.string.seguro_borrar)
 			    	.setIcon(android.R.drawable.ic_dialog_alert)
 			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
@@ -553,13 +553,13 @@ public class ActivitySimulacion extends Activity {
 	        		}
 			    	return false;
 	    		}else if (tabs.getCurrentTabTag().equals("tab2")){
-	        		if(datosA.get_array().isEmpty()){
+	        		if(datosB.get_array().isEmpty()){
 	    				Toast.makeText(activity, R.string.vacio, Toast.LENGTH_LONG ).show();
 	        		}else{
 	    			
 	    			AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 			    	builder
-			    	.setTitle("Borrar Todas las Medidas")
+			    	.setTitle(R.string.menu_borrarMedidas)
 			    	.setMessage(R.string.seguro_borrar)
 			    	.setIcon(android.R.drawable.ic_dialog_alert)
 			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
@@ -576,13 +576,13 @@ public class ActivitySimulacion extends Activity {
 			    	return false;
 	    			
 	    		}else if (tabs.getCurrentTabTag().equals("tab3")){
-	        		if(datosA.get_array().isEmpty()){
+	        		if(datosC.get_array().isEmpty()){
 	    				Toast.makeText(activity, R.string.vacio, Toast.LENGTH_LONG ).show();
 	        		}else{
 	    			
 	    			AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 			    	builder
-			    	.setTitle("Borrar Todas las Medidas")
+			    	.setTitle(R.string.menu_borrarMedidas)
 			    	.setMessage(R.string.seguro_borrar)
 			    	.setIcon(android.R.drawable.ic_dialog_alert)
 			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {

@@ -7,8 +7,8 @@
         android:icon="@android:drawable/ic_menu_edit"></item>
     
     <item 
-        android:id= "@+id/action_borrar_datos"
-        android:title="@string/menu_borrarDatos"
+        android:id= "@+id/action_borrar_medidas"
+        android:title="@string/menu_borrarMedidas"
         android:orderInCategory="2"
         android:icon="@android:drawable/ic_input_delete"></item>
     
