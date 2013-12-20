@@ -257,7 +257,7 @@ public class ActivitySimulacion extends Activity {
 					GestoraInformacion.setDatosC(datosC.get_array());
 					adaptador_apartado3.notifyDataSetChanged();
 				}else{
-					tomarMedB.setVisibility(View.GONE);
+					tomarMedC.setVisibility(View.GONE);
 				}
 			}
 			});
