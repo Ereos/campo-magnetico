@@ -7,6 +7,8 @@ import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+
+import android.R.array;
 import android.annotation.SuppressLint;
 import android.os.Environment;
 
@@ -15,6 +17,7 @@ public class Datos {
 
 	protected int apartado;
 	protected ArrayList<Medida> arrayDatos;
+	private boolean lleno;
 	
 	/**
 	 * Genera un nuevo contenido con Datos de un "apartado" determinado.
@@ -24,6 +27,7 @@ public class Datos {
 		// TODO Auto-generated constructor stub
 		this.apartado = apartado;
 		this.arrayDatos = new ArrayList<Medida>();
+		lleno = false;
 	}
 	/**
 	 * Añade una Medida al conjunto de datos.
@@ -137,5 +141,35 @@ public class Datos {
 			}
 			return cadenaDatos;	
 		}
+	}
+	/**
+	 * Para la medida dada se comprueba si existe otra igual
+	 * en el conjunto.
+	 * @param medida Medida que se desa comprobar
+	 */
+	public boolean esta(Medida medida){
+		for(Medida med : arrayDatos){
+			if(medida.valor1 == med.valor1){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * Metodo que da el tamaño del conjunto.
+	 * @return Cantidad de datos que tiene el conjunto.
+	 */
+	public int length(){
+		return arrayDatos.size();
+	}
+
+	public void set_lleno(boolean b) {
+		// TODO Auto-generated method stub
+		this.lleno = b;
+	}
+	
+	public boolean esta_lleno(){
+		return lleno;
 	}
 }

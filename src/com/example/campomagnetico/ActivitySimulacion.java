@@ -15,6 +15,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -206,11 +207,17 @@ public class ActivitySimulacion extends Activity {
 			public void onClick(View arg0) {
 				int progress = seekbarA.getProgress();
 				Medida medA = new Medida(progress * 5, apartado1.getB(progress*5), progress * 5 * 2);
-				
-				datosA.add_dato(medA);
-				GestoraInformacion.setDatosA(datosA.get_array());
-				adaptador_apartado1.notifyDataSetChanged();
+				if(!datosA.esta_lleno()){
+					mensaje_demasiadas_medidas(datosA);
+					datosA.add_dato(medA);
+					GestoraInformacion.setDatosA(datosA.get_array());
+					adaptador_apartado1.notifyDataSetChanged();
+				}else{
+					tomarMedA.setVisibility(View.GONE);
+				}
 			}
+
+			
 		});
 				
 		tomarMedB.setOnClickListener(new OnClickListener() {
@@ -223,9 +230,14 @@ public class ActivitySimulacion extends Activity {
 				double progDouble = prog.doubleValue();
 				Medida medB = new Medida(progDouble, apartado2.getB(progDouble));
 				
-				datosB.add_dato(medB);
-				GestoraInformacion.setDatosB(datosB.get_array());
-				adaptador_apartado2.notifyDataSetChanged();
+				if(!datosB.esta_lleno()){
+					mensaje_demasiadas_medidas(datosB);
+					datosB.add_dato(medB);
+					GestoraInformacion.setDatosB(datosB.get_array());
+					adaptador_apartado2.notifyDataSetChanged();
+				}else{
+					tomarMedB.setVisibility(View.GONE);
+				}
 			}
 		});
 
@@ -239,10 +251,15 @@ public class ActivitySimulacion extends Activity {
 				double progDouble = prog.doubleValue();
 				Medida medC = new Medida(progDouble, apartado2.getB(progDouble));
 				
-				datosC.add_dato(medC);
-				GestoraInformacion.setDatosC(datosC.get_array());
-				adaptador_apartado3.notifyDataSetChanged();
+				if(!datosC.esta_lleno()){
+					mensaje_demasiadas_medidas(datosC);
+					datosC.add_dato(medC);
+					GestoraInformacion.setDatosC(datosC.get_array());
+					adaptador_apartado3.notifyDataSetChanged();
+				}else{
+					tomarMedB.setVisibility(View.GONE);
 				}
+			}
 			});
 		//Fin Botones
 			
@@ -397,6 +414,7 @@ public class ActivitySimulacion extends Activity {
 		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 		    	    public void onClick(DialogInterface dialog, int which) {
 		    	    	
+		    	    	tomarMedA.setVisibility(View.VISIBLE);
 		    	    	datosA.get_array().remove(pos);
 		    	    	GestoraInformacion.setDatosA(datosA.get_array());
 						adaptador_apartado1.notifyDataSetChanged();
@@ -424,6 +442,7 @@ public class ActivitySimulacion extends Activity {
 		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 		    	    public void onClick(DialogInterface dialog, int which) {
 		    	    	
+		    	    	tomarMedB.setVisibility(View.VISIBLE);
 		    	    	datosB.get_array().remove(pos);
 		    	    	GestoraInformacion.setDatosB(datosB.get_array());
 						adaptador_apartado2.notifyDataSetChanged();
@@ -451,7 +470,7 @@ public class ActivitySimulacion extends Activity {
 		    	.setIcon(android.R.drawable.ic_dialog_alert)
 		    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 		    	    public void onClick(DialogInterface dialog, int which) {
-		    	    	
+		    	    	tomarMedC.setVisibility(View.VISIBLE);
 		    	    	datosC.get_array().remove(pos);
 		    	    	GestoraInformacion.setDatosC(datosC.get_array());
 						adaptador_apartado3.notifyDataSetChanged();	
@@ -543,6 +562,8 @@ public class ActivitySimulacion extends Activity {
 			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 			    	    public void onClick(DialogInterface dialog, int which) {
 			    	    	
+			    	    	tomarMedA.setVisibility(View.VISIBLE);
+
 			    	    	datosA.get_array().clear();
 			    	    	GestoraInformacion.setDatosA(datosA.get_array());
 							adaptador_apartado1.notifyDataSetChanged();
@@ -565,6 +586,7 @@ public class ActivitySimulacion extends Activity {
 			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 			    	    public void onClick(DialogInterface dialog, int which) {
 			    	    	
+			    	    	tomarMedB.setVisibility(View.VISIBLE);
 			    	    	datosB.get_array().clear();
 			    	    	GestoraInformacion.setDatosB(datosB.get_array());
 			    	    	adaptador_apartado2.notifyDataSetChanged();
@@ -588,6 +610,7 @@ public class ActivitySimulacion extends Activity {
 			    	.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 			    	    public void onClick(DialogInterface dialog, int which) {
 			    	    	
+			    	    	tomarMedC.setVisibility(View.VISIBLE);
 			    	    	datosC.get_array().clear();
 			    	    	GestoraInformacion.setDatosC(datosC.get_array());
 							adaptador_apartado3.notifyDataSetChanged();
@@ -604,5 +627,32 @@ public class ActivitySimulacion extends Activity {
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
+	}
+	/**
+	 * Muestra por pantalla un popup con información para el usuario
+	 * indicandole que lleva una cantidad de medidas desconmensurada.
+	 */
+	private void mensaje_demasiadas_medidas(Datos datos) {
+		// TODO Auto-generated method stub
+		switch (datos.length()) {
+		case 50:
+			Toast.makeText(activity, "Cincuenta medidas ya deberían ser suficientes para realizar los calculos oportunos.", (int) (Toast.LENGTH_LONG * 1.5)).show();
+		break;
+		case 100:
+			Toast.makeText(activity, "Ya acumulas 100 mediciones en el mismo apartado, ¿no te parecen demasiadas?", (int) (Toast.LENGTH_LONG * 1.5)).show();
+		break;
+		case 150:
+			Toast.makeText(activity, "¿Necesitas tomar más mediciones? ¿En serio?, ten en cuenta que esas 150 medidas luego las tendrás que representar en una gráfica.", (int) (Toast.LENGTH_LONG * 1.5)).show();
+		break;
+		case 199:
+			Toast.makeText(activity, "Esta es la última medida que se te permitirá tomar, no se considera necesario que tomes más.", (int) (Toast.LENGTH_LONG * 1.5)).show();
+		break;
+		case 200:
+			datos.set_lleno(true);
+			Toast.makeText(activity, "Vale, ya es definitivo. No se te dejará tomar más datos, no queremos ser responsables de que colapse el terminal.", Toast.LENGTH_LONG * 2).show();
+		break;	
+		default:
+			break;
+		}
 	}
 }
