@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity_Monataje"
+    android:background="@drawable/fondo1" >
+
+	    <ScrollView
+	        android:id="@+id/scrollView1"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
+
+	        <LinearLayout
+	            android:padding="15dp"
+	            android:id="@+id/linearMontaje"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical" >
+
+	            <TextView
+	                android:id="@+id/textView1"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:text="@string/titulo_montaje"
+	                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	            <TextView
+	                android:id="@+id/textView2"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:text="@string/Montaje1"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            <ImageView
+	                android:id="@+id/imageView3"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:adjustViewBounds="true"
+	                android:src="@drawable/montaje1" />
+
+	            <TextView
+	                android:id="@+id/textView3"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:text="@string/Montaje2"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            <ImageView
+	                android:id="@+id/imageView4"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:adjustViewBounds="true"
+	                android:src="@drawable/montaje2" />
+
+	            <TextView
+	                android:id="@+id/textView4"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:text="@string/Montaje3"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            <ImageView
+	                android:id="@+id/imageView5"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:adjustViewBounds="true"
+	                android:src="@drawable/montaje3" />
+
+	            <TextView
+	                android:id="@+id/textView5"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:text="@string/Montaje4"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            <ImageView
+	                android:id="@+id/imageView6"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:adjustViewBounds="true"
+	                android:src="@drawable/montaje4" />
+
+	            <TextView
+	                android:id="@+id/textView6"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:text="@string/Montaje5"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            <ImageView
+	                android:id="@+id/imageView1"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:adjustViewBounds="true"
+	                android:src="@drawable/montaje5" />
+
+	        </LinearLayout>
+
+	    </ScrollView>
+
+</LinearLayout>

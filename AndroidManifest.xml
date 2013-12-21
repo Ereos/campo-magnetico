@@ -8,6 +8,8 @@
         android:minSdkVersion="10"
         android:targetSdkVersion="18" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -15,12 +17,85 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.campomagnetico.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/titulo_activity_main"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.campomagnetico.ActivityGuion"
+            android:label="@string/titulo_activity_guion"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="guion" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.campomagnetico.ActivityListaComponentes"
+            android:label="@string/titulo_activity_componentes"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="componentes" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.campomagnetico.ActivityMontaje"
+            android:label="@string/titulo_activity_montaje"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="montaje" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.campomagnetico.ActivitySimulacion"
+            android:label="@string/titulo_activity_simulacion"
+            android:screenOrientation="portrait"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="simulacion" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.campomagnetico.AcercaDeActivity"
+            android:label="@string/title_activity_acerca_de"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="acerca_de" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.campomagnetico.ImagenComponenteActivity"
+            android:label="@string/title_activity_imagen_componente"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="imagenComponente" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.campomagnetico.Ayuda"
+            android:label="@string/title_activity_ayuda"
+            android:noHistory="true"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="AAyuda" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                </intent-filter>
         </activity>
     </application>
 
